@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+         #
+#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/24 15:27:23 by pommedepin        #+#    #+#              #
-#    Updated: 2019/02/01 14:03:28 by cajulien         ###   ########.fr        #
+#    Updated: 2019/02/01 15:59:24 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ endif
 SRCS =	display.c \
 		free_stuff.c \
 		list.c \
-		parsing.c
+		parsing.c \
+		utils.c
 
 # Objects
 OBJS= $(patsubst %.c,$(DIR_OBJS)%.o,$(SRCS))
