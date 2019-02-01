@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 15:36:29 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/02/01 17:36:38 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/02/01 18:04:38 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,21 +35,17 @@ typedef	struct				s_flags
 
 typedef struct 				s_data
 {
+	int						narg;
 	char					*nstr;
 	char					*arg;
 	t_flags					*flags;
 	struct s_data			*next;
 }							t_data;
 
-typedef struct				s_plendid
-{
-	int						narg;
-	t_data					*data;
-}							t_plendid;
 
-void    					parse(char *str, t_data **data, t_plendid *s);
+void    					parse(char *str, t_data **data);
 t_data      				*create_elem(t_data *data);
-void						show_data(t_data **data, t_plendid *s);
-void						free_data(t_data **data, t_plendid *s);
+void						show_data(t_data **data);
+void						free_data(t_data **data);
 char						is_spec(char c, char *charset);
 #endif
