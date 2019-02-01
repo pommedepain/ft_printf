@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 15:36:29 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/02/01 15:43:02 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/02/01 16:32:00 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ typedef struct 				s_data
 	struct s_data			*next;
 }							t_data;
 
-typedef struct				s_printf
+typedef struct				s_plendid
 {
-	char					*normstr;
-	char					*spestr;
-}							t_printf;
+	int						narg;
+	t_all					*data;
+}							t_plendid;
 
-void    					parse(char *str, t_data **data);
+void    					parse(char *str, t_data **data, t_plendid *s);
 t_data      				*create_elem(t_data *data);
 void						show_data(t_data **data);
-void						free_data(t_data **data);
+void						free_data(t_data **data, t_plendid *s);
 char						is_spec(char c);
 #endif
