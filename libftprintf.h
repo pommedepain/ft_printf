@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 15:36:29 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/02/01 17:21:33 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/02/01 17:36:38 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <stdarg.h> // permet l'accès à va_list, va_arg, va_end & va_start
 
 # define SPECSET "cspdiouxXfegbrk"
-# define OPTSET ""
+# define OPTSET "-+0# "
 # define WIDTHSET "0123456789*"
 # define PRECSET ".0123456789*"
 # define LENGTHSET "hlL"
