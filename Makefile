@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
+#    By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/24 15:27:23 by pommedepin        #+#    #+#              #
-#    Updated: 2019/01/24 17:21:19 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/02/01 14:03:28 by cajulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,16 @@ CC= gcc
 
 DEBUG= no
 ifeq ($(DEBUG), yes)
-	FLAGS= -Wall -Werror -Wextra -g
+	FLAGS= -Wall -Werror -Wextra -g3
 else
 	FLAGS= -Wall -Werror -Wextra
 endif
 
 # Sources
-SRCS =	
+SRCS =	display.c \
+		free_stuff.c \
+		list.c \
+		parsing.c
 
 # Objects
 OBJS= $(patsubst %.c,$(DIR_OBJS)%.o,$(SRCS))
