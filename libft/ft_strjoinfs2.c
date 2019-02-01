@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strjoinfs2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:42:03 by cajulien          #+#    #+#             */
-/*   Updated: 2018/11/10 22:43:40 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/19 18:20:50 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/19 18:21:36 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+char	*ft_strjoinfs2(char *s1, char *s2)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	char	*join;
+
+	join = NULL;
+	if (!s1 && !s2)
+		return (NULL);
+	if (!s1)
+		return (s2);
+	if (!s2)
+		return (ft_strdups(s1));
+	if (!(join = ft_strnew(ft_strlens(s1) + ft_strlens(s2) + 1)))
+		return (NULL);
+	join = ft_strcpy(join, s1);
+	join = ft_strcat(join, s2);
+	free(s2);
+	s1 = NULL;
+	return (join);
 }

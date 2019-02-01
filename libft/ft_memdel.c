@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 14:03:51 by psentilh          #+#    #+#             */
-/*   Updated: 2018/11/13 14:30:44 by psentilh         ###   ########.fr       */
+/*   Created: 2018/11/10 14:27:43 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/10 15:35:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	ft_memdel(void **ap)
 {
-	if (ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
+	if (ap == NULL || *ap == NULL)
+		return ;
+	free(*ap);
+	*ap = NULL;
 }

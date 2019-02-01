@@ -3,43 +3,56 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/15 19:39:30 by psentilh          #+#    #+#             */
-/*   Updated: 2018/11/16 15:41:54 by psentilh         ###   ########.fr       */
+/*   Created: 2018/11/10 20:26:49 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 02:35:26 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_issign(int n)
+static int		ft_nlen(int n)
 {
+	int				len;
+	unsigned int	nb;
+
+	len = 1;
 	if (n < 0)
-		return (1);
-	return (0);
+		nb = n * -1;
+	else
+		nb = n;
+	while (nb >= 10)
+	{
+		nb /= 10;
+		len++;
+	}
+	return (len);
 }
 
-char		*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
-	char	*str;
-	long	tmp_n;
-	long	len;
+	char			*str;
+	int				len;
+	unsigned int	nb;
 
-	tmp_n = n;
-	len = ft_digit_len(tmp_n);
+	len = ft_nlen(n);
+	if (n < 0)
+	{
+		nb = n * -1;
+		len++;
+	}
+	else
+		nb = n;
 	if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	str[len] = '\0';
-	len--;
-	if (tmp_n < 0)
-		tmp_n = -tmp_n;
-	while (len >= 0)
+	while (len)
 	{
-		str[len] = (tmp_n % 10) + '0';
-		len--;
-		tmp_n /= 10;
+		str[--len] = nb % 10 + 48;
+		nb /= 10;
 	}
-	if (ft_issign(n))
+	if (n < 0)
 		str[0] = '-';
 	return (str);
 }

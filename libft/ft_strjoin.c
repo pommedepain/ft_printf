@@ -3,27 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 15:01:24 by psentilh          #+#    #+#             */
-/*   Updated: 2018/11/15 12:03:16 by psentilh         ###   ########.fr       */
+/*   Created: 2018/11/10 16:10:23 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 16:10:33 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*str;
-	size_t	size;
+	char	*join;
+	size_t	i;
+	size_t	j;
 
-	if (!s1 || !s2)
+	i = -1;
+	j = -1;
+	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	size = ft_strlen(s1) + ft_strlen(s2);
-	if (!(str = (char *)malloc(sizeof(char) * (size + 1))))
+	if (!(join = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1)))
 		return (NULL);
-	str[size] = '\0';
-	ft_strcpy(str, s1);
-	ft_strcat((char *)str, s2);
-	return (str);
+	while (++i < ft_strlen(s1))
+		join[i] = s1[i];
+	while (++j < ft_strlen(s2))
+		join[i + j] = s2[j];
+	join[i + j] = '\0';
+	return (join);
 }

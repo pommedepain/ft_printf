@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_strcmps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/10 22:42:03 by cajulien          #+#    #+#             */
-/*   Updated: 2018/11/10 22:43:40 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/11 03:16:00 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 03:43:08 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+int		ft_strcmps(const char *s1, const char *s2)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	size_t		i;
+
+	i = 0;
+	if (!s1 && !s2)
+		return (0);
+	if (!s1 && s2)
+		return (0 - ((unsigned char *)s2)[i]);
+	if (s1 && !s2)
+		return (((unsigned char *)s1)[i] - 0);
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

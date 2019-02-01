@@ -3,29 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 14:59:13 by psentilh          #+#    #+#             */
-/*   Updated: 2018/11/09 16:19:35 by psentilh         ###   ########.fr       */
+/*   Created: 2018/11/07 10:19:09 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 14:09:41 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*tempdest;
-	unsigned char	*tempsrc;
+	size_t			i;
 
-	tempdest = (unsigned char *)dest;
-	tempsrc = (unsigned char *)src;
-	if (dest > src)
-		while (len--)
-			tempdest[len] = tempsrc[len];
-	else
+	i = 0;
+	if (src < dst)
+	{
 		while (len--)
 		{
-			*tempdest++ = *tempsrc++;
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
 		}
-	return (dest);
+	}
+	else
+	{
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }
+
+/*
+**int		main(int ac, char **av)
+**{
+**	if (ac != 3)
+**		return (0);
+**	printf("%s\n", ft_memmove((void *)av[1], (void *)av[1] + 2, atoi(av[2])));
+**	printf("%s\n", memmove((void *)av[1], (void *)av[1] + 2, atoi(av[2])));
+**	return (0);
+**}
+*/

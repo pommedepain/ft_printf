@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/12 11:15:46 by pommedepin        #+#    #+#             */
-/*   Updated: 2018/11/13 10:20:48 by psentilh         ###   ########.fr       */
+/*   Created: 2018/11/07 19:53:24 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 19:57:39 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-		c -= 32;
+	{
+		return (c - 32);
+	}
 	else
 		return (c);
-	return (c);
 }
