@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 12:30:24 by cajulien          #+#    #+#             */
-/*   Updated: 2019/02/01 18:16:01 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:39:48 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static int			init_elem(t_data *data)
 {
 	data->narg = 0;
 	data->nstr = NULL;
-	data->arg = NULL;
 	if(!(data->flags = (t_flags *)malloc(sizeof(t_flags))))
 		return (0); 
 	data->flags->opt = NULL;

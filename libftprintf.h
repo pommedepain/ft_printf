@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 15:36:29 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/02/01 18:04:38 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/02/01 18:40:06 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ typedef struct 				s_data
 {
 	int						narg;
 	char					*nstr;
-	char					*arg;
 	t_flags					*flags;
 	struct s_data			*next;
 }							t_data;
