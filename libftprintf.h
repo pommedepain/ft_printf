@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 15:36:29 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/02/01 13:46:06 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/02/01 15:43:02 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,5 @@ void    					parse(char *str, t_data **data);
 t_data      				*create_elem(t_data *data);
 void						show_data(t_data **data);
 void						free_data(t_data **data);
+char						is_spec(char c);
 #endif
