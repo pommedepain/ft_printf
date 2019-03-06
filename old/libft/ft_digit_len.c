@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_digit_len.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/16 15:40:43 by psentilh          #+#    #+#             */
+/*   Updated: 2018/11/16 15:42:56 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-
-int		main(void)
+long		ft_digit_len(int n)
 {
+	long size;
 
-	printf("%*.*d", 5,3 ,42);
+	if (n == 0)
+		return (1);
+	size = 0;
+	if (n < 0)
+	{
+		size++;
+		n = -n;
+	}
+	while (n != 0)
+	{
+		n /= 10;
+		size++;
+	}
+	return (size++);
 }

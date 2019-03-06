@@ -1,19 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/10/20 18:21:40 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 11:28:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
+	size_t	i;
 
-	printf("%*.*d", 5,3 ,42);
+	i = 0;
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		if (((unsigned char *)dest)[i] == (unsigned char)c)
+			return (dest + i + 1);
+		i++;
+	}
+	return (NULL);
 }

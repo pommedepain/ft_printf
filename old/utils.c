@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2019/02/01 15:42:29 by cajulien          #+#    #+#             */
+/*   Updated: 2019/02/01 16:52:28 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libftprintf.h"
 
-int		main(void)
+char		is_spec(char c, char *charset)
 {
+	int		i;
 
-	printf("%*.*d", 5,3 ,42);
+	i = 0;
+	while (charset[i])
+	{
+		if (c == charset[i])
+			return (c);
+		i++;
+	}
+	return (0);
 }

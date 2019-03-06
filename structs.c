@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:41:31 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:35:44 by cajulien         ###   ########.fr       */
+/*   Created: 2019/03/06 14:16:36 by cajulien          #+#    #+#             */
+/*   Updated: 2019/03/06 14:25:31 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "struct.h"
 
-t_arg		**init(char *str)
+void	free_link(t_arg	*link)
 {
-	t_arg	**list;
-	t_arg	*first;
+	free(link->nstr);
+	free(link->flags.option);
+	free(link->flags.width);
+	free(link->flags.precision);
+	free(link->flags.length);
+	free(link->flags.spec);
+	free(link);
+}
 
-	if (str == NULL)
-		return (NULL);
-	if (!first = create_elem(NULL))
-		return (NULL);
-	list = &first;
-	if(!ft_parse(str; first))
+void	free_list(t_arg **list)
+{
+	t_arg	*current;
+	t_arg	*next;
+
+	if (!list || !*list)
+		return ;
+	current = *list;
+	while (current)
 	{
-		free_list(list);
-		return(NULL);
-	}	
-	return (list);
+		next = current->next; 
+		free_link(current);
+		current = next;
+	}
 }

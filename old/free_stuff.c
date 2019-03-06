@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_stuff.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2019/02/01 13:36:38 by cajulien          #+#    #+#             */
+/*   Updated: 2019/02/01 18:48:00 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libftprintf.h"
 
-int		main(void)
+void	free_data(t_data **data)
 {
+	t_data		*current;
+	t_data		*tmp;
 
-	printf("%*.*d", 5,3 ,42);
+	if (!data || !*data)
+			return ;
+	current = *data;
+	while (current)
+	{
+		tmp = current->next;
+		free(current->nstr);
+		free(current->flags);
+		free(current);
+		current = tmp;
+	}
 }

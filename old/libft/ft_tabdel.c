@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/12/04 15:47:45 by psentilh          #+#    #+#             */
+/*   Updated: 2018/12/04 16:30:57 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+void	ft_tabdel(char **as)
 {
+	int i;
 
-	printf("%*.*d", 5,3 ,42);
+	i = 0;
+	if (as)
+	{
+		while (i)
+			free(as[i--]);
+		free(*as);
+		*as = NULL;
+	}
 }

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_str_dupfree.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/18 18:07:17 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/18 18:13:22 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+char	*ft_str_dupfree(char *str)
 {
+	char	*new;
 
-	printf("%*.*d", 5,3 ,42);
+	new = NULL;
+	new = ft_strdups(str);
+	free(str);
+	str = NULL;
+	return (new);
 }

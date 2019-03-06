@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/10 23:56:52 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 02:46:54 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-
-	printf("%*.*d", 5,3 ,42);
+	if (new && *alst)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
+	else
+	{
+		*alst = new;
+		(*alst)->next = NULL;
+	}
 }

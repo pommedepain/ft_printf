@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/15 19:26:00 by psentilh          #+#    #+#             */
+/*   Updated: 2018/11/15 19:35:51 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-
-int		main(void)
+int		ft_word_count(char *s, char c)
 {
+	int word;
+	int i;
 
-	printf("%*.*d", 5,3 ,42);
+	i = 0;
+	word = 0;
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != c && s[i])
+		{
+			word++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+	}
+	return (word);
 }

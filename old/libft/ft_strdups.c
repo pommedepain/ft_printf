@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdups.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/11 03:46:28 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/18 16:12:02 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+char	*ft_strdups(const char *s1)
 {
+	size_t	len;
+	size_t	i;
+	char	*dst;
 
-	printf("%*.*d", 5,3 ,42);
+	i = 0;
+	if (!s1)
+		return (NULL);
+	len = ft_strlens(s1);
+	if (!(dst = (char *)malloc(sizeof(*dst) * (len + 1))))
+		return (0);
+	while (i < len)
+	{
+		dst[i] = s1[i];
+		i++;
+	}
+	dst[len] = '\0';
+	return (dst);
 }

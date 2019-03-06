@@ -1,19 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 16:10:16 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 16:15:58 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+char	*ft_strrchr(const char *s, int c)
 {
+	size_t	i;
 
-	printf("%*.*d", 5,3 ,42);
+	i = ft_strlen(s);
+	if ((char)c == '\0')
+		return ((char *)s + i);
+	while (s[i - 1] && i > 0)
+	{
+		if (s[i - 1] == (char)c)
+			return ((char *)s + i - 1);
+		i--;
+	}
+	return (NULL);
 }

@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:03:53 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 20:04:14 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 20:35:14 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
+#include "libft.h"
 
-int		main(void)
+void	*ft_memalloc(size_t size)
 {
+	void	*area;
 
-	printf("%*.*d", 5,3 ,42);
+	if (!(area = (void *)malloc(sizeof(area) * size)))
+		return (NULL);
+	ft_bzero(area, size);
+	return (area);
 }

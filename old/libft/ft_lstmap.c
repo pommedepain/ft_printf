@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:41:31 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 14:35:44 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/11 01:09:08 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 02:22:09 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "struct.h"
+#include "libft.h"
 
-t_arg		**init(char *str)
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	t_arg	**list;
-	t_arg	*first;
+	t_list	*new;
+	t_list	*first;
+	t_list	*tmp;
 
-	if (str == NULL)
+	if (lst == NULL || f == NULL)
 		return (NULL);
-	if (!first = create_elem(NULL))
+	tmp = f(lst);
+	if (!(new = ft_lstnew(tmp->content, tmp->content_size)))
 		return (NULL);
-	list = &first;
-	if(!ft_parse(str; first))
+	first = new;
+	lst = lst->next;
+	while (lst)
 	{
-		free_list(list);
-		return(NULL);
-	}	
-	return (list);
+		tmp = f(lst);
+		if (!(new->next = ft_lstnew(tmp->content, tmp->content_size)))
+			return (NULL);
+		new = new->next;
+		lst = lst->next;
+	}
+	return (first);
 }
