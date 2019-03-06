@@ -93,7 +93,7 @@ int		new_reading(const char *format, va_list list)
 	while (format[i])
 	{
 		j = 0;
-		len = ft_strclen(&format[i], "%");
+		len = ft_strstringlen(&format[i], "%");
 		if (!(tmpf = (char *)malloc(sizeof(char) * len + 1)))
 			return (-1);
 		tmpf[len] = '\0';
@@ -119,7 +119,7 @@ int		new_reading(const char *format, va_list list)
 	return (res);
 }
 
-int		ft_strclen(const char *str, char *chr)
+int		ft_strstringlen(const char *str, char *chr)
 {
 	int j;
 	int i;

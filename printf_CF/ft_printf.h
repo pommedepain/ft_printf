@@ -37,7 +37,7 @@ typedef	struct		s_flag
 int		ft_printf(const char *format, ...)
 			__attribute__((format(printf, 1, 2)));
 int		reading_format(const char *format, va_list list);
-int		ft_strclen(const char *str, char *chr);
+int		ft_strstringlen(const char *str, char *chr);
 int		new_reading(const char *format, va_list list);
 
 /*

@@ -70,7 +70,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	j = 0;
 	k = 0;
-	len = ft_strclen(&str[i], flags);
+	len = ft_strstringlen(&str[i], flags);
 	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
 		return(NULL);
 	while(str[i])
