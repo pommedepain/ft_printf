@@ -119,6 +119,12 @@ int		new_reading(const char *format, va_list list)
 	return (res);
 }
 
+/*
+** Fonction utile de Cam = ft_strjoinfs1 (join meme si une des string est vide, et free la premiere string
+** passée en parametre)
+*/
+
+
 int		ft_strstringlen(const char *str, char *chr)
 {
 	int j;
