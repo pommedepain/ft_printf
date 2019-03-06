@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2018/11/19 18:22:23 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/06 13:36:15 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+
+#define BUFF_SIZE 42
 
 typedef struct	s_list
 {
@@ -90,5 +92,18 @@ char			*ft_strdups(const char *s1);
 size_t			ft_strlens(const char *s);
 char			*ft_strjoinfs1(char *s1, char *s2);
 char			*ft_strjoinfs2(char *s1, char *s2);
+void			ft_print_words_tables(char **tab);
+long			ft_digit_len(int n);
+void			ft_letter_count(char **split, char *s, char c);
+void			ft_tab_filling(char **split, char *s, char c);
+void			ft_tabdel(char **as);
+int				ft_word_count(char *s, char c);
+int				get_next_line(const int fd, char **line);
+char			*ft_strtrimc(char const *s, char c);
+size_t			ft_strcountsplit(const char *s, char c);
+size_t			ft_strclen(const char *s, char c);
+char			**ft_tabcpy(char **dst, char **src);
+char			*ft_strndup(const char *s1, size_t n);
+size_t			ft_strnlen(const char *s, size_t maxlen);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/24 15:27:23 by pommedepin        #+#    #+#              #
-#    Updated: 2019/02/01 15:59:24 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/06 12:55:42 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ SRCS =	display.c \
 # Objects
 OBJS= $(patsubst %.c,$(DIR_OBJS)%.o,$(SRCS))
 
-DIR_OBJS= objs/
+DIR_OBJS= objs_printf/
 
 
 # Include
