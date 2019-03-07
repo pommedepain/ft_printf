@@ -5,66 +5,61 @@
 #                                                     +:+ +:+         +:+      #
 #    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/01/24 15:27:23 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/06 12:55:42 by pommedepin       ###   ########.fr        #
+#    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
+#    Updated: 2019/03/07 16:54:25 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+.PHONY: all clean fclean re
+
 NAME = libftprintf.a
 
-# Compilation
-CC= gcc
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -I$(INC_DIR)
 
-DEBUG= no
-ifeq ($(DEBUG), yes)
-	FLAGS= -Wall -Werror -Wextra -g3
-else
-	FLAGS= -Wall -Werror -Wextra
-endif
+SRC_DIR = ./src/
+SRCS = $(addprefix $(SRC_DIR), $(SRC))
+SRC =	conversion_util.c\
+		conversion.c\
+		ft_printf.c\
+		main.c\
+		parsing_util.c\
+		parsing.c\
+		printf_str_manager.c\
+		util.c\
 
-# Sources
-SRCS =	display.c \
-		free_stuff.c \
-		list.c \
-		parsing.c \
-		utils.c
+OBJ_DIR = ./obj/
+OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
+OBJ = $(SRC:.c=.o)
 
-# Objects
-OBJS= $(patsubst %.c,$(DIR_OBJS)%.o,$(SRCS))
-
-DIR_OBJS= objs_printf/
-
-
-# Include
-HEADERS = -I libftprintf.h
-
+INC_DIR = ./inc/
+INCS = $(addprefix $(INC_DIR), $(INC))
+INC = libftprintf.h
 
 all: $(NAME)
-ifeq ($(DEBUG), yes)
-	@echo "*** DEBUG MODE ACTIVATED ***"
-endif
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJ_DIR) $(OBJS)
 	@cd libft; make all
 	@ar rcs $(NAME) $(OBJS)
+	@ranlib $(NAME)
 	@echo "\033[31m\033[1mCreating $(NAME)...\033[0m"
 
-$(DIR_OBJS)%.o: %.c
-	@mkdir -p $(DIR_OBJS)
-	@$(CC) $(FLAGS) -c $< -o $@ $(HEADERS)
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "\033[36mCompiling $<...\033[0m"
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 clean:
 	@cd libft; make clean
-	@/bin/rm -rf $(DIR_OBJS)
-	@echo "\033[35mCleaning $(DIR_OBJS)...\033[0m"
+	@rm -f $(OBJS)
+	@rm -rf $(OBJ_DIR)
+	@echo "\033[35mCleaning $(OBJ_DIR)...\033[0m"
 
 fclean: clean
 	@cd libft; make fclean
-	@/bin/rm -rf $(NAME)
+	@rm -f $(NAME)
 	@echo "\033[32mCleaning $(NAME)...\033[0m"
 
 re: fclean all
-
-.PHONY: all clean fclean re
-
