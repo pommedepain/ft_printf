@@ -38,7 +38,17 @@ int		pf_manager(const char *format, va_list ap)
 	while (format[pos])
 	{
 		if (format[pos] == '%')
-			printed += ft_parsing(format, &pos, ap);
+		{
+			if (format[pos + 1] && format[pos + 1] == '%')
+			{
+				write(1, '%', 1);
+				pos += 2;
+				printed++;
+			}
+			else
+				printed += ft_parsing(format, &pos, ap);
+		}
+	
 		if (format[pos] != '%')
 			printed += pf_str_manager(format, &pos);
 	}
