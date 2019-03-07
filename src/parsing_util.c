@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 17:25:06 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/07 16:15:43 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ int		ft_chrchar(char c, char *chr)
 
 int		pf_catchprecision(char *str, int i, va_list list)
 {
-	int		j;
-	char	*numbers;
-	int		len;
-	int		ibis;
+	int j;
+	char *numbers;
+	int len;
+	int ibis;
 
 	j = 0;
 	i += 1;
@@ -101,10 +101,10 @@ int		pf_catchprecision(char *str, int i, va_list list)
 
 int		pf_catchfield(char *str, int i, va_list list)
 {
-	int		j;
-	char	*numbers;
-	int		len;
-	int		ibis;
+	int j;
+	char *numbers;
+	int len;
+	int ibis;
 
 	j = 0;
 	len = 1;

@@ -6,7 +6,7 @@
 #    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/07 16:54:25 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/07 18:30:03 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,13 +39,14 @@ INC = libftprintf.h
 all: $(NAME)
 
 $(NAME): $(OBJ_DIR) $(OBJS)
-	@cd libft; make all
 	@ar rcs $(NAME) $(OBJS)
 	@ranlib $(NAME)
 	@echo "\033[31m\033[1mCreating $(NAME)...\033[0m"
+	@echo "\033[32m\033[1m$(NAME) all done and ready to go ! 🤗 \033[0m"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@cd libft; make all
+	@$(CC) $(CFLAGS) -c $< -o $@ -Ilibft/
 	@echo "\033[36mCompiling $<...\033[0m"
 
 $(OBJ_DIR):
@@ -54,7 +55,7 @@ $(OBJ_DIR):
 clean:
 	@cd libft; make clean
 	@rm -f $(OBJS)
-	@rm -rf $(OBJ_DIR)
+	@rm -rf obj/
 	@echo "\033[35mCleaning $(OBJ_DIR)...\033[0m"
 
 fclean: clean

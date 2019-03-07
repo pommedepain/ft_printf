@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 17:34:53 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/07 16:58:13 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 # define UINT_MAX 4294967296
 # define flags "cspdiouxXf"
 # define options "#0-+ "
-# define B1 0x0000000000FF
-# define HEX "0123456789abcdef"
 
 typedef	struct		s_flag
 {
@@ -86,7 +84,6 @@ char	*ft_flag_u(va_list list, char *tmp);
 char	*ft_flag_o(va_list list, char *tmp);
 char	*ft_flag_x(va_list list, char *tmp);
 char	*ft_flag_X(va_list list, char *tmp);
-char	*ft_flag_p(va_list list, char *tmp);
 
 /*
 ** conversion_util.c
@@ -97,8 +94,7 @@ char	*space_fill_l(char *str, int i);
 char	*space_fill_r(char *str, int i);
 char	*precision_string(char *str, int i);
 char	*add_sign(char *str, char *option);
-char	*bytes_to_str(unsigned char b[8]);
-char	*print_address(void *address);
+
 /*
 ** util.c
 */
