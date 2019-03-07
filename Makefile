@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
+#    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/07 18:30:03 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/07 19:08:34 by benjamintle      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRC =	conversion_util.c\
 		parsing.c\
 		printf_str_manager.c\
 		util.c\
+		
 
 OBJ_DIR = ./obj/
 OBJS = $(addprefix $(OBJ_DIR), $(OBJ))
@@ -45,7 +46,6 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@echo "\033[32m\033[1m$(NAME) all done and ready to go ! 🤗 \033[0m"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
-	@cd libft; make all
 	@$(CC) $(CFLAGS) -c $< -o $@ -Ilibft/
 	@echo "\033[36mCompiling $<...\033[0m"
 
@@ -53,7 +53,6 @@ $(OBJ_DIR):
 	@mkdir -p $(OBJ_DIR)
 
 clean:
-	@cd libft; make clean
 	@rm -f $(OBJS)
 	@rm -rf obj/
 	@echo "\033[35mCleaning $(OBJ_DIR)...\033[0m"
