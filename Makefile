@@ -6,7 +6,7 @@
 #    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/07 19:09:30 by benjamintle      ###   ########.fr        #
+#    Updated: 2019/03/07 19:16:11 by benjamintle      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,7 +127,7 @@ $(NAME): $(OBJ_DIR) $(OBJS)
 	@echo "\033[32m\033[1m$(NAME) all done and ready to go ! 🤗 \033[0m"
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(INCS)
-	@$(CC) $(CFLAGS) -c $< -o $@ -Ilibft/
+	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "\033[36mCompiling $<...\033[0m"
 
 $(OBJ_DIR):
@@ -139,7 +139,6 @@ clean:
 	@echo "\033[35mCleaning $(OBJ_DIR)...\033[0m"
 
 fclean: clean
-	@cd libft; make fclean
 	@rm -f $(NAME)
 	@echo "\033[32mCleaning $(NAME)...\033[0m"
 
