@@ -1,22 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 19:45:27 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 19:46:41 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_isascii(int c)
 {
-	double		i;
-	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (c >= 0 && c <= 127)
+		return (1);
+	else
+		return (0);
 }

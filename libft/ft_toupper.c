@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 19:53:24 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 19:57:39 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_toupper(int c)
 {
-	double		i;
-	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (c >= 97 && c <= 122)
+	{
+		return (c - 32);
+	}
+	else
+		return (c);
 }

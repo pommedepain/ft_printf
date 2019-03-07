@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchrs.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/11 03:49:28 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 03:50:08 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+char	*ft_strchrs(const char *s, int c)
 {
-	double		i;
+	size_t	i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (!s)
+		return (NULL);
+	if ((char)c == '\0')
+		return ((char *)s + ft_strlens(s));
+	while (s[i])
+	{
+		if (s[i] == (char)c)
+			return ((char *)s + i);
+		i++;
+	}
+	return (NULL);
 }

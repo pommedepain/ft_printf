@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tabdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/12/04 15:47:45 by psentilh          #+#    #+#             */
+/*   Updated: 2018/12/04 16:30:57 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+void	ft_tabdel(char **as)
 {
-	double		i;
+	int i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (as)
+	{
+		while (i)
+			free(as[i--]);
+		free(*as);
+		*as = NULL;
+	}
 }

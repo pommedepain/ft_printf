@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 18:59:10 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/10 18:26:02 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_atoi(const char *str)
 {
-	double		i;
+	int		i;
+	int		somme;
+	int		sign;
+
+	sign = 1;
+	somme = 0;
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (str[i])
+	{
+		while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+			i++;
+		if (str[i] == '+' || str[i] == '-')
+		{
+			if (str[i++] == '-')
+				sign = -1;
+		}
+		while (str[i] >= '0' && str[i] <= '9')
+			somme = somme * 10 + (str[i++] - 48);
+	}
+	return (sign * somme);
 }

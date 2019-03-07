@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 18:00:48 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 18:28:52 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	double		i;
+	size_t i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && i < n - 1)
+	{
+		if (s1[i] != s2[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+		i++;
+	}
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

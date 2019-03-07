@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 14:54:43 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 15:05:01 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	double		i;
+	size_t	i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		i++;
+	}
+	return (dst);
 }

@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/10 23:03:41 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/10 23:14:24 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	double		i;
-	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	t_list	*new;
+
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	if (!(content == NULL))
+	{
+		new->content = ft_memcpy(ft_memalloc(content_size),
+		content, content_size);
+		new->content_size = content_size;
+	}
+	else
+	{
+		new->content = NULL;
+		new->content_size = 0;
+	}
+	new->next = NULL;
+	return (new);
 }

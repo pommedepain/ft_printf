@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcountsplit.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2019/03/06 13:23:48 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/06 13:23:53 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+size_t	ft_strcountsplit(const char *s, char c)
 {
-	double		i;
+	size_t	i;
+	size_t	j;
+
+	if (!s)
+		return (0);
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	j = 0;
+	while (s[i])
+	{
+		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+			j++;
+		i++;
+	}
+	return (j);
 }

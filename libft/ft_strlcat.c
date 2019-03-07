@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/07 15:28:23 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 15:57:48 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	double		i;
+	size_t	len_dst;
+	size_t	len_src;
+	size_t	i;
+
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(src);
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (size < len_dst)
+		return (size + len_src);
+	while (src[i] && i + 1 + len_dst < size)
+	{
+		dst[i + len_dst] = src[i];
+		i++;
+	}
+	dst[i + len_dst] = '\0';
+	return (len_dst + len_src);
 }

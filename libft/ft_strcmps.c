@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/11/11 03:16:00 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/11 03:43:08 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+int		ft_strcmps(const char *s1, const char *s2)
 {
-	double		i;
+	size_t		i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	if (!s1 && !s2)
+		return (0);
+	if (!s1 && s2)
+		return (0 - ((unsigned char *)s2)[i]);
+	if (s1 && !s2)
+		return (((unsigned char *)s1)[i] - 0);
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 }

@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/12/04 12:54:15 by psentilh          #+#    #+#             */
+/*   Updated: 2018/12/04 12:54:44 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+void	ft_print_words_tables(char **tab)
 {
-	double		i;
+	int i;
+	int j;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	while (tab[i])
+	{
+		j = 0;
+		while (tab[i][j])
+		{
+			ft_putchar(tab[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		i++;
+	}
 }

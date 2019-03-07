@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2019/03/06 13:28:17 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/06 13:33:03 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+char	**ft_tabcpy(char **dst, char **src)
 {
-	double		i;
-	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	int k;
+
+	k = 0;
+	while (src[k])
+	{
+		dst[k] = ft_strcpy(dst[k], src[k]);
+		k++;
+	}
+	return (dst);
 }

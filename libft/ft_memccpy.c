@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:12:01 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:20:17 by cajulien         ###   ########.fr       */
+/*   Created: 2018/10/20 18:21:40 by cajulien          #+#    #+#             */
+/*   Updated: 2018/11/07 11:28:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "address.h"
+#include "libft.h"
 
-int		main(void)
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	double		i;
+	size_t	i;
+
 	i = 0;
-	
-	printf("%p\n", &i);
-	ft_putendl(print_address((void *)&i));
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
+		if (((unsigned char *)dest)[i] == (unsigned char)c)
+			return (dest + i + 1);
+		i++;
+	}
+	return (NULL);
 }

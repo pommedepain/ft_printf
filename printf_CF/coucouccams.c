@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   coucouccams.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 12:02:58 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 18:59:54 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/06 18:45:17 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void		process_arg(char *tmp, t_data *data)
 		i++;
 	tmp[i - 1] == '*' ? data->narg += 1 : 0;	
 	data->flags->length = ft_strsub(tmp, j, i - j);
-	tmp[i] ? data->flags->spec = tmp[i] : 0;
+	data->flags->spec = tmp[i];
 }
 
 static int		doublepercent(char *str, int i, t_data *current)
