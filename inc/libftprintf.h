@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 17:30:02 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/07 17:34:53 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ char	*ft_flag_u(va_list list, char *tmp);
 char	*ft_flag_o(va_list list, char *tmp);
 char	*ft_flag_x(va_list list, char *tmp);
 char	*ft_flag_X(va_list list, char *tmp);
+char	*ft_flag_p(va_list list, char *tmp);
 
 /*
 ** conversion_util.c
