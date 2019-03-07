@@ -6,11 +6,11 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 01:07:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:16:39 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/07 19:31:25 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 char 	*ft_ltoa_base(long value, int base)
 {

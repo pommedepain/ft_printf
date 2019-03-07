@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
+#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/07 19:16:11 by benjamintle      ###   ########.fr        #
+#    Updated: 2019/03/07 19:32:16 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,7 +116,7 @@ OBJ = $(SRC:.c=.o)
 
 INC_DIR = ./inc/
 INCS = $(addprefix $(INC_DIR), $(INC))
-INC = libftprintf.h
+INC = libft.h
 
 all: $(NAME)
 

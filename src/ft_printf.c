@@ -6,11 +6,11 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:13:53 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/07 19:30:38 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 /*
 ** Main Function: initialise va_list, call reading_format and return

@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 13:36:15 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/07 19:29:24 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,17 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
-#define BUFF_SIZE 42
+# define BUFF_SIZE 42
+# define UINT_MAX 4294967296
+# define flags "cspdiouxXf"
+# define options "#0-+ "
+
+
+/*
+** Structures :
+*/
 
 typedef struct	s_list
 {
@@ -24,6 +33,36 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef	struct		s_flag
+{
+	char	*parsing;
+	char	*to_print;
+	char	flag;
+	char	*option;
+	int		precision;
+	int		field;
+	char	modif;
+}					t_flag;
+
+/*
+typedef struct			s_flags{
+	char	*arg;
+	char	*to_print;
+	char	*options;
+	char    *width;
+	char	*precision;
+	char	lenght;
+	char	spec;
+}						t_flags;
+*/
+
+
+
+/*
+** Functions of Libft project :
+*/
+
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t	n);
@@ -105,5 +144,74 @@ size_t			ft_strclen(const char *s, char c);
 char			**ft_tabcpy(char **dst, char **src);
 char			*ft_strndup(const char *s1, size_t n);
 size_t			ft_strnlen(const char *s, size_t maxlen);
+
+
+
+/*
+** Functions of ft_printf project :
+*/
+
+
+/*
+** ft_printf.c
+*/
+
+int		ft_printf(const char *format, ...)
+			__attribute__((format(printf, 1, 2)));
+int		reading_format(const char *format, va_list list);
+int		ft_strstringlen(const char *str, char *chr);
+int		new_reading(const char *format, va_list list);
+int		pf_manager(const char *format, va_list ap);
+int		pf_str_manager(const char *str, int *pos);
+
+/*
+** parsing.c
+*/
+
+int		ft_parsing(const char *format, int *i, va_list list);
+t_flag	fill_flag(t_flag flag, va_list list);
+char 	*ft_fillparsing(const char *str, int i, char *chr);
+
+/*
+** parsing_util.c
+*/
+
+int		ft_chrstring(const char *str, char *chr);
+int		ft_chrchar(char c, char *chr);
+int		pf_catchprecision(char *str, int i, va_list list);
+int		pf_catchfield(char *str, int i, va_list list);
+char	*pf_catch_option(char *str, int i, char *res);
+
+/*
+** conversion.c
+*/
+
+char	*ft_flag_c(va_list list, char *tmp);
+char	*ft_flag_s(va_list list, char *tmp);
+char	*ft_flag_d(va_list list, char *tmp);
+char	*ft_flag_u(va_list list, char *tmp);
+char	*ft_flag_o(va_list list, char *tmp);
+char	*ft_flag_x(va_list list, char *tmp);
+char	*ft_flag_X(va_list list, char *tmp);
+
+/*
+** conversion_util.c
+*/
+
+char	*zero_fill(char *str, int i);
+char	*space_fill_l(char *str, int i);
+char	*space_fill_r(char *str, int i);
+char	*precision_string(char *str, int i);
+char	*add_sign(char *str, char *option);
+
+/*
+** util.c
+*/
+
+char 	*ft_ltoa_base_2(long value, int base);
+char 	*ft_ltoa_base(long value, int base);
+char	*ft_ltoa(long n);
+char	*pf_strjoin(char const *s1, char const *s2);
+//int		ft_size(int n);
 
 #endif
