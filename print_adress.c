@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 13:58:22 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 15:29:37 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/07 15:36:43 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*bytes_to_str(unsigned char b[8])
 
 	hex = HEX;
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * 18)))
+	if (!(str = (char *)malloc(sizeof(char) * 19)))
 		return NULL;
 	while (i < 8)
 	{
@@ -29,6 +29,7 @@ char	*bytes_to_str(unsigned char b[8])
 		str[2 * i] = hex[((int)b[i] % 16)];
 		i++;
 	}
+	str[16] = '\0';
 	return (str);
 }
 
@@ -38,6 +39,7 @@ char	*print_address(void *address)
 	int		i;
 	int		size;
 	char	*to_print;
+	char	*to_free;
 
 	i = 0;
 	while (i < 8)
@@ -49,6 +51,8 @@ char	*print_address(void *address)
 	i = 0;
 	while (to_print[i] == 48)
 		i++;
+	to_free = to_print;
 	to_print = ft_strjoins("0x", &to_print[i]);
+	free(to_free);
 	return (to_print);
 }
