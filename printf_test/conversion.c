@@ -95,6 +95,6 @@ char	*ft_flag_x(va_list list, char *tmp)
 
 char	*ft_flag_p(va_list list, char *tmp)
 {
-	tmp = print_adress(va_arg(list, void *);
+	tmp = print_adress(va_arg(list, void *));
 	return (tmp);
 }
