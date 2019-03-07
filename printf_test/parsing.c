@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 13:06:51 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/07 12:42:56 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,43 +22,44 @@
 int		ft_parsing(const char *format, int *i, va_list list)
 {
 	t_flag	flag;
+	char	*tmp;
 	int		res;
 
 	res = 0;
-	flag.to_print = NULL;
+	tmp = NULL;
 	flag.parsing = NULL;
 	flag.to_print = NULL;
 	flag.parsing = ft_fillparsing(format, *i, flags);
-	flag = fill_flag(flag);
+	flag = fill_flag(flag, list);
 	if (flag.flag == 'c')
-		flag.to_print = ft_flag_c(list, flag.to_print);
+		tmp = ft_flag_c(list, tmp);
 	if (flag.flag == 'd' || flag.flag == 'i')
-		flag.to_print = ft_flag_d(list, flag.to_print);
+		tmp = ft_flag_d(list, tmp);
 	if (flag.flag == 's')
-		flag.to_print = ft_flag_s(list, flag.to_print);
+		tmp = ft_flag_s(list, tmp);
 	if (flag.flag == 'u')
-		flag.to_print = ft_flag_u(list, flag.to_print);
+		tmp = ft_flag_u(list, tmp);
 	if (flag.flag == 'o')
-		flag.to_print = ft_flag_o(list, flag.to_print);
+		tmp = ft_flag_o(list, tmp);
 	if (flag.flag == 'X')
-		flag.to_print = ft_flag_X(list, flag.to_print);
+		tmp = ft_flag_X(list, tmp);
 	if (flag.flag == 'x')
-		flag.to_print = ft_flag_x(list, flag.to_print);
+		tmp = ft_flag_x(list, tmp);
 	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
-		flag.to_print = add_sign(flag.to_print, flag.option);
+		tmp = add_sign(tmp, flag.option);
 	if (flag.precision >= 0 && ft_chrstring(flag.parsing, "diouxX") == 1)
-		flag.to_print = zero_fill(flag.to_print, flag.precision);
+		tmp = zero_fill(tmp, flag.precision);
 	if (flag.precision != 0 && ft_chrstring(flag.parsing, "s") == 1)
-		flag.to_print = precision_string(flag.to_print, flag.precision);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") == 1)
-		flag.to_print = space_fill_r(flag.to_print, flag.field);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1)
-		flag.to_print = space_fill_l(flag.to_print, flag.field);
+		tmp = precision_string(tmp, flag.precision);
+	if (flag.field > (int)ft_strlen(tmp) && ft_chrstring(flag.option, "-") == 1)
+		tmp = space_fill_r(tmp, flag.field);
+	if (flag.field > (int)ft_strlen(tmp) && ft_chrstring(flag.option, "-") != 1)
+		tmp = space_fill_l(tmp, flag.field);
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
-	ft_putstr(flag.to_print);
-	res = ft_strlen(flag.to_print);
+	ft_putstr(tmp);
+	res = ft_strlen(tmp);
 	
 	return (res);
 }
@@ -103,7 +104,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 ** structure
 */
 
-t_flag	fill_flag(t_flag flag)
+t_flag	fill_flag(t_flag flag, va_list list)
 {
 	int i;
 
@@ -119,17 +120,17 @@ t_flag	fill_flag(t_flag flag)
 			while (ft_chrchar(flag.parsing[i], options) == 1)
 				i++;
 		}
-		if (flag.parsing[i] >= '0' && flag.parsing[i] <= '9')
+		if ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 		{
-			flag.field = pf_catchfield(flag.parsing, i);
-			while (flag.parsing[i] >= '0' && flag.parsing[i] <= '9')
+			flag.field = pf_catchfield(flag.parsing, i, list);
+			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 				i++;
 		}	
 		if (flag.parsing[i] == '.')
 		{
-			flag.precision = pf_catchprecision(flag.parsing, i);
+			flag.precision = pf_catchprecision(flag.parsing, i, list);
 			i += 1;
-			while (flag.parsing[i] >= '0' && flag.parsing[i] <= '9')
+			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 				i++;
 		}
 		i++;

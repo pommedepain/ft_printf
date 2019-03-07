@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 12:58:15 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/07 12:42:57 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int		pf_str_manager(const char *str, int *pos);
 */
 
 int		ft_parsing(const char *format, int *i, va_list list);
-t_flag	fill_flag(t_flag flag);
+t_flag	fill_flag(t_flag flag, va_list list);
 char 	*ft_fillparsing(const char *str, int i, char *chr);
 
 /*
@@ -70,8 +70,8 @@ char 	*ft_fillparsing(const char *str, int i, char *chr);
 
 int		ft_chrstring(const char *str, char *chr);
 int		ft_chrchar(char c, char *chr);
-int		pf_catchprecision(char *str, int i);
-int		pf_catchfield(char *str, int i);
+int		pf_catchprecision(char *str, int i, va_list list);
+int		pf_catchfield(char *str, int i, va_list list);
 char	*pf_catch_option(char *str, int i, char *res);
 
 /*
