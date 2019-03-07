@@ -6,7 +6,7 @@
 #    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 12:31:47 by psentilh          #+#    #+#              #
-#    Updated: 2019/03/06 13:36:52 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/07 15:15:13 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ OBJS= $(patsubst %.c,$(DIR_OBJS)%.o,$(SRCS))
 
 
 # Others
-HEADERS= -I .
+HEADERS= -I libft.h
 
 
 all: $(NAME)
@@ -124,6 +124,7 @@ endif
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
+	@ranlib $(NAME)
 	@echo "\033[31m\033[1mCreating $(NAME)...\033[0m"
 
 $(DIR_OBJS)%.o: %.c
