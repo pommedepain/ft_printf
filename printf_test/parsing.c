@@ -45,6 +45,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		tmp = ft_flag_X(list, tmp);
 	if (flag.flag == 'x')
 		tmp = ft_flag_x(list, tmp);
+	if (flag.flag == 'p')
+		tmp = ft_flag_p(list, tmp);
 	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
 		tmp = add_sign(tmp, flag.option);
 	if (flag.precision >= 0 && ft_chrstring(flag.parsing, "diouxX") == 1)

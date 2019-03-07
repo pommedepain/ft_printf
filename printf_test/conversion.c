@@ -92,3 +92,9 @@ char	*ft_flag_x(va_list list, char *tmp)
 	tmp = ft_ltoa_base_2(res, 16);
 	return (tmp);
 }
+
+char	*ft_flag_p(va_list list, char *tmp)
+{
+	tmp = print_adress(va_arg(list, void *);
+	return (tmp);
+}

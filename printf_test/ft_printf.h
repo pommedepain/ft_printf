@@ -19,6 +19,8 @@
 # define UINT_MAX 4294967296
 # define flags "cspdiouxXf"
 # define options "#0-+ "
+# define B1 0x0000000000FF
+# define HEX "0123456789abcdef"
 
 typedef	struct		s_flag
 {
@@ -95,6 +97,8 @@ char	*space_fill_l(char *str, int i);
 char	*space_fill_r(char *str, int i);
 char	*precision_string(char *str, int i);
 char	*add_sign(char *str, char *option);
+char	*print_address(void *address);
+char	*bytes_to_str(unsigned char b[8]);
 
 /*
 ** util.c
