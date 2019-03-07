@@ -48,7 +48,6 @@ int		pf_manager(const char *format, va_list ap)
 			else
 				printed += ft_parsing(format, &pos, ap);
 		}
-	
 		if (format[pos] != '%')
 			printed += pf_str_manager(format, &pos);
 	}
