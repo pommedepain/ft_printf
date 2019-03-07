@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:58:13 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/07 19:05:11 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-# include "../libft/libft.h"
+# include "libft.h"
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
