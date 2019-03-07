@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   coucou_cam.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/01 12:02:58 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/06 18:34:27 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/06 18:34:39 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

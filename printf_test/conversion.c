@@ -38,8 +38,8 @@ char	*ft_flag_s(va_list list, char *tmp)
 
 char	*ft_flag_u(va_list list, char *tmp)
 {
-	unsigned long res;
-	int arg;
+	unsigned long	res;
+	int				arg;
 
 	res = 0;
 	arg = va_arg(list, int);
@@ -53,8 +53,8 @@ char	*ft_flag_u(va_list list, char *tmp)
 
 char	*ft_flag_o(va_list list, char *tmp)
 {
-	unsigned long res;
-	int arg;
+	unsigned long	res;
+	int				arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)
@@ -67,8 +67,8 @@ char	*ft_flag_o(va_list list, char *tmp)
 
 char	*ft_flag_X(va_list list, char *tmp)
 {
-	unsigned long res;
-	int arg;
+	unsigned long	res;
+	int				arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)
@@ -81,8 +81,8 @@ char	*ft_flag_X(va_list list, char *tmp)
 
 char	*ft_flag_x(va_list list, char *tmp)
 {
-	unsigned long res;
-	int arg;
+	unsigned long	res;
+	int				arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)

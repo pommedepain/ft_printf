@@ -76,7 +76,7 @@ char	*space_fill_r(char *str, int i)
 	char	*res;
 	int		j;
 	int		k;
-	int len;
+	int		len;
 
 	len = strlen(str);
 	k = 0;
@@ -111,8 +111,8 @@ char	*add_sign(char *str, char *option)
 {
 	char	*res;
 	int		len;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	len = ft_strlen(str);
 	i = 0;

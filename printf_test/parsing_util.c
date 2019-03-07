@@ -68,10 +68,10 @@ int		ft_chrchar(char c, char *chr)
 
 int		pf_catchprecision(char *str, int i, va_list list)
 {
-	int j;
-	char *numbers;
-	int len;
-	int ibis;
+	int		j;
+	char	*numbers;
+	int		len;
+	int		ibis;
 
 	j = 0;
 	i += 1;
@@ -101,10 +101,10 @@ int		pf_catchprecision(char *str, int i, va_list list)
 
 int		pf_catchfield(char *str, int i, va_list list)
 {
-	int j;
-	char *numbers;
-	int len;
-	int ibis;
+	int		j;
+	char	*numbers;
+	int		len;
+	int		ibis;
 
 	j = 0;
 	len = 1;
