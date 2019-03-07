@@ -87,6 +87,7 @@ char	*ft_flag_u(va_list list, char *tmp);
 char	*ft_flag_o(va_list list, char *tmp);
 char	*ft_flag_x(va_list list, char *tmp);
 char	*ft_flag_X(va_list list, char *tmp);
+char	*ft_flag_p(va_list list, char *tmp);
 
 /*
 ** conversion_util.c
