@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:33:21 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 16:39:47 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		tmp = ft_flag_c(list, tmp);
 	if (flag.flag == 's')
 		tmp = ft_flag_s(list, tmp);
-	
+	if (flag.flag == 'p')
+		tmp = ft_flag_p(list, tmp);
 	if (flag.flag == 'd' || flag.flag == 'i')
 		tmp = ft_flag_d(list, tmp);
 	if (flag.flag == 'o')
