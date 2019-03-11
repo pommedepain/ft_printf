@@ -6,11 +6,11 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:55:51 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:00:22 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "inc/libftprintf.h"
+#include "libftprintf.h"
 #include <stdio.h>
 
 int		main(void)
