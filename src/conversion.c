@@ -6,37 +6,37 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:16:59 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:49:18 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char	*ft_flag_c(va_list list, char *tmp)
+char	*ft_flag_c(va_list list, t_flag flag)
 {
 	int i;
 	
 	i = 0;
-	tmp = ft_strnew(1);
-	*tmp =(va_arg(list, int));
-	i = ft_strlen(tmp);
-	tmp[i] = '\0';
-	return (tmp);
+	flag.to_print = ft_strnew(1);
+	*flag.to_print =(va_arg(list, int));
+	i = ft_strlen(flag.to_print);
+	flag.to_print[i] = '\0';
+	return (flag.to_print);
 }
 
-char	*ft_flag_d(va_list list, char *tmp)
+char	*ft_flag_d(va_list list, t_flag flag)
 {
-	tmp = ft_itoa(va_arg(list, int));
-	return (tmp);
+	flag.to_print = ft_itoa(va_arg(list, int));
+	return (flag.to_print);
 }
 
-char	*ft_flag_s(va_list list, char *tmp)
+char	*ft_flag_s(va_list list, t_flag flag)
 {
-	tmp = va_arg(list, char *);
-	return (tmp);
+	flag.to_print = va_arg(list, char *);
+	return (flag.to_print);
 }
 
-char	*ft_flag_u(va_list list, char *tmp)
+char	*ft_flag_u(va_list list, t_flag flag)
 {
 	unsigned long res;
 	int arg;
@@ -47,11 +47,11 @@ char	*ft_flag_u(va_list list, char *tmp)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	tmp = ft_ltoa(res);
-	return(tmp);
+	flag.to_print = ft_ltoa(res);
+	return(flag.to_print);
 }
 
-char	*ft_flag_o(va_list list, char *tmp)
+char	*ft_flag_o(va_list list, t_flag flag)
 {
 	unsigned long res;
 	int arg;
@@ -61,11 +61,11 @@ char	*ft_flag_o(va_list list, char *tmp)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	tmp = ft_ltoa_base(res, 8);
-	return (tmp);
+	flag.to_print = ft_ltoa_base(res, 8);
+	return (flag.to_print);
 }
 
-char	*ft_flag_X(va_list list, char *tmp)
+char	*ft_flag_X(va_list list, t_flag flag)
 {
 	unsigned long res;
 	int arg;
@@ -75,11 +75,11 @@ char	*ft_flag_X(va_list list, char *tmp)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	tmp = ft_ltoa_base(res, 16);
-	return (tmp);
+	flag.to_print = ft_ltoa_base(res, 16);
+	return (flag.to_print);
 }
 
-char	*ft_flag_x(va_list list, char *tmp)
+char	*ft_flag_x(va_list list, t_flag flag)
 {
 	unsigned long res;
 	int arg;
@@ -89,14 +89,14 @@ char	*ft_flag_x(va_list list, char *tmp)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	tmp = ft_ltoa_base_2(res, 16);
-	return (tmp);
+	flag.to_print = ft_ltoa_base_2(res, 16);
+	return (flag.to_print);
 }
 
-char	*ft_flag_p(va_list list, char *tmp)
+char	*ft_flag_p(va_list list, t_flag flag)
 {
-	tmp = print_address(va_arg(list, void *));
-	return (tmp);
+	flag.to_print = print_address(va_arg(list, void *));
+	return (flag.to_print);
 }
 
 char	*ft_flag_per(t_flag flag)

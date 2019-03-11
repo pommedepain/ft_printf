@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:19:23 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:48:22 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,21 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.parsing = ft_fillparsing(format, *i, flags);
 	flag = fill_flag(flag, list);
 	if (flag.flag == 'c')
-		flag.to_print = ft_flag_c(list, flag.to_print);
+		flag.to_print = ft_flag_c(list, flag);
 	if (flag.flag == 's')
-		flag.to_print = ft_flag_s(list, flag.to_print);
+		flag.to_print = ft_flag_s(list, flag);
 	if (flag.flag == 'p')
-		flag.to_print = ft_flag_p(list, flag.to_print);
+		flag.to_print = ft_flag_p(list, flag);
 	if (flag.flag == 'd' || flag.flag == 'i')
-		flag.to_print = ft_flag_d(list, flag.to_print);
+		flag.to_print = ft_flag_d(list, flag);
 	if (flag.flag == 'o')
-		flag.to_print = ft_flag_o(list, flag.to_print);
+		flag.to_print = ft_flag_o(list, flag);
 	if (flag.flag == 'u')
-		flag.to_print = ft_flag_u(list, flag.to_print);
+		flag.to_print = ft_flag_u(list, flag);
 	if (flag.flag == 'X')
-		flag.to_print = ft_flag_X(list, flag.to_print);
+		flag.to_print = ft_flag_X(list, flag);
 	if (flag.flag == 'x')
-		flag.to_print = ft_flag_x(list, flag.to_print);
+		flag.to_print = ft_flag_x(list, flag);
 	if (flag.flag == '%')
 		flag.to_print = ft_flag_per(flag);
 	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
