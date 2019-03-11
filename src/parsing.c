@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 18:10:36 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 22:37:22 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,10 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
+	free(flag.modif);
 	ft_putstr(flag.to_print);
 	res = ft_strlen(flag.to_print);
+	//free(flag.to_print);
 	return (res);
 }
 
@@ -105,6 +107,7 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	flag.precision = 0;
 	flag.field = 0;
 	flag.option = NULL;
+	flag.modif = NULL;
 	while (flag.parsing[i])
 	{
 		if (ft_chrchar(flag.parsing[i], options) == 1)
@@ -124,6 +127,12 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			flag.precision = pf_catchprecision(flag.parsing, i, list);
 			i += 1;
 			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
+				i++;
+		}
+		if(ft_chrchar(flag.parsing[i], "lLh") == 1)
+		{
+			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
+			while (ft_chrchar(flag.parsing[i], "lLh") == 1)
 				i++;
 		}
 		i++;

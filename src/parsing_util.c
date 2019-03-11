@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:15:43 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/11 18:48:35 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,4 +142,23 @@ char	*pf_catch_option(char *str, int i, char *res)
 	while (ft_chrchar(str[i], options) == 1)
 		res[j++] = str[i++];
 	return(res); 
+}
+
+char	*pf_catchmodifier(char *str, int i, char *res)
+{
+	int j;
+	int len;
+	int ibis;
+
+	j = 0;
+	len = 0;
+	ibis = i;
+	while (ft_chrchar(str[ibis++], "lLh") == 1)
+		len++;
+	if (!(res = (char *)malloc(sizeof(char)* len + 1)))
+		return (NULL);
+	res[len] = '\0';
+	while (ft_chrchar(str[i], "lLh") == 1)
+		res[j++] = str[i++];
+	return(res);
 }

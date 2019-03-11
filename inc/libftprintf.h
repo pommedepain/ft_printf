@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:56:20 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 21:44:53 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define options "#0-+ "
 # define B1 0x0000000000FF
 # define HEX "0123456789abcdef"
+# define BASE "0123456789ABCDEF"
 
 typedef	struct		s_flag
 {
@@ -30,7 +31,7 @@ typedef	struct		s_flag
 	char	*option;
 	int		precision;
 	int		field;
-	char	modif;
+	char	*modif;
 }					t_flag;
 
 /*
@@ -62,6 +63,7 @@ int		ft_chrchar(char c, char *chr);
 int		pf_catchprecision(char *str, int i, va_list list);
 int		pf_catchfield(char *str, int i, va_list list);
 char	*pf_catch_option(char *str, int i, char *res);
+char	*pf_catchmodifier(char *str, int i, char *res);
 
 /*
 ** conversion.c
@@ -88,6 +90,10 @@ char	*precision_string(char *str, int i);
 char	*add_sign(char *str, char *option);
 char	*print_address(void *address);
 char	*bytes_to_str(unsigned char b[8]);
+int		ft_numlen(unsigned long long int value, int base);
+char	*ft_lltoa_base(long long value, int base);
+char	*ft_ulltoa_base(unsigned long long value, int base);
+char	*zero_fill_l(char *str, int i);
 
 /*
 ** util.c
