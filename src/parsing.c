@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:01:32 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:19:23 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	res = 0;
 	flag.parsing = NULL;
 	flag.to_print = NULL;
+	*i += 1;
 	flag.parsing = ft_fillparsing(format, *i, flags);
 	flag = fill_flag(flag, list);
 	if (flag.flag == 'c')
@@ -45,6 +46,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		flag.to_print = ft_flag_X(list, flag.to_print);
 	if (flag.flag == 'x')
 		flag.to_print = ft_flag_x(list, flag.to_print);
+	if (flag.flag == '%')
+		flag.to_print = ft_flag_per(flag);
 	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
 		flag.to_print = add_sign(flag.to_print, flag.option);
 	if (flag.precision >= 0 && ft_chrstring(flag.parsing, "diouxX") == 1)

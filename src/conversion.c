@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:58:09 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:16:59 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,14 @@ char	*ft_flag_p(va_list list, char *tmp)
 {
 	tmp = print_address(va_arg(list, void *));
 	return (tmp);
+}
+
+char	*ft_flag_per(t_flag flag)
+{
+	flag.to_print = "%";
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1)
+		flag.to_print = space_fill_l(flag.to_print, flag.field);
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") == 1)
+		flag.to_print = space_fill_r(flag.to_print, flag.field);
+	return (flag.to_print);
 }

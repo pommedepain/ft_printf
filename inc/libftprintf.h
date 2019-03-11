@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:38:22 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:05:10 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
-# define flags "cspdiouxXf"
+# define flags "cspdiouxX%f"
 # define options "#0-+ "
 # define B1 0x0000000000FF
 # define HEX "0123456789abcdef"
@@ -87,6 +87,7 @@ char	*ft_flag_o(va_list list, char *tmp);
 char	*ft_flag_x(va_list list, char *tmp);
 char	*ft_flag_X(va_list list, char *tmp);
 char	*ft_flag_p(va_list list, char *tmp);
+char	*ft_flag_per(t_flag flag);
 
 /*
 ** conversion_util.c
