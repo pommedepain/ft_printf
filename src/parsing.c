@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:39:47 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 16:54:05 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	free(flag.option);
 	ft_putstr(tmp);
 	res = ft_strlen(tmp);
-	
 	return (res);
 }
+
 
 /*
 ** Duplicate the format string until a conversion specifier appears(Create a 

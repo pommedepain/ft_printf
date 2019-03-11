@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:14:26 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/11 16:55:51 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "inc/libftprintf.h"
 #include <stdio.h>
 
 int		main(void)
@@ -23,8 +23,8 @@ int		main(void)
 	int j;
 
 	ft_putstr("\nTest1\n");
-	i = ft_printf("Ma fonction:%*.*d, %-15s, %-o, %c\n",10,25, test2, test, test2, test3);
-	j = printf("La fonction:%.*d, %-15s, %-o, %c\n",25, test2, test, test2, test3);
+	i = ft_printf("Ma fonction:%p, %-15s, %-o, %c\n",test, test, test2, test3);
+	j = printf("La fonction:%p, %-15s, %-o, %c\n",test, test, test2, test3);
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
 	ft_putstr("\nTest2\n");
