@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 23:08:12 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 00:45:44 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,22 @@ char	*zero_fill(char *str, int i)
 			res = (char *)malloc(sizeof(char) * (i + 2));
 			res[i + 1] = '\0';
 			res[0] = str[0];
-			while(i-- > (j - 1))
+			while (i-- > (j - 1))
 				res[k++] = '0';
 		}
 		else
 		{
 			res = (char *)malloc(sizeof(char) * (i + 1));
 			res[i] = '\0';
-			while(i-- > j)
+			while (i-- > j)
 				res[k++] = '0';
 		}
-		while(j-- > 0)
+		while (j-- > 0)
 			res[k++] = str[ibis++];
 		free(str);
 		return (res);
 	}
-	return(str);
+	return (str);
 }
 
 char	*space_fill_l(char *str, int i)
@@ -62,9 +62,9 @@ char	*space_fill_l(char *str, int i)
 	ibis = 0;
 	res = (char *)malloc(sizeof(char) * (i + 1));
 	res[i] = '\0';
-	while(i-- > j)
+	while (i-- > j)
 		res[k++] = ' ';
-	while(j-- > 0)
+	while (j-- > 0)
 		res[k++] = str[ibis++];
 	return (res);
 }
@@ -74,17 +74,17 @@ char	*space_fill_r(char *str, int i)
 	char	*res;
 	int		j;
 	int		k;
-	int len;
+	int		len;
 
 	len = ft_strlen(str);
 	k = 0;
 	j = 0;
 	res = (char *)malloc(sizeof(char) * (i + 1));
 	res[i] = '\0';
-	while(len-- > 0)
+	while (len-- > 0)
 		res[j++] = str[k++];
-	i -= j; 
-	while(i-- > 0)
+	i -= j;
+	while (i-- > 0)
 		res[j++] = ' ';
 	return (res);
 }
@@ -93,14 +93,14 @@ char	*precision_string(char *str, int i)
 {
 	char	*res;
 	int		j;
-	int 	k;
+	int		k;
 
 	k = 0;
 	j = 0;
-	if(!(res = (char *)malloc(sizeof(char) * i + 1)))
+	if (!(res = (char *)malloc(sizeof(char) * i + 1)))
 		return (NULL);
 	res[i] = '\0';
-	while(i-- > 0)
+	while (i-- > 0)
 		res[k++] = str[j++];
 	return (res);
 }
@@ -109,14 +109,14 @@ char	*add_sign(char *str, char *option)
 {
 	char	*res;
 	int		len;
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	len = ft_strlen(str);
 	i = 0;
 	j = 1;
 	if (ft_chrstring(str, "-") == 1)
-		return(str);
+		return (str);
 	if (!(res = (char *)malloc(sizeof(char) * len + 2)))
 		return (0);
 	res[len + 1] = '\0';
@@ -124,12 +124,11 @@ char	*add_sign(char *str, char *option)
 		res[0] = '+';
 	if (ft_chrstring(option, " ") == 1 && ft_chrstring(option, "+") != 1)
 		res[0] = ' ';
-	while(str[i])
+	while (str[i])
 		res[j++] = str[i++];
 	free(str);
-	return(res);
+	return (res);
 }
-
 
 char	*bytes_to_str(unsigned char b[8])
 {
@@ -140,7 +139,7 @@ char	*bytes_to_str(unsigned char b[8])
 	hex = HEX;
 	i = 0;
 	if (!(str = (char *)malloc(sizeof(char) * 19)))
-		return NULL;
+		return (NULL);
 	while (i < 8)
 	{
 		str[2 * i + 1] = hex[((int)b[i] % 16)];
@@ -154,11 +153,10 @@ char	*bytes_to_str(unsigned char b[8])
 
 char	*print_address(void *address)
 {
-	unsigned char b[8];
-	int		i;
-	//int		size;
-	char	*to_print;
-	char	*to_free;
+	unsigned char	b[8];
+	int				i;
+	char			*to_print;
+	char			*to_free;
 
 	i = 0;
 	while (i < 8)
@@ -254,20 +252,20 @@ char	*zero_fill_l(char *str, int i)
 			res = (char *)malloc(sizeof(char) * (i + 2));
 			res[i + 1] = '\0';
 			res[0] = str[0];
-			while(--i > j)
+			while (--i > j)
 				res[k++] = '0';
 		}
 		else
 		{
 			res = (char *)malloc(sizeof(char) * (i + 1));
 			res[i] = '\0';
-			while(i-- > j)
+			while (i-- > j)
 				res[k++] = '0';
 		}
-		while(j-- > 0)
+		while (j-- > 0)
 			res[k++] = str[ibis++];
 		free(str);
 		return (res);
 	}
-	return(str);
+	return (str);
 }

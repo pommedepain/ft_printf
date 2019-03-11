@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 16:30:10 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 00:36:50 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,6 @@ int		pf_manager(const char *format, va_list ap)
 	}
 	return (printed);
 }
-
-/*
-** Fonction utile de Cam = ft_strjoinfs1 (join meme si une des string est vide, et free la premiere string
-** passée en parametre)
-*/
-
 
 int		ft_strstringlen(const char *str, char *chr)
 {

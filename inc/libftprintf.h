@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 21:44:53 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 00:10:14 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ char	*ft_flag_x(va_list list, t_flag flag);
 char	*ft_flag_X(va_list list, t_flag flag);
 char	*ft_flag_p(va_list list, t_flag flag);
 char	*ft_flag_per(t_flag flag);
+char	*handle_field(t_flag flag);
 
 /*
 ** conversion_util.c

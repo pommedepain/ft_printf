@@ -6,16 +6,17 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 22:37:22 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 00:32:23 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
 /*
-** Duplicate the "%   " part of format in a separate string (with the call of 
+** Duplicate the "%   " part of format in a separate string (with the call of
 ** ft_fillparsing)
-** Fill the structure flag, with all classified information to help the conversion
+** Fill the structure flag, with all classified information to help the
+** conversion
 ** (with the call of fillflag)
 */
 
@@ -29,6 +30,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.to_print = NULL;
 	*i += 1;
 	flag.parsing = ft_fillparsing(format, *i, flags);
+	if (flag.parsing == NULL)
+		return (0);
 	flag = fill_flag(flag, list);
 	if (flag.flag == 'c')
 		flag.to_print = ft_flag_c(list, flag);
@@ -54,13 +57,11 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	free(flag.modif);
 	ft_putstr(flag.to_print);
 	res = ft_strlen(flag.to_print);
-	//free(flag.to_print);
 	return (res);
 }
 
-
 /*
-** Duplicate the format string until a conversion specifier appears(Create a 
+** Duplicate the format string until a conversion specifier appears(Create a
 ** "flag string")
 */
 
@@ -73,29 +74,31 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	j = 0;
 	k = 0;
+	if (ft_chrstring(&str[i], flags) != 1)
+		return (NULL);
 	len = ft_strstringlen(&str[i], flags);
 	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
-		return(NULL);
-	while(str[i])
+		return (NULL);
+	while (str[i])
 	{
 		j = 0;
-		while(chr[j])
+		while (chr[j])
 		{
-			if(chr[j] == str[i])
+			if (chr[j] == str[i])
 			{
 				dest[k] = str[i];
 				dest[k + 1] = '\0';
-				return(dest);
+				return (dest);
 			}
 			j++;
 		}
 		dest[k++] = str[i++];
 	}
-	return(NULL);
+	return (NULL);
 }
 
 /*
-** Check a flag string to see and classified all the parameter in the flag 
+** Check a flag string to see and classified all the parameter in the flag
 ** structure
 */
 
@@ -121,7 +124,7 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			flag.field = pf_catchfield(flag.parsing, i, list);
 			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 				i++;
-		}	
+		}
 		if (flag.parsing[i] == '.')
 		{
 			flag.precision = pf_catchprecision(flag.parsing, i, list);
@@ -129,7 +132,7 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 				i++;
 		}
-		if(ft_chrchar(flag.parsing[i], "lLh") == 1)
+		if (ft_chrchar(flag.parsing[i], "lLh") == 1)
 		{
 			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
 			while (ft_chrchar(flag.parsing[i], "lLh") == 1)

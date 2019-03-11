@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 01:07:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:16:39 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 00:47:26 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-char 	*ft_ltoa_base(long value, int base)
+char	*ft_ltoa_base(long value, int base)
 {
 	char	*tmp;
 	long	n;
@@ -24,7 +24,7 @@ char 	*ft_ltoa_base(long value, int base)
 	i = (sign == -1) ? 2 : 1;
 	while ((n /= base) >= 1)
 		i++;
-	tmp = (char *)malloc (sizeof(char) * i + 1);
+	tmp = (char *)malloc(sizeof(char) * i + 1);
 	tmp[i] = '\0';
 	n = (value < 0) ? -(long)value : value;
 	while (i-- + sign)
@@ -36,7 +36,7 @@ char 	*ft_ltoa_base(long value, int base)
 	return (tmp);
 }
 
-char 	*ft_ltoa_base_2(long value, int base)
+char	*ft_ltoa_base_2(long value, int base)
 {
 	char	*tmp;
 	long	n;
@@ -48,7 +48,7 @@ char 	*ft_ltoa_base_2(long value, int base)
 	i = (sign == -1) ? 2 : 1;
 	while ((n /= base) >= 1)
 		i++;
-	tmp = (char *)malloc (sizeof(char) * i + 1);
+	tmp = (char *)malloc(sizeof(char) * i + 1);
 	tmp[i] = '\0';
 	n = (value < 0) ? -(long)value : value;
 	while (i-- + sign)
@@ -78,7 +78,7 @@ int		ft_size(long n)
 	return (len + 1);
 }
 
-char		*ft_ltoa(long n)
+char	*ft_ltoa(long n)
 {
 	char	*tab;
 	int		len;
