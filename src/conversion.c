@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 12:27:09 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:12:18 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 char	*ft_flag_c(va_list list, char *tmp)
 {
@@ -38,8 +38,8 @@ char	*ft_flag_s(va_list list, char *tmp)
 
 char	*ft_flag_u(va_list list, char *tmp)
 {
-	unsigned long	res;
-	int				arg;
+	unsigned long res;
+	int arg;
 
 	res = 0;
 	arg = va_arg(list, int);
@@ -53,8 +53,8 @@ char	*ft_flag_u(va_list list, char *tmp)
 
 char	*ft_flag_o(va_list list, char *tmp)
 {
-	unsigned long	res;
-	int				arg;
+	unsigned long res;
+	int arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)
@@ -67,8 +67,8 @@ char	*ft_flag_o(va_list list, char *tmp)
 
 char	*ft_flag_X(va_list list, char *tmp)
 {
-	unsigned long	res;
-	int				arg;
+	unsigned long res;
+	int arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)
@@ -81,8 +81,8 @@ char	*ft_flag_X(va_list list, char *tmp)
 
 char	*ft_flag_x(va_list list, char *tmp)
 {
-	unsigned long	res;
-	int				arg;
+	unsigned long res;
+	int arg;
 	res = 0;
 	arg = va_arg(list, int);
 	if (arg < 0)
@@ -90,11 +90,5 @@ char	*ft_flag_x(va_list list, char *tmp)
 	else
 		res = arg;
 	tmp = ft_ltoa_base_2(res, 16);
-	return (tmp);
-}
-
-char	*ft_flag_p(va_list list, char *tmp)
-{
-	tmp = print_adress(va_arg(list, void *));
 	return (tmp);
 }

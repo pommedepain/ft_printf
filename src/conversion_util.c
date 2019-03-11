@@ -6,11 +6,11 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/02/26 17:06:25 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 15:00:13 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 char	*zero_fill(char *str, int i)
 {
@@ -76,9 +76,9 @@ char	*space_fill_r(char *str, int i)
 	char	*res;
 	int		j;
 	int		k;
-	int		len;
+	int len;
 
-	len = strlen(str);
+	len = ft_strlen(str);
 	k = 0;
 	j = 0;
 	res = (char *)malloc(sizeof(char) * (i + 1));
@@ -111,8 +111,8 @@ char	*add_sign(char *str, char *option)
 {
 	char	*res;
 	int		len;
-	int		i;
-	int		j;
+	int i;
+	int j;
 
 	len = ft_strlen(str);
 	i = 0;
@@ -128,49 +128,4 @@ char	*add_sign(char *str, char *option)
 		res[j++] = str[i++];
 	free(str);
 	return(res);
-}
-
-char	*bytes_to_str(unsigned char b[8])
-{
-	int		i;
-	char	*hex;
-	char	*str;
-
-	hex = HEX;
-	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * 19)))
-		return NULL;
-	while (i < 8)
-	{
-		str[2 * i + 1] = hex[((int)b[i] % 16)];
-		b[i] /= 16;
-		str[2 * i] = hex[((int)b[i] % 16)];
-		i++;
-	}
-	str[16] = '\0';
-	return (str);
-}
-
-char	*print_address(void *address)
-{
-	unsigned char b[8];
-	int		i;
-	int		size;
-	char	*to_print;
-	char	*to_free;
-
-	i = 0;
-	while (i < 8)
-	{
-		b[i] = ((unsigned long)address >> (56 - 8 * i)) & B1;
-		i++;
-	}
-	to_print = bytes_to_str(b);
-	i = 0;
-	while (to_print[i] == 48)
-		i++;
-	to_free = to_print;
-	to_print = ft_strjoins("0x", &to_print[i]);
-	free(to_free);
-	return (to_print);
 }

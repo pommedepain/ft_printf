@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 12:28:47 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:15:43 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libftprintf.h"
 
 /*
 ** Search if one of multiple characteres (written in the string chr) are 
@@ -66,7 +66,7 @@ int		ft_chrchar(char c, char *chr)
 ** this charactere)
 */
 
-int		pf_catchprecision(char *str, int i)
+int		pf_catchprecision(char *str, int i, va_list list)
 {
 	int j;
 	char *numbers;
@@ -77,8 +77,13 @@ int		pf_catchprecision(char *str, int i)
 	i += 1;
 	len = 1;
 	ibis = i;
-	if (str[i] <= '0' || str[i] >= '9')
+	if ((str[i] <= '0' || str[i] >= '9') && str[i] != '*')
 		return (-1);
+	if (str[i] == '*')
+	{
+		j = va_arg(list, int);
+		return (j);
+	}
 	while(str[ibis++] >= '0' && str[ibis] <= '9')
 		len++;
 	numbers = malloc(sizeof(char) * len + 1);
@@ -94,7 +99,7 @@ int		pf_catchprecision(char *str, int i)
 ** Convert a decimal digit string (into a bigger string) into a int
 */
 
-int		pf_catchfield(char *str, int i)
+int		pf_catchfield(char *str, int i, va_list list)
 {
 	int j;
 	char *numbers;
@@ -104,6 +109,11 @@ int		pf_catchfield(char *str, int i)
 	j = 0;
 	len = 1;
 	ibis = i;
+	if (str[i] == '*')
+	{
+		j = va_arg(list, int);
+		return (j);
+	}
 	while(str[ibis++] >= '0' && str[ibis] <= '9')
 		len++;
 	numbers = malloc(sizeof(char) * len + 1);

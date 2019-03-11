@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   printf_str_manager.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/06 17:22:47 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
+/*   Updated: 2019/03/07 16:16:09 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "libftprintf.h"
 
-int		main(void)
+int			pf_str_manager(const char *str, int *pos)
 {
-	char *test = "bonjour";
-	int test2 = 20;
-	char test3 = 'a';
-	//int	*test4 = &test2;
 	int i;
-	int j;
+	char *to_print;
 
-	i = ft_printf("Ma fonction:%+20.10d, %-15s, %-o, %c\n", test2, test, test2, test3);
-	j = printf("La fonction:%+20.10d, %-15s, %-o, %c\n", test2, test, test2, test3);
-	ft_putnbr(i);
-	ft_putchar('\n');
-	ft_putnbr(j);
-	return (0);
+	i = 0;
+	to_print = NULL;
+	if (!str || *pos < 0)
+		return (-1);
+	while (str[*pos + i] && str[*pos + i] != '%')
+		i++;
+	to_print = ft_strnew((size_t)i);
+	i = 0;
+	while (str[*pos + i] && str[*pos + i] != '%')
+	{
+		to_print[i] = str[*pos + i];
+		i++;
+	}
+	ft_putstr(to_print);
+	free(to_print);
+	*pos += i;
+	return(i);
 }

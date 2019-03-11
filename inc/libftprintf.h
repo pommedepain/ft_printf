@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 12:42:57 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/07 19:05:11 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
-# include "../libft/libft.h"
+# include "libft.h"
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
 # define flags "cspdiouxXf"
 # define options "#0-+ "
-# define B1 0x0000000000FF
-# define HEX "0123456789abcdef"
 
 typedef	struct		s_flag
 {
@@ -35,7 +33,6 @@ typedef	struct		s_flag
 
 /*
 typedef struct			s_flags{
-
 	char	*arg;
 	char	*to_print;
 	char	*options;
@@ -87,7 +84,6 @@ char	*ft_flag_u(va_list list, char *tmp);
 char	*ft_flag_o(va_list list, char *tmp);
 char	*ft_flag_x(va_list list, char *tmp);
 char	*ft_flag_X(va_list list, char *tmp);
-char	*ft_flag_p(va_list list, char *tmp);
 
 /*
 ** conversion_util.c
@@ -98,8 +94,6 @@ char	*space_fill_l(char *str, int i);
 char	*space_fill_r(char *str, int i);
 char	*precision_string(char *str, int i);
 char	*add_sign(char *str, char *option);
-char	*print_address(void *address);
-char	*bytes_to_str(unsigned char b[8]);
 
 /*
 ** util.c
