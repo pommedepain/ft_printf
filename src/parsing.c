@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:15:09 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/11 16:33:21 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,15 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag = fill_flag(flag, list);
 	if (flag.flag == 'c')
 		tmp = ft_flag_c(list, tmp);
-	if (flag.flag == 'd' || flag.flag == 'i')
-		tmp = ft_flag_d(list, tmp);
 	if (flag.flag == 's')
 		tmp = ft_flag_s(list, tmp);
-	if (flag.flag == 'u')
-		tmp = ft_flag_u(list, tmp);
+	
+	if (flag.flag == 'd' || flag.flag == 'i')
+		tmp = ft_flag_d(list, tmp);
 	if (flag.flag == 'o')
 		tmp = ft_flag_o(list, tmp);
+	if (flag.flag == 'u')
+		tmp = ft_flag_u(list, tmp);
 	if (flag.flag == 'X')
 		tmp = ft_flag_X(list, tmp);
 	if (flag.flag == 'x')

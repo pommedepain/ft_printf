@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 16:12:18 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/11 16:33:25 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,11 @@ char	*ft_flag_x(va_list list, char *tmp)
 	else
 		res = arg;
 	tmp = ft_ltoa_base_2(res, 16);
+	return (tmp);
+}
+
+char	*ft_flag_p(va_list list, char *tmp)
+{
+	tmp = print_address(va_arg(list, void *));
 	return (tmp);
 }
