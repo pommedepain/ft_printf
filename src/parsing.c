@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:48:22 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 18:10:36 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,16 +48,6 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		flag.to_print = ft_flag_x(list, flag);
 	if (flag.flag == '%')
 		flag.to_print = ft_flag_per(flag);
-	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
-		flag.to_print = add_sign(flag.to_print, flag.option);
-	if (flag.precision >= 0 && ft_chrstring(flag.parsing, "diouxX") == 1)
-		flag.to_print = zero_fill(flag.to_print, flag.precision);
-	if (flag.precision != 0 && ft_chrstring(flag.parsing, "s") == 1)
-		flag.to_print = precision_string(flag.to_print, flag.precision);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") == 1)
-		flag.to_print = space_fill_r(flag.to_print, flag.field);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1)
-		flag.to_print = space_fill_l(flag.to_print, flag.field);
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
