@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/11 17:49:56 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:56:20 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,6 @@ typedef	struct		s_flag
 	int		field;
 	char	modif;
 }					t_flag;
-
-/*
-typedef struct			s_flags{
-	char	*arg;
-	char	*to_print;
-	char	*options;
-	char    *width;
-	char	*precision;
-	char	lenght;
-	char	spec;
-}						t_flags;
-*/
 
 /*
 ** ft_printf.c
