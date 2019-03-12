@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 00:45:44 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 01:53:11 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -264,7 +264,7 @@ char	*zero_fill_l(char *str, int i)
 		}
 		while (j-- > 0)
 			res[k++] = str[ibis++];
-		free(str);
+		//free(str);
 		return (res);
 	}
 	return (str);

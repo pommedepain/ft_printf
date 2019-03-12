@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/15 16:00:17 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 00:10:14 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 02:43:44 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
-# define flags "cspdiouxX%f"
+# define flags "cspdiouxX%fZ"
 # define options "#0-+ "
 # define B1 0x0000000000FF
 # define HEX "0123456789abcdef"
@@ -38,8 +38,8 @@ typedef	struct		s_flag
 ** ft_printf.c
 */
 
-int		ft_printf(const char *format, ...)
-			__attribute__((format(printf, 1, 2)));
+int		ft_printf(const char *format, ...);
+			//__attribute__((format(printf, 1, 2)));
 int		reading_format(const char *format, va_list list);
 int		ft_strstringlen(const char *str, char *chr);
 int		new_reading(const char *format, va_list list);

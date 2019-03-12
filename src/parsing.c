@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 00:32:23 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 02:37:38 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		flag.to_print = ft_flag_x(list, flag);
 	if (flag.flag == '%')
 		flag.to_print = ft_flag_per(flag);
+	if (flag.flag == 'Z')
+		flag.to_print = "Z";
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
