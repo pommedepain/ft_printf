@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 13:39:25 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 16:15:47 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,17 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	// c et p. Apres dans les tests, il y a des trucs hyper chelou genre
 	// j, z, U, O, D... (present surtout dans le moulitest) mais alors
 	// la c'est mystery et les floats MDRRRRs
-	if (flag.flag == 'c')
-		flag.to_print = ft_flag_c(list, flag);
-	if (flag.flag == 's')
-		flag.to_print = ft_flag_s(list, flag);
+	flag.flag == 'c' ? flag.to_print = ft_flag_c(list, flag) : 0;
+	flag.flag == 's' ? flag.to_print = ft_flag_s(list, flag) : 0;
+	flag.flag == 'p' ? flag.to_print = ft_flag_p(list, flag) : 0;
+	(flag.flag == 'd' || flag.flag == 'i') ?
+	flag.to_print = ft_flag_d(list, flag) : 0;
+	flag.flag == 'o' ? flag.to_print = ft_flag_o(list, flag) : 0;
+	flag.flag == 'u' ? flag.to_print = ft_flag_u(list, flag) : 0;
+	flag.flag == 'x' ? flag.to_print = ft_flag_x(list, flag) : 0;
+	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
+	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
+/*		flag.to_print = ft_flag_s(list, flag);
 	if (flag.flag == 'p')
 		flag.to_print = ft_flag_p(list, flag);
 	if (flag.flag == 'd' || flag.flag == 'i')
@@ -62,6 +69,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	//  tests, ecrit comme ça, ça repond aux tests.
 	if (flag.flag == 'Z')
 		flag.to_print = "Z";
+		*/
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
