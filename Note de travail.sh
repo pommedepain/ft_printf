@@ -37,5 +37,18 @@ peut etre grave ameliorer comme on avait parlé avec Cam!
 Si on se revoit pas avant que je parte, plein de bonne chose et on se voit a NOISY LE CHAMPS 💥💥
 
 
+
+Pommedepin
 - c, p & d : quand tu leur envoie un argument qui est égal 0, ils sont censé renvoyer qqchose qu on ne fait pas
 - #, les modifieurs hh ouxXf à gérer
+
+A rajouter dans la fonction pour les basic test :
+ulltoa pour positif
+lltoa pour négatif --> à gérer pour Chewie
+
+16 pour hexadecimal
+8 pour octal
+_x_ pour minuscules
+_X_ pour majuscule
+
+Pbs detectés :

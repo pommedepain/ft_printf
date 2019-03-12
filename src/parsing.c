@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 10:34:18 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 13:39:25 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 /*
 ** Duplicate the "%   " part of format in a separate string (with the call of
 ** ft_fillparsing)
-** Fill the structure flag, with all classified information to help the
-** conversion
-** (with the call of fillflag)
+** Fill the structure flag, with all the informations organized in order to help
+** for the conversion (with the call of fill_flag)
 */
 
 int		ft_parsing(const char *format, int *i, va_list list)
@@ -29,7 +28,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.parsing = NULL;
 	flag.to_print = NULL;
 	*i += 1;
-	flag.parsing = ft_fillparsing(format, *i, flags);
+	flag.parsing = ft_fillparsing(format, *i, FLAGS);
 	if (flag.parsing == NULL)
 		return (0);
 	//il faut *i s'incremente jusqu'au prochain % (voir les undefined behavior
@@ -74,8 +73,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 }
 
 /*
-** Duplicate the format string until a conversion specifier appears(Create a
-** "flag string")
+** Duplicate the format string until a conversion specifier appears
+** (Create a "flag string")
 */
 
 char	*ft_fillparsing(const char *str, int i, char *chr)
@@ -87,9 +86,9 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	j = 0;
 	k = 0;
-	if (ft_chrstring(&str[i], flags) != 1)
+	if (ft_chrstring(&str[i], FLAGS) != 1)
 		return (NULL);
-	len = ft_strstringlen(&str[i], flags);
+	len = ft_strstringlen(&str[i], FLAGS);
 	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
 		return (NULL);
 	while (str[i])
@@ -111,8 +110,8 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 }
 
 /*
-** Check a flag string to see and classified all the parameter in the flag
-** structure
+** Check a flag string to see and organize all of the parameters
+** in the flag structure
 */
 
 t_flag	fill_flag(t_flag flag, va_list list)
@@ -126,10 +125,10 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	flag.modif = NULL;
 	while (flag.parsing[i])
 	{
-		if (ft_chrchar(flag.parsing[i], options) == 1)
+		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
 			flag.option = pf_catch_option(flag.parsing, i, flag.option);
-			while (ft_chrchar(flag.parsing[i], options) == 1)
+			while (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 				i++;
 		}
 		if ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')

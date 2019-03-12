@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 10:34:11 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 13:39:42 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,12 +135,12 @@ char	*pf_catch_option(char *str, int i, char *res)
 	j = 0;
 	len = 0;
 	ibis = i;
-	while (ft_chrchar(str[ibis++], options) == 1)
+	while (ft_chrchar(str[ibis++], OPTIONS) == 1)
 		len++;
 	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	res[len] = '\0';
-	while (ft_chrchar(str[i], options) == 1)
+	while (ft_chrchar(str[i], OPTIONS) == 1)
 		res[j++] = str[i++];
 	return (res);
 }

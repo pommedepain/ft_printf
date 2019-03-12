@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/12 11:01:56 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 13:38:27 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
-# define flags "cspdiouxX%fZ"
-# define options "#0-+ "
+# define FLAGS "cspdiouxX%fZ"
+# define OPTIONS "#0-+ "
 # define B1 0x0000000000FF
 # define HEX "0123456789abcdef"
 # define BASE "0123456789ABCDEF"
