@@ -42,6 +42,8 @@ Pommedepin
 - c, p & d : quand tu leur envoie un argument qui est égal 0, ils sont censé renvoyer qqchose qu on ne fait pas
 - #, les modifieurs hh ouxXf à gérer
 
+
+
 A rajouter dans la fonction pour les basic test :
 ulltoa pour positif
 lltoa pour négatif --> à gérer pour Chewie
@@ -51,4 +53,10 @@ lltoa pour négatif --> à gérer pour Chewie
 _x_ pour minuscules
 _X_ pour majuscule
 
+
+
 Pbs detectés :
+
+
+Questions : 
+- C est quoi l int field dans le t_flag ?
