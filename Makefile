@@ -6,7 +6,7 @@
 #    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/07 19:32:16 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/12 14:41:44 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,9 @@ SRC =	conversion_util.c\
 		parsing.c\
 		printf_str_manager.c\
 		util.c\
+		ft_lltoa_base.c\
+		ft_ulltoa_base.c\
+		ft_numlen.c\
 		ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\

@@ -6,26 +6,19 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/07 19:29:24 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 14:41:42 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
 
 # define BUFF_SIZE 42
-# define UINT_MAX 4294967296
-# define flags "cspdiouxXf"
-# define options "#0-+ "
-
-
-/*
-** Structures :
-*/
 
 typedef struct	s_list
 {
@@ -33,35 +26,6 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
-
-typedef	struct		s_flag
-{
-	char	*parsing;
-	char	*to_print;
-	char	flag;
-	char	*option;
-	int		precision;
-	int		field;
-	char	modif;
-}					t_flag;
-
-/*
-typedef struct			s_flags{
-	char	*arg;
-	char	*to_print;
-	char	*options;
-	char    *width;
-	char	*precision;
-	char	lenght;
-	char	spec;
-}						t_flags;
-*/
-
-
-
-/*
-** Functions of Libft project :
-*/
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
@@ -122,6 +86,113 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+
+
+
+
+/*
+** Projet ft_printf :
+*/
+
+# include <stdarg.h>
+
+# define UINT_MAX 4294967296
+# define FLAGS "cspdiouxX%fZ"
+# define OPTIONS "#0-+ "
+# define B1 0x0000000000FF
+# define _X_ "0123456789ABCDEF"
+# define _x_ "0123456789abcdef"
+
+typedef	struct	s_flag
+{
+	char	*parsing;
+	char	*to_print;
+	char	flag;
+	char	*option;
+	int		precision;
+	int		field;
+	char	*modif;
+}				t_flag;
+
+/*
+** ft_printf.c
+*/
+
+int				ft_printf(const char *format, ...);
+			//__attribute__((format(printf, 1, 2)));
+int				reading_format(const char *format, va_list list);
+int				ft_strstringlen(const char *str, char *chr);
+int				new_reading(const char *format, va_list list);
+int				pf_manager(const char *format, va_list ap);
+int				pf_str_manager(const char *str, int *pos);
+
+/*
+** parsing.c
+*/
+
+int				ft_parsing(const char *format, int *i, va_list list);
+t_flag			fill_flag(t_flag flag, va_list list);
+char 			*ft_fillparsing(const char *str, int i, char *chr);
+
+/*
+** parsing_util.c
+*/
+
+int				ft_chrstring(const char *str, char *chr);
+int				ft_chrchar(char c, char *chr);
+int				pf_catchprecision(char *str, int i, va_list list);
+int				pf_catchfield(char *str, int i, va_list list);
+char			*pf_catch_option(char *str, int i, char *res);
+char			*pf_catchmodifier(char *str, int i, char *res);
+
+/*
+** conversion.c
+*/
+
+char			*ft_flag_c(va_list list, t_flag flag);
+char			*ft_flag_s(va_list list, t_flag flag);
+char			*ft_flag_d(va_list list, t_flag flag);
+char			*ft_flag_u(va_list list, t_flag flag);
+char			*ft_flag_o(va_list list, t_flag flag);
+char			*ft_flag_x(va_list list, t_flag flag);
+char			*ft_flag_X(va_list list, t_flag flag);
+char			*ft_flag_p(va_list list, t_flag flag);
+char			*ft_flag_per(t_flag flag);
+char			*handle_field(t_flag flag);
+
+/*
+** conversion_util.c
+*/
+
+char			*zero_fill(char *str, int i);
+char			*space_fill_l(char *str, int i);
+char			*space_fill_r(char *str, int i);
+char			*precision_string(char *str, int i);
+char			*add_sign(char *str, char *option);
+char			*print_address(void *address);
+char			*bytes_to_str(unsigned char b[8]);
+int				ft_numlen(unsigned long long int value, int base_size);
+char			*ft_lltoa_base(long long value, int base_size, char *base);
+char			*ft_ulltoa_base(unsigned long long value, int base_size, char *base);
+char			*zero_fill_l(char *str, int i);
+
+/*
+** util.c
+*/
+
+char 			*ft_ltoa_base_2(long value, int base);
+char 			*ft_ltoa_base(long value, int base);
+char			*ft_ltoa(long n);
+char			*pf_strjoin(char const *s1, char const *s2);
+//int			ft_size(int n);
+
+
+/*
+** Amélioration de la libft de base :
+*/
+
+
 char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
 char			*ft_no_whitespaces(char *str);
 int				ft_strcmps(const char *s1, const char *s2);

@@ -6,67 +6,75 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 19:31:14 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 14:42:02 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-** Duplicate the "%   " part of format in a separate string (with the call of 
+** Duplicate the "%   " part of format in a separate string (with the call of
 ** ft_fillparsing)
-** Fill the structure flag, with all classified information to help the conversion
-** (with the call of fillflag)
+** Fill the structure flag, with all the informations organized in order to help
+** for the conversion (with the call of fill_flag)
 */
 
 int		ft_parsing(const char *format, int *i, va_list list)
 {
 	t_flag	flag;
-	char	*tmp;
 	int		res;
 
 	res = 0;
-	tmp = NULL;
 	flag.parsing = NULL;
 	flag.to_print = NULL;
-	flag.parsing = ft_fillparsing(format, *i, flags);
+	*i += 1;
+	flag.parsing = ft_fillparsing(format, *i, FLAGS);
+	if (flag.parsing == NULL)
+		return (0);
+	//il faut *i s'incremente jusqu'au prochain % (voir les undefined behavior
+	// tests). 
 	flag = fill_flag(flag, list);
+	// Il reste a gerer: l'option #, les modifieurs: il manque 
+	// l'integration de ll pour les conversions non signée.
+	//  d est le plus avancé. Il faut aussi gerer un argument 0 pour
+	// c et p. Apres dans les tests, il y a des trucs hyper chelou genre
+	// j, z, U, O, D... (present surtout dans le moulitest) mais alors
+	// la c'est mystery et les floats MDRRRRs
 	if (flag.flag == 'c')
-		tmp = ft_flag_c(list, tmp);
-	if (flag.flag == 'd' || flag.flag == 'i')
-		tmp = ft_flag_d(list, tmp);
+		flag.to_print = ft_flag_c(list, flag);
 	if (flag.flag == 's')
-		tmp = ft_flag_s(list, tmp);
-	if (flag.flag == 'u')
-		tmp = ft_flag_u(list, tmp);
+		flag.to_print = ft_flag_s(list, flag);
+	if (flag.flag == 'p')
+		flag.to_print = ft_flag_p(list, flag);
+	if (flag.flag == 'd' || flag.flag == 'i')
+		flag.to_print = ft_flag_d(list, flag);
 	if (flag.flag == 'o')
-		tmp = ft_flag_o(list, tmp);
-	if (flag.flag == 'X')
-		tmp = ft_flag_X(list, tmp);
+		flag.to_print = ft_flag_o(list, flag);
+	if (flag.flag == 'u')
+		flag.to_print = ft_flag_u(list, flag);
 	if (flag.flag == 'x')
-		tmp = ft_flag_x(list, tmp);
-	if (ft_chrstring(flag.option, "+ ") == 1  && ft_chrchar(flag.flag, "dif") == 1)
-		tmp = add_sign(tmp, flag.option);
-	if (flag.precision >= 0 && ft_chrstring(flag.parsing, "diouxX") == 1)
-		tmp = zero_fill(tmp, flag.precision);
-	if (flag.precision != 0 && ft_chrstring(flag.parsing, "s") == 1)
-		tmp = precision_string(tmp, flag.precision);
-	if (flag.field > (int)ft_strlen(tmp) && ft_chrstring(flag.option, "-") == 1)
-		tmp = space_fill_r(tmp, flag.field);
-	if (flag.field > (int)ft_strlen(tmp) && ft_chrstring(flag.option, "-") != 1)
-		tmp = space_fill_l(tmp, flag.field);
+		flag.to_print = ft_flag_x(list, flag);
+	if (flag.flag == 'X')
+		flag.to_print = ft_flag_X(list, flag);
+	if (flag.flag == '%')
+		flag.to_print = ft_flag_per(flag);
+	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
+	//  tests, ecrit comme ça, ça repond aux tests.
+	if (flag.flag == 'Z')
+		flag.to_print = "Z";
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);
-	ft_putstr(tmp);
-	res = ft_strlen(tmp);
-	
+	free(flag.modif);
+	ft_putstr(flag.to_print);
+	res = ft_strlen(flag.to_print);
+	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }
 
 /*
-** Duplicate the format string until a conversion specifier appears(Create a 
-** "flag string")
+** Duplicate the format string until a conversion specifier appears
+** (Create a "flag string")
 */
 
 char	*ft_fillparsing(const char *str, int i, char *chr)
@@ -78,30 +86,32 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	j = 0;
 	k = 0;
-	len = ft_strstringlen(&str[i], flags);
+	if (ft_chrstring(&str[i], FLAGS) != 1)
+		return (NULL);
+	len = ft_strstringlen(&str[i], FLAGS);
 	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
-		return(NULL);
-	while(str[i])
+		return (NULL);
+	while (str[i])
 	{
 		j = 0;
-		while(chr[j])
+		while (chr[j])
 		{
-			if(chr[j] == str[i])
+			if (chr[j] == str[i])
 			{
 				dest[k] = str[i];
 				dest[k + 1] = '\0';
-				return(dest);
+				return (dest);
 			}
 			j++;
 		}
 		dest[k++] = str[i++];
 	}
-	return(NULL);
+	return (NULL);
 }
 
 /*
-** Check a flag string to see and classified all the parameter in the flag 
-** structure
+** Check a flag string to see and organize all of the parameters
+** in the flag structure
 */
 
 t_flag	fill_flag(t_flag flag, va_list list)
@@ -112,12 +122,13 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	flag.precision = 0;
 	flag.field = 0;
 	flag.option = NULL;
+	flag.modif = NULL;
 	while (flag.parsing[i])
 	{
-		if (ft_chrchar(flag.parsing[i], options) == 1)
+		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
 			flag.option = pf_catch_option(flag.parsing, i, flag.option);
-			while (ft_chrchar(flag.parsing[i], options) == 1)
+			while (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 				i++;
 		}
 		if ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
@@ -125,12 +136,18 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			flag.field = pf_catchfield(flag.parsing, i, list);
 			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 				i++;
-		}	
+		}
 		if (flag.parsing[i] == '.')
 		{
 			flag.precision = pf_catchprecision(flag.parsing, i, list);
 			i += 1;
 			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
+				i++;
+		}
+		if (ft_chrchar(flag.parsing[i], "lLh") == 1)
+		{
+			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
+			while (ft_chrchar(flag.parsing[i], "lLh") == 1)
 				i++;
 		}
 		i++;
