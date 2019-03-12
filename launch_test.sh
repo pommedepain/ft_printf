@@ -1,3 +1,3 @@
-make re
-gcc -Wall -Wextra -Werror main1.c libftprintf.a
+make
+gcc -Wall -Wextra -Werror src/main.c libftprintf.a
 ./a.out

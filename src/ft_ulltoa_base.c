@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_ulltoa_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 10:34:24 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/12 01:14:12 by cajulien          #+#    #+#             */
+/*   Updated: 2019/03/12 10:43:39 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+char	*ft_ulltoa_base(unsigned long long value, int base_size, char *base)
 {
-	int i;
-	char *to_print;
+	int						i;
+	int						size;
+	char					*to_print;
 
-	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	size = ft_numlen(value, base_size);
+	if (!(to_print = (char *)malloc(sizeof(char) * (size + 1))))
+		return (NULL);
+	i = size;
+	while (i--)
 	{
-		to_print[i] = str[*pos + i];
-		i++;
+		to_print[i] = base[value % base_size];
+		value /= base_size;
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	to_print[size] = '\0';
+	return (to_print);
 }

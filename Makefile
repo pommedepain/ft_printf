@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+         #
+#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/12 03:36:10 by cfauvell         ###   ########.fr        #
+#    Updated: 2019/03/12 10:50:43 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,9 @@ SRC =	conversion_util.c\
 		parsing.c\
 		printf_str_manager.c\
 		util.c\
+		ft_lltoa_base.c\
+		ft_ulltoa_base.c\
+		ft_numlen.c\
 		ft_memset.c\
 		ft_bzero.c\
 		ft_memcpy.c\
@@ -116,7 +119,7 @@ OBJ = $(SRC:.c=.o)
 
 INC_DIR = ./inc/
 INCS = $(addprefix $(INC_DIR), $(INC))
-INC = libftprintf.h
+INC = libft.h
 
 all: $(NAME)
 

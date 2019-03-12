@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   conversion_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 04:11:30 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 10:54:59 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 char	*zero_fill(char *str, int i)
 {
@@ -211,63 +211,5 @@ char	*print_address(void *address)
 	to_free = to_print;
 	to_print = ft_strjoins("0x", &to_print[i]);
 	free(to_free);
-	return (to_print);
-}
-
-int		ft_numlen(unsigned long long int value, int base)
-{
-	int		i;
-
-	i = 1;
-	while (value >= (unsigned long long)base)
-	{
-		value /= base;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_lltoa_base(long long value, int base)
-{
-	int						i;
-	unsigned long long		nbr;
-	int						size;
-	char					*to_print;
-
-	if (value < 0)
-		nbr = value * -1;
-	else
-		nbr = value;
-	size = ft_numlen(nbr, base);
-	(base == 10 && value < 0) ? size++ : 0;
-	if (!(to_print = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	i = size;
-	while (i--)
-	{
-		to_print[i] = BASE[nbr % base];
-		nbr /= base;
-	}
-	(base == 10 && value < 0) ? to_print[0] = '-' : 0;
-	to_print[size] = '\0';
-	return (to_print);
-}
-
-char	*ft_ulltoa_base(unsigned long long value, int base)
-{
-	int						i;
-	int						size;
-	char					*to_print;
-
-	size = ft_numlen(value, base);
-	if (!(to_print = (char *)malloc(sizeof(char) * (size + 1))))
-		return (NULL);
-	i = size;
-	while (i--)
-	{
-		to_print[i] = BASE[value % base];
-		value /= base;
-	}
-	to_print[size] = '\0';
 	return (to_print);
 }

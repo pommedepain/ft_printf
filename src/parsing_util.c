@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 00:36:02 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 10:34:11 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 /*
 ** Search if one of multiple characteres (written in the string chr) are

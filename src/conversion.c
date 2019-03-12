@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 03:14:00 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 11:00:18 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 char	*ft_flag_c(va_list list, t_flag flag)
 {
@@ -48,7 +48,7 @@ char	*ft_flag_d(va_list list, t_flag flag)
 	if (flag.modif)
 	{
 		if (ft_strcmp(flag.modif, "ll") == 0)
-			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10);
+			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
 		if (ft_strcmp(flag.modif, "h") == 0)
 			flag.to_print = ft_itoa(va_arg(list, int));
 		if (ft_strcmp(flag.modif, "l") == 0)
