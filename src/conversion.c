@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/07 23:01:56 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 11:00:18 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 14:24:24 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	flag.to_print = ft_ltoa_base(res, 8);
+	flag.to_print = ft_ulltoa_base(res, 8, _x_);
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);
@@ -113,7 +113,7 @@ char	*ft_flag_x(va_list list, t_flag flag)
 		res = UINT_MAX + arg;
 	else
 		res = arg;
-	flag.to_print = ft_ltoa_base_2(res, 16);
+	flag.to_print = ft_ulltoa_base(res, 16, _x_);
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);
