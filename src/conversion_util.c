@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 10:54:59 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/12 14:03:16 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,7 +176,7 @@ char	*bytes_to_str(unsigned char b[8])
 	char	*hex;
 	char	*str;
 
-	hex = HEX;
+	hex = _x_;
 	i = 0;
 	if (!(str = (char *)malloc(sizeof(char) * 19)))
 		return (NULL);
