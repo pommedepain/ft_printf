@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 02:37:38 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 04:09:44 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,15 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.parsing = ft_fillparsing(format, *i, flags);
 	if (flag.parsing == NULL)
 		return (0);
+	//il faut *i s'incremente jusqu'au prochain % (voir les undefined behavior
+	// tests). 
 	flag = fill_flag(flag, list);
+	// Il reste a gerer: l'option #, les modifieurs: il manque 
+	// l'integration de ll pour les conversions non signée.
+	//  d est le plus avancé. Il faut aussi gerer un argument 0 pour
+	// c et p. Apres dans les tests, il y a des trucs hyper chelou genre
+	// j, z, U, O, D... (present surtout dans le moulitest) mais alors
+	// la c'est mystery et les floats MDRRRRs
 	if (flag.flag == 'c')
 		flag.to_print = ft_flag_c(list, flag);
 	if (flag.flag == 's')
@@ -45,12 +53,14 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		flag.to_print = ft_flag_o(list, flag);
 	if (flag.flag == 'u')
 		flag.to_print = ft_flag_u(list, flag);
-	if (flag.flag == 'X')
-		flag.to_print = ft_flag_X(list, flag);
 	if (flag.flag == 'x')
 		flag.to_print = ft_flag_x(list, flag);
+	if (flag.flag == 'X')
+		flag.to_print = ft_flag_X(list, flag);
 	if (flag.flag == '%')
 		flag.to_print = ft_flag_per(flag);
+	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
+	//  tests, ecrit comme ça, ça repond aux tests.
 	if (flag.flag == 'Z')
 		flag.to_print = "Z";
 	*i += ft_strlen(flag.parsing);
@@ -59,6 +69,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	free(flag.modif);
 	ft_putstr(flag.to_print);
 	res = ft_strlen(flag.to_print);
+	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }
 

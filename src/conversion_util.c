@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 01:53:11 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/03/12 04:11:30 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,46 @@ char	*zero_fill(char *str, int i)
 		while (j-- > 0)
 			res[k++] = str[ibis++];
 		free(str);
+		return (res);
+	}
+	return (str);
+}
+
+char	*zero_fill_l(char *str, int i)
+{
+	char	*res;
+	int		j;
+	int		k;
+	int		ibis;
+
+	j = ft_strlen(str);
+	k = 0;
+	ibis = 0;
+	if (i > j)
+	{
+		if (ft_chrchar(str[0], "-+ ") == 1)
+		{
+			ibis = 1;
+			k = 1;
+			j = ft_strlen(str) - 1;
+			res = (char *)malloc(sizeof(char) * (i + 2));
+			res[i + 1] = '\0';
+			res[0] = str[0];
+			while (--i > j)
+				res[k++] = '0';
+		}
+		else
+		{
+			res = (char *)malloc(sizeof(char) * (i + 1));
+			res[i] = '\0';
+			while (i-- > j)
+				res[k++] = '0';
+		}
+		while (j-- > 0)
+			res[k++] = str[ibis++];
+		// dans l'etat free(str) peut entrainer des segfaults, je l'ai donc mis en 
+		// commentaire
+		//free(str);
 		return (res);
 	}
 	return (str);
@@ -230,42 +270,4 @@ char	*ft_ulltoa_base(unsigned long long value, int base)
 	}
 	to_print[size] = '\0';
 	return (to_print);
-}
-
-char	*zero_fill_l(char *str, int i)
-{
-	char	*res;
-	int		j;
-	int		k;
-	int		ibis;
-
-	j = ft_strlen(str);
-	k = 0;
-	ibis = 0;
-	if (i > j)
-	{
-		if (ft_chrchar(str[0], "-+ ") == 1)
-		{
-			ibis = 1;
-			k = 1;
-			j = ft_strlen(str) - 1;
-			res = (char *)malloc(sizeof(char) * (i + 2));
-			res[i + 1] = '\0';
-			res[0] = str[0];
-			while (--i > j)
-				res[k++] = '0';
-		}
-		else
-		{
-			res = (char *)malloc(sizeof(char) * (i + 1));
-			res[i] = '\0';
-			while (i-- > j)
-				res[k++] = '0';
-		}
-		while (j-- > 0)
-			res[k++] = str[ibis++];
-		//free(str);
-		return (res);
-	}
-	return (str);
 }
