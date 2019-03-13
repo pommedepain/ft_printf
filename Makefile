@@ -6,7 +6,7 @@
 #    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/12 15:28:17 by benjamintle      ###   ########.fr        #
+#    Updated: 2019/03/12 19:32:25 by benjamintle      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,6 +111,8 @@ SRC =	conversion_util.c\
 		ft_tabcpy.c\
 		ft_strndup.c\
 		ft_strnlen.c\
+		ft_chrchar.c\
+		ft_chrstring.c\
 		pf_arg_c.c\
 		pf_arg_s.c\
 		pf_arg_p.c\
@@ -120,6 +122,7 @@ SRC =	conversion_util.c\
 		pf_arg_x.c\
 		pf_arg_xx.c\
 		pf_arg_per.c\
+		pf_manage_struct.c
 		
 
 OBJ_DIR = ./obj/

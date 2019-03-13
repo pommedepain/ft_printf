@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/12 15:20:25 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/13 12:42:28 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 /*
 ** Projet ft_printf :
 */
-
+#include <stdio.h>
 # include <stdarg.h>
 
 # define UINT_MAX 4294967296
@@ -185,6 +185,14 @@ char 			*ft_ltoa_base(long value, int base);
 char			*ft_ltoa(long n);
 char			*pf_strjoin(char const *s1, char const *s2);
 //int			ft_size(int n);
+
+void			pf_init_struct(t_flag *flag);
+void			pf_fill_struct(t_flag *flag);
+void			pf_free_struct(t_flag *flag);
+int print_struct(t_flag flag);
+
+int pf_fill_option(t_flag *flag, int *i);
+int pf_fill_field(t_flag *flag, int *i, va_list list);
 
 
 /*

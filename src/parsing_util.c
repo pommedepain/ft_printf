@@ -3,62 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 13:39:42 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/13 12:41:31 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Search if one of multiple characteres (written in the string chr) are
-** contained in a string (str)
-*/
 
-int		ft_chrstring(const char *str, char *chr)
-{
-	int j;
-	int i;
-
-	i = 0;
-	j = 0;
-	if (str && chr)
-	{
-		while (str[i])
-		{
-			j = 0;
-			while (chr[j])
-			{
-				if (chr[j] == str[i])
-					return (1);
-				j++;
-			}
-			i++;
-		}
-	}
-	return (0);
-}
-
-/*
-** Search if one of multiple characteres (written in the string chr) are
-** contained in a char (c)
-*/
-
-int		ft_chrchar(char c, char *chr)
-{
-	int i;
-
-	i = 0;
-	while (chr[i])
-	{
-		if (c == chr[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 /*
 ** Convert a decimal digit string (into a bigger string) into a int
