@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/13 12:43:28 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/14 18:05:05 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,14 +57,14 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 	return (NULL);
 }
 
-int print_struct(t_flag flag)
+int 	print_struct(t_flag flag)
 {
 	printf("char	*parsing; %s\n", flag.parsing);
 	printf("char	*to_print; %s\n", flag.to_print);
-printf("char	flag; %c\n", flag.flag);
+	printf("char	flag; %c\n", flag.flag);
 	printf("char	*option; %s\n", flag.option);
-printf("int	*precision; %d\n", flag.precision);
-printf("int	*field; %d\n", flag.field);
+	printf("int	*precision; %d\n", flag.precision);
+	printf("int	*field; %d\n", flag.field);
 	printf("char	*modif; %s\n", flag.modif);
 	return(1);
 }
@@ -79,6 +79,8 @@ t_flag	fill_flag(t_flag flag, va_list list)
 		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
 			flag.option = pf_catch_option(flag.parsing, i, flag.option);
+			while (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
+				i++;
 		}
 		if ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 		{

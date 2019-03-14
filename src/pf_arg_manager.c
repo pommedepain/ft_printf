@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/13 12:29:54 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/14 17:17:53 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	ft_putstr(flag.to_print);
 	res = ft_strlen(flag.to_print);
 		//print_struct(flag);
-	pf_free_struct(&flag);
+	//pf_free_struct(&flag);
 	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }

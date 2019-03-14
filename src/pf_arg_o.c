@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_o.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:12 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/12 17:31:50 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/14 17:11:53 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	}
 	else
 		flag.to_print = ft_ulltoa_base(res, 8, _x_);
+	if (flag.option)
+		if (ft_strcmp(flag.option, "#") == 0)
+			flag.to_print = add_hashtag(flag.to_print, "0");
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);
