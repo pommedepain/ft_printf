@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 14:41:39 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/14 16:19:41 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,3 +213,73 @@ char	*print_address(void *address)
 	free(to_free);
 	return (to_print);
 }
+
+char	*add_hashtag(char *str, char *add)
+{
+	char	*mod;
+	int		len;
+	int		len2;
+	int		i;
+	int		j;
+	int		k;
+
+	len = ft_strlen(str);
+	len2 = ft_strlen(add);
+	i = 0;
+	/*if (str[i] == ' ' && str[i + 1] == ' ')
+		len -= 2;*/
+	if (!(mod = (char *)malloc(sizeof(char) * (len + len2 + 1))))
+		return (NULL);
+	j = 0;
+	k = 0;
+	// il faut faire en sorte que tous les chars soient regroupés et enlever les espaces supplémentaires
+	while (str[k] == ' ')
+	{
+		mod[j] = str[k];
+		k++;
+		j++;
+	}
+	i = 0;
+	while (add[i])
+	{
+		mod[j] = add[i];
+		i++;
+		j++;
+	}
+	while (str[k])
+	{
+		mod[j] = str[k];
+		k++;
+		j++;
+	}
+	mod[j + 1] = '\0';
+	return (mod);
+}
+
+/*char	*zero_value(char *str)
+{
+	char	*mod;
+	int		len;
+	int		i;
+	int		j;
+
+	len = ft_strlen(str);
+	if (!(mod = (char *)malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (str[j] != FLAGS[j])
+		{
+			mod[j] = str[j];
+			i++;
+		}
+		if (str[j] == FLAGS[j])
+		{
+			if ()
+		}
+		i++;
+	} 
+	return (mod);
+}*/

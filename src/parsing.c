@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 14:42:02 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/13 18:55:06 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	//  tests, ecrit comme ça, ça repond aux tests.
 	if (flag.flag == 'Z')
 		flag.to_print = "Z";
+	/*if (flag.flag)
+		flag.to_print = zero_value(flag.to_print);*/
 	*i += ft_strlen(flag.parsing);
 	free(flag.parsing);
 	free(flag.option);

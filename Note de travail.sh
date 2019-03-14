@@ -38,25 +38,65 @@ Si on se revoit pas avant que je parte, plein de bonne chose et on se voit a NOI
 
 
 
-Pommedepin
+# Pommedepin
 - c, p & d : quand tu leur envoie un argument qui est égal 0, ils sont censé renvoyer qqchose qu on ne fait pas
-- #, les modifieurs hh ouxXf à gérer
+- '#', les modifieurs hh ouxXf à gérer
 
 
-
-A rajouter dans la fonction pour les basic test :
+# A rajouter dans la fonction pour les basic test :
 ulltoa pour positif
 lltoa pour négatif --> à gérer pour Chewie
 
 16 pour hexadecimal
 8 pour octal
+10 pour décimal
 _x_ pour minuscules
 _X_ pour majuscule
 
 
+# Aide mémoire :
+char	*ft_ulltoa_base(unsigned long long value, int base_size, char *base); pour pos
+char	*ft_itoa(int n);
+char	*ft_lltoa_base(long long value, int base_size, char *base); pour nég (à corriger par Chewie)
+char	*ft_ltoa_base(long value, int base); base conversion to x pour pos
+char	*ft_ltoa_base_2(long value, int base); base conversion to X
+char	*ft_ltoa(long n) : long to char *
 
-Pbs detectés :
 
 
-Questions : 
-- C est quoi l int field dans le t_flag ?
+
+char	*ft_flag_d(va_list list, t_flag flag)
+{
+	if (flag.modif)
+	{
+		if (ft_strcmp(flag.modif, "ll") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
+		if (ft_strcmp(flag.modif, "h") == 0)
+			flag.to_print = ft_itoa(va_arg(list, int));
+		if (ft_strcmp(flag.modif, "l") == 0)
+			flag.to_print = ft_ltoa_base(va_arg(list, long), 10);
+		if (ft_strcmp(flag.modif, "hh") == 0)
+			flag.to_print = ft_itoa(va_arg(list, int));
+	}
+	else
+		flag.to_print = ft_itoa(va_arg(list, int));
+	if (ft_chrstring(flag.option, "+ ") == 1)
+		flag.to_print = add_sign(flag.to_print, flag.option);
+	if (flag.precision >= 0)
+		flag.to_print = zero_fill(flag.to_print, flag.precision);
+	flag.to_print = handle_field(flag);
+	return (flag.to_print);
+}
+
+
+# Pbs détectés :
+- x & X : les valeurs négatives pas gérées. ft_ulltoa_base est celui qui y arrive le mieux mais bug;
+- '#' à faire
+- 0 et NULL comme valeurs doivent renvoyer ^@ au lieu de rien
+- hd ou hhd inverse visiblement la valeur dans les basic test avec printf (ex : -42 devient 42) + peut la modifier (ex : -129 devient 127)
+- u a l air d avoir un comportement différent en fonction des valeurs pos ou nég et du cast associé
+
+# Corrigé :
+- x : conversions l et ll en positif done
+	--> dans flag_x, déclaration va_arg en variable silenced
+	--> utilisation ft_ltoa_base_2
