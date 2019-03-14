@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
+#    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/13 16:56:21 by pommedepin       ###   ########.fr        #
+#    Updated: 2019/03/12 19:32:25 by benjamintle      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC =	conversion_util.c\
 		ft_printf.c\
 		main.c\
 		parsing_util.c\
-		parsing.c\
+		pf_arg_manager.c\
 		printf_str_manager.c\
 		util.c\
 		ft_lltoa_base.c\
@@ -111,6 +111,18 @@ SRC =	conversion_util.c\
 		ft_tabcpy.c\
 		ft_strndup.c\
 		ft_strnlen.c\
+		ft_chrchar.c\
+		ft_chrstring.c\
+		pf_arg_c.c\
+		pf_arg_s.c\
+		pf_arg_p.c\
+		pf_arg_d.c\
+		pf_arg_o.c\
+		pf_arg_u.c\
+		pf_arg_x.c\
+		pf_arg_xx.c\
+		pf_arg_per.c\
+		pf_manage_struct.c
 		
 
 OBJ_DIR = ./obj/

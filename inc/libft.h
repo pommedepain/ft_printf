@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/13 18:41:55 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/14 17:08:26 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include <stdarg.h>
 
 # define BUFF_SIZE 42
 
@@ -96,6 +95,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 # include <stdarg.h>
+# include <stdio.h>
 
 # define UINT_MAX 4294967296
 # define FLAGS "cspdiouxX%fZ"
@@ -139,8 +139,6 @@ char 			*ft_fillparsing(const char *str, int i, char *chr);
 ** parsing_util.c
 */
 
-int				ft_chrstring(const char *str, char *chr);
-int				ft_chrchar(char c, char *chr);
 int				pf_catchprecision(char *str, int i, va_list list);
 int				pf_catchfield(char *str, int i, va_list list);
 char			*pf_catch_option(char *str, int i, char *res);
@@ -187,6 +185,12 @@ char			*ft_ltoa(long n);
 char			*pf_strjoin(char const *s1, char const *s2);
 //int			ft_size(int n);
 char			*add_hashtag(char *str, char *add);
+void			pf_init_struct(t_flag *flag);
+void			pf_fill_struct(t_flag *flag);
+void			pf_free_struct(t_flag *flag);
+int 			print_struct(t_flag flag);
+int 			pf_fill_option(t_flag *flag, int *i);
+int 			pf_fill_field(t_flag *flag, int *i, va_list list);
 
 
 /*
@@ -216,5 +220,7 @@ size_t			ft_strclen(const char *s, char c);
 char			**ft_tabcpy(char **dst, char **src);
 char			*ft_strndup(const char *s1, size_t n);
 size_t			ft_strnlen(const char *s, size_t maxlen);
+int				ft_chrstring(const char *str, char *chr);
+int				ft_chrchar(char c, char *chr);
 
 #endif
