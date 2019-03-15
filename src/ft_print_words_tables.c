@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_words_tables.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 12:54:15 by psentilh          #+#    #+#             */
-/*   Updated: 2019/03/14 20:08:23 by pommedepin       ###   ########.fr       */
+/*   Updated: 2018/12/04 12:54:44 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

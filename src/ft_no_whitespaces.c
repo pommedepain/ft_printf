@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_no_whitespaces.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 02:59:27 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/14 20:08:19 by pommedepin       ###   ########.fr       */
+/*   Updated: 2018/11/11 02:59:30 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

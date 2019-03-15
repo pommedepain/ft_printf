@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/14 17:17:53 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/15 11:51:37 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,23 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
 	//  tests, ecrit comme ça, ça repond aux tests.
 	//flag.flag == 'Z' ? flag.to_print = "Z" : 0;
+	/*if ((ft_chrchar(flag.to_print, '0') == 1) && (ft_chrstring(flag.to_print, "123456789") == 0))
+		flag.to_print = zero_value(&flag);*/
 	*i += ft_strlen(flag.parsing);
+	//ft_putchar('\n');
+	//print_struct(flag);
+	//ft_putchar('\n');
 	ft_putstr(flag.to_print);
 	res = ft_strlen(flag.to_print);
-		//print_struct(flag);
 	//pf_free_struct(&flag);
 	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }
+
+/*char	*zero_value(t_flag flag)
+{
+	free(flag.to_print);
+	if 
+	if (!(flag.to_print = (char *)malloc(sizeof(char) * 2)))
+		flag.to_print = "0";
+}*/

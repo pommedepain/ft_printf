@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:12 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/14 17:11:53 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/15 11:35:39 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);
+	if ((ft_chrstring(flag.option, "#") == 1) && ft_chrstring(flag.option, "-") == 1)
+		flag.to_print = add_hashtag(flag.to_print, "0");
 	return (flag.to_print);
 }
