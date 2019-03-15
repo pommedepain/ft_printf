@@ -153,6 +153,7 @@ char			*ft_flag_s(va_list list, t_flag flag);
 char			*ft_flag_d(va_list list, t_flag flag);
 char			*ft_flag_u(va_list list, t_flag flag);
 char			*ft_flag_o(va_list list, t_flag flag);
+char			*prec_0o(char *str, int arg);
 char			*ft_flag_x(va_list list, t_flag flag);
 char			*ft_flag_X(va_list list, t_flag flag);
 char			*ft_flag_p(va_list list, t_flag flag);
@@ -174,6 +175,7 @@ int				ft_numlen(unsigned long long int value, int base_size);
 char			*ft_lltoa_base(long long value, int base_size, char *base);
 char			*ft_ulltoa_base(unsigned long long value, int base_size, char *base);
 char			*zero_fill_l(char *str, int i);
+char			*add_hashtag(char *str, char *add);
 
 /*
 ** util.c

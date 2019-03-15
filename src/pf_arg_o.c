@@ -14,7 +14,7 @@
 
 char	*ft_flag_o(va_list list, t_flag flag)
 {
-	unsigned long	res;
+	/*unsigned long	res;
 	int				arg;
 
 	res = 0;
@@ -22,7 +22,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	if (arg < 0)
 		res = UINT_MAX + arg;
 	else
-		res = arg;
+		res = arg;*/
 	if (flag.modif)
 	{
 		if (ft_strcmp(flag.modif, "ll") == 0)
@@ -35,14 +35,25 @@ char	*ft_flag_o(va_list list, t_flag flag)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
 	}
 	else
-		flag.to_print = ft_ulltoa_base(res, 8, _x_);
-	if (flag.option)
-		if (ft_strcmp(flag.option, "#") == 0)
-			flag.to_print = add_hashtag(flag.to_print, "0");
-	if (flag.precision >= 0)
+		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
+	if (flag.precision < 0)
+		flag.to_print = "";
+	else if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
+	printf("ap precision = -->%s<--\n", flag.to_print);
 	flag.to_print = handle_field(flag);
-	if ((ft_chrstring(flag.option, "#") == 1) && ft_chrstring(flag.option, "-") == 1)
-		flag.to_print = add_hashtag(flag.to_print, "0");
+	printf("av option = -->%s<--\n", flag.to_print);
+	if ((ft_chrstring(flag.option, "#") == 1))
+	{
+		if (flag.precision == -1)
+			flag.to_print = "0";
+		else if (ft_strcmp(flag.to_print, "0") == 0)
+			flag.to_print = flag.to_print;
+		else
+			flag.to_print = add_hashtag(flag.to_print, "0");
+	}
+	//if ((ft_strcmp(flag.option, "#") == 0) && ft_chrstring(flag.option, "-") == 1)
+	//	flag.to_print = add_hashtag(flag.to_print, "0");
+	printf("final = -->%s<--\n", flag.to_print);
 	return (flag.to_print);
 }

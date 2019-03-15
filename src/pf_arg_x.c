@@ -36,10 +36,14 @@ char	*ft_flag_x(va_list list, t_flag flag)
 	}
 	else
 		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 16, _x_);
+	//printf("avant preci = %s\n", flag.to_print);
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
+	else if (flag.precision == -1)
+		flag.to_print = "";
+	//printf("apres preci = %s\n", flag.to_print);
 	flag.to_print = handle_field(flag);
-	if ((ft_chrstring(flag.option, "#") == 1) && (ft_strcmp(flag.to_print, "0") != 0))
+	if (((ft_chrstring(flag.option, "#") == 1) && (ft_strcmp(flag.to_print, "0") != 0)) && ft_strcmp(flag.to_print, "") != 0)
 		flag.to_print = add_hashtag(flag.to_print, "0x");
 	return (flag.to_print);
 }

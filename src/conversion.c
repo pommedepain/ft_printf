@@ -18,6 +18,8 @@ char	*handle_field(t_flag flag)
 	{
 		if ((ft_chrstring(flag.option, "#") == 1) && ((flag.flag == 'x') || flag.flag == 'X'))
 			flag.to_print = space_fill_r(flag.to_print, (flag.field - 2));
+		else if ((ft_chrstring(flag.option, "#") == 1) && (flag.flag == 'o'))
+			flag.to_print = space_fill_r(flag.to_print, (flag.field - 1));
 		else
 			flag.to_print = space_fill_r(flag.to_print, flag.field);
 	}
@@ -26,6 +28,8 @@ char	*handle_field(t_flag flag)
 	{
 		if ((ft_chrstring(flag.option, "#") == 1) && ((flag.flag == 'x') || flag.flag == 'X'))
 			flag.to_print = zero_fill_l(flag.to_print, (flag.field - 2));
+		else if ((ft_chrstring(flag.option, "#") == 1) && (flag.flag == 'o'))
+			flag.to_print = space_fill_l(flag.to_print, (flag.field - 1));
 		else
 			flag.to_print = zero_fill_l(flag.to_print, flag.field);
 	}
@@ -33,6 +37,8 @@ char	*handle_field(t_flag flag)
 	{
 		if ((ft_chrstring(flag.option, "#") == 1) && ((flag.flag == 'x') || flag.flag == 'X'))
 			flag.to_print = space_fill_l(flag.to_print, (flag.field - 2));
+		else if ((ft_chrstring(flag.option, "#") == 1) && (flag.flag == 'o'))
+			flag.to_print = space_fill_l(flag.to_print, (flag.field - 1));
 		else
 			flag.to_print = space_fill_l(flag.to_print, flag.field);
 	}
@@ -41,6 +47,8 @@ char	*handle_field(t_flag flag)
 	{
 		if ((ft_chrstring(flag.option, "#") == 1) && ((flag.flag == 'x') || flag.flag == 'X'))
 			flag.to_print = space_fill_l(flag.to_print, (flag.field - 2));
+		else if ((ft_chrstring(flag.option, "#") == 1) && (flag.flag == 'o'))
+			flag.to_print = space_fill_l(flag.to_print, (flag.field - 1));
 		else
 			flag.to_print = space_fill_l(flag.to_print, flag.field);
 	}

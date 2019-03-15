@@ -34,7 +34,7 @@ int		main(void)
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);*/
 
 	// quand en ll#x, output pas le même que les test d'undefined behavior
-	printf("\nTest3 ll#x de 9223372036854775807\n");
+	/*printf("\nTest3 ll#x de 9223372036854775807\n");
 	i = ft_printf("%#llx\n", 9223372036854775807);
 	j = printf("%#llx\n", (unsigned long long)9223372036854775807);
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
@@ -43,13 +43,82 @@ int		main(void)
 	printf("\nTest3 -#6o de 25000\n");
 	i = ft_printf("%-#6o\n", 25000);
 	j = printf("%-#6o\n", 25000);
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
-
-	/*printf("\nTest3 5.x 5.1x de 0\n");
-	i = ft_printf("%5.x %5.0x\n", 1, 1);
-	j = printf("%5.x %5.0x\n", 1, 1);
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);*/
 
+	printf("\nTest o de 0\n");
+	i = ft_printf("%o = 1\n", 0);
+	j = printf("%o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest .2o de 0\n"); // affiche 0 au lieu de rien + un char en trop
+	i = ft_printf("%.2o = 1\n", 0);
+	j = printf("%.2o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest .0o de 0\n"); // affiche 0 au lieu de rien + un char en trop
+	i = ft_printf("%.0o = 1\n", 0);
+	j = printf("%.0o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);	
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest #.o de 0\n"); // un char en trop
+	i = ft_printf("%#.o = 1\n", 0);
+	j = printf("%#.o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest #.2o de 0\n"); // un char en trop
+	i = ft_printf("%#.2o = 1\n", 0);
+	j = printf("%#.2o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest #6o de 0\n"); // affiche deux 0 au lieu d'un
+	i = ft_printf("%#6o = 1\n", 0);
+	j = printf("%#6o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest -#6o de 0\n"); // affiche deux 0 au lieu d'un
+	i = ft_printf("%-#6o = 1\n", 0);
+	j = printf("%-#6o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest 5.o de 0\n"); // affiche 0 au lieu de rien + un char en trop
+	i = ft_printf("%5.o = 1\n", 0);
+	j = printf("%5.o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest 5.0o de 0\n"); // affiche 0 au lieu de rien + un char en trop
+	i = ft_printf("%5.0o = 1\n", 0);
+	j = printf("%5.0o = 1\n", 0);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest #6o de 25000\n");
+	i = ft_printf("%#6o = 1\n", 2500);
+	j = printf("%#6o = 1\n", 2500);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+	
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest -#6o de 25000\n");
+	i = ft_printf("%-#6o = 1\n", 2500);
+	j = printf("%-#6o = 1\n", 2500);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
 	/*ft_putstr("\nTest Unitaire u\n");
 	ft_putstr(ft_ulltoa_base((unsigned int)-21, 10, _x_));
