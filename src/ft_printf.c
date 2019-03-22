@@ -32,15 +32,23 @@ int		pf_manager(const char *format, va_list ap)
 {
 	int pos;
 	int printed;
+	int i;
 
 	pos = 0;
 	printed = 0;
+	i = va_arg(ap, int);
 	while (format[pos])
 	{
 		if (format[pos] == '%')
 			printed += ft_parsing(format, &pos, ap);
-		if (format[pos] != '%')
+		if (format[pos] != '%' && i != 0)
+		{
+			printf("%s\n", format);
+			ft_putnbr(i);
+			ft_putchar('\n');
 			printed += pf_str_manager(format, &pos);
+		}
+		i++;
 	}
 	return (printed);
 }

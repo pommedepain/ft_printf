@@ -11,14 +11,14 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_flag_c(va_list list, t_flag flag)
 {
-	int i;
-
-	i = 0;
-	i = (va_arg(list, int));
 	flag.to_print = ft_strnew(2);
-	flag.to_print[0] = i;
+	if (ft_strcmps(flag.modif, "l") != 0)
+		flag.to_print[0] = va_arg(list, wint_t);
+	else
+		flag.to_print[0] = va_arg(list, int);
 	flag.to_print[1] = '\0';
 	flag.to_print = handle_field(flag);
 	return (flag.to_print);

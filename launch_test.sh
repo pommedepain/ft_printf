@@ -1,3 +1,4 @@
 make
-gcc -Wall -Wextra -Werror src/main.c libftprintf.a
+#gcc -fsanitize=address -g3 src/main.c libftprintf.a
+gcc src/main.c libftprintf.a
 ./a.out

@@ -40,9 +40,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 		flag.to_print = "";
 	else if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
-	printf("ap precision = -->%s<--\n", flag.to_print);
 	flag.to_print = handle_field(flag);
-	printf("av option = -->%s<--\n", flag.to_print);
 	if ((ft_chrstring(flag.option, "#") == 1))
 	{
 		if (flag.precision == -1)
@@ -52,8 +50,5 @@ char	*ft_flag_o(va_list list, t_flag flag)
 		else
 			flag.to_print = add_hashtag(flag.to_print, "0");
 	}
-	//if ((ft_strcmp(flag.option, "#") == 0) && ft_chrstring(flag.option, "-") == 1)
-	//	flag.to_print = add_hashtag(flag.to_print, "0");
-	printf("final = -->%s<--\n", flag.to_print);
 	return (flag.to_print);
 }

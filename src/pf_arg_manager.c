@@ -19,6 +19,17 @@
 ** for the conversion (with the call of fill_flag)
 */
 
+void    ft_putstrtest(char *str, int len)
+{
+    int i = 0;
+
+    while (i < len)
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
+}
+
 int		ft_parsing(const char *format, int *i, va_list list)
 {
 	t_flag	flag;
@@ -52,14 +63,20 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
 	//  tests, ecrit comme ça, ça repond aux tests.
 	//flag.flag == 'Z' ? flag.to_print = "Z" : 0;
-	/*if ((ft_chrchar(flag.to_print, '0') == 1) && (ft_chrstring(flag.to_print, "123456789") == 0))
-		flag.to_print = zero_value(&flag);*/
 	*i += ft_strlen(flag.parsing);
 	ft_putchar('\n');
 	print_struct(flag);
 	ft_putchar('\n');
-	ft_putstr(flag.to_print);
-	res = ft_strlen(flag.to_print);
+	if (flag.flag == 'c' && (ft_strlen(flag.to_print) == 0)) // only_char || ft_strcmp(flag.to_print, " ")))
+	{
+		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
+		res = ft_strlen(flag.to_print) + 1;
+	}
+	else
+	{
+		ft_putstr(flag.to_print);
+		res = ft_strlen(flag.to_print);
+	}
 	//pf_free_struct(&flag);
 	//free flag.to_print ici fait bugger bcp de test...
 	return (res);

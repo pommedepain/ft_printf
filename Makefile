@@ -22,7 +22,6 @@ SRCS = $(addprefix $(SRC_DIR), $(SRC))
 SRC =	conversion_util.c\
 		conversion.c\
 		ft_printf.c\
-		main.c\
 		parsing_util.c\
 		pf_arg_manager.c\
 		printf_str_manager.c\
