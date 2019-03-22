@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/14 17:27:25 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/22 15:39:30 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,8 @@ char	*space_fill_l(char *str, int i)
 	j = ft_strlen(str);
 	k = 0;
 	ibis = 0;
-	res = (char *)malloc(sizeof(char) * (i + 1));
+	if(!(res = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
 	res[i] = '\0';
 	while (i-- > j)
 		res[k++] = ' ';
@@ -119,7 +120,8 @@ char	*space_fill_r(char *str, int i)
 	len = ft_strlen(str);
 	k = 0;
 	j = 0;
-	res = (char *)malloc(sizeof(char) * (i + 1));
+	if(!(res = (char *)malloc(sizeof(char) * (i + 1))))
+		return (NULL);
 	res[i] = '\0';
 	while (len-- > 0)
 		res[j++] = str[k++];
