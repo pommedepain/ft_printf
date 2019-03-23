@@ -67,3 +67,25 @@ char	*ft_ltoa(long n) : long to char *
 - verifier l utilisation de strcmp dans les conversions : semble potentiellement creer des pbs par moments. Better to use strcmps
 - hd ou hhd inverse visiblement la valeur dans les basic test avec printf (ex : -42 devient 42) + peut la modifier (ex : -129 devient 127)
 - u a l air d avoir un comportement différent en fonction des valeurs pos ou nég et du cast associé
+
+# Corrigé :
+- x : conversions l et ll en positif done
+	--> dans flag_x, déclaration va_arg en variable silenced
+	--> utilisation ft_ltoa_base_2
+
+# Pour les leaks:
+
+	Les leaks sont situés : Dans la structure et dans les fonctions de conversion_util.
+
+	Probleme:
+	- To_print est la "hot string" de la fonction, elle est souvent modifiées, mais parfois il n a pas ete aloués 
+	avant de passer dans certaine fonction, meme jusqu a la fin de ft_printf. Ce qui fait aborté tout le bordel...
+	Comment savoir si elle a ete deja alloué? (pour les strings par exemple elle n est pas nulle mais elle n a pas ete allouée..)
+
+# Petit probleme de read / write dans ft_parsing
+
+	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
+		return (NULL);
+	dest[len + 1] = '\0';
+
+(rajouter 1 a la len et mettre un '/0' a len + 1). Je sais pas pourquoi mais ca enleve le probleme sans faire de leaks comme ca)
