@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/23 12:25:50 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 19:01:36 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,11 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 # define B1 0x0000000000FF
 # define _X_ "0123456789ABCDEF"
 # define _x_ "0123456789abcdef"
+# define SIG		0x1
+# define EXPONENT	0x7FF
+# define FRACTION	0xFFFFFFF
+# define CUT		0x0F
+# define _ULLMAX_	0xFFFFFFFFFFFFFFFF
 
 typedef	struct	s_flag
 {
@@ -115,6 +120,14 @@ typedef	struct	s_flag
 	int		field;
 	char	*modif;
 }				t_flag;
+
+typedef struct s_double
+{
+	short int			s;
+	int					e;
+	int					pow;
+	unsigned long long	f;
+}				t_double;
 
 /*
 ** ft_printf.c
@@ -157,6 +170,7 @@ char			*ft_flag_o(va_list list, t_flag flag);
 char			*ft_flag_x(va_list list, t_flag flag);
 char			*ft_flag_X(va_list list, t_flag flag);
 char			*ft_flag_p(va_list list, t_flag flag);
+char			*ft_flag_f(va_list list, t_flag flag);
 char			*ft_flag_per(t_flag flag);
 char			*handle_field(t_flag flag);
 
@@ -194,6 +208,49 @@ int 			print_struct(t_flag flag);
 int 			pf_fill_option(t_flag *flag, int *i);
 int 			pf_fill_field(t_flag *flag, int *i, va_list list);
 
+/*
+** FLOAT
+*/
+
+/*
+** pf_atoull.c
+*/
+
+char				*ft_decimal_zeros(int zero);
+unsigned long long	ft_decimal_process(unsigned long long pows[56],
+					char *str, int i, int tmp);
+char				*ft_add_neg_pows(int zero, unsigned long long pows[56],
+					char *str);
+char				*ft_rightatoulltoa(char *str);
+char				*ft_leftatoulltoa(char *str);
+
+/*
+** pf_double.c
+*/
+
+t_double	*ft_decomp(void *d);
+char		*ft_put_zeros_neg(int pow, char *fraction);
+char		*ft_put_zeros_pos(int pow, char *fraction);
+char		*ft_zeros(int pow, char *fraction);
+char		*ft_double(double d);
+
+/*
+** pf_float_utils.c
+*/
+
+int			ft_search_c(char *str, char c);
+char		*ft_large_number(int pow, char *fraction);
+char		*ft_carry(char *str);
+char		*ft_round(char *str, int prec);
+char		*final_process(char *tmp);
+
+/*
+** pf_split_float.c
+*/
+
+char			*case1(char *str, char *str1, char *str2, int i);
+char			*case2(char *str, char *str1, char *str2, int prec);
+char			*case3(char *str, char *str1, char *str2, int prec);
 
 /*
 ** Amélioration de la libft de base :

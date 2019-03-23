@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 18:16:38 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 19:00:29 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.flag == 'u' ? flag.to_print = ft_flag_u(list, flag) : 0;
 	flag.flag == 'x' ? flag.to_print = ft_flag_x(list, flag) : 0;
 	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
+	flag.flag == 'f' ? flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
 	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
 	//  tests, ecrit comme ça, ça repond aux tests.

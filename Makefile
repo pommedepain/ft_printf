@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+         #
+#    By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/12 19:32:25 by benjamintle      ###   ########.fr        #
+#    Updated: 2019/03/23 19:10:03 by pommedepin       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,12 @@ SRC =	conversion_util.c\
 		pf_arg_x.c\
 		pf_arg_xx.c\
 		pf_arg_per.c\
-		pf_manage_struct.c
+		pf_manage_struct.c\
+		pf_split_float.c\
+		pf_float_utils.c\
+		pf_atoull.c\
+		pf_double.c\
+		pf_arg_f.c 
 		
 
 OBJ_DIR = ./obj/
