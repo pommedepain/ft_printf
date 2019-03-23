@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_c.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:45:24 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/12 14:58:42 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/23 18:04:05 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@ char	*ft_flag_c(va_list list, t_flag flag)
 	else
 		flag.to_print[0] = va_arg(list, int);
 	flag.to_print[1] = '\0';
-	flag.to_print = handle_field(flag);
+	if ((ft_char_only(flag.to_print, ' ', '\0') == 1) && flag.field > 0)
+	{
+		flag.field -= 1;
+		flag.to_print = handle_field(flag);
+	}
+	else
+		flag.to_print = handle_field(flag);
 	return (flag.to_print);
 }

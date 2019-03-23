@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/12 10:33:42 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 12:09:03 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,15 @@ int		pf_manager(const char *format, va_list ap)
 {
 	int pos;
 	int printed;
-	int i;
 
 	pos = 0;
 	printed = 0;
-	i = va_arg(ap, int);
 	while (format[pos])
 	{
 		if (format[pos] == '%')
 			printed += ft_parsing(format, &pos, ap);
-		if (format[pos] != '%' && i != 0)
-		{
-			printf("%s\n", format);
-			ft_putnbr(i);
-			ft_putchar('\n');
+		if (format[pos] != '%')
 			printed += pf_str_manager(format, &pos);
-		}
-		i++;
 	}
 	return (printed);
 }

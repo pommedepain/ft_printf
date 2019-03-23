@@ -40,7 +40,6 @@ peut etre grave ameliorer comme on avait parlé avec Cam!
 ###### Pommedepin ######
 - c & d : quand tu leur envoie un argument qui est égal 0, ils sont censé renvoyer qqchose qu on ne fait pas
 - '#', les modifieurs hh ouxXf à gérer
-- remplacer strcmp dans pf_arg_manager par only_char
 - pbs quand y a % mais pas de params, affiche quand meme qqchose (à corriger dans ft_printf et pf_str_manager)
 
 

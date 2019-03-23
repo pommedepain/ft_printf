@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/14 17:27:25 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 12:25:33 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -189,6 +189,20 @@ char	*bytes_to_str(unsigned char b[8])
 	}
 	str[16] = '\0';
 	return (str);
+}
+
+int		ft_char_only(char *str, char c, char d)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != c && str[i] != d)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 char	*add_hashtag(char *str, char *add)

@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/14 17:08:26 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 12:25:50 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 # include <stdarg.h>
 # include <stdio.h>
-# include <wchar.h>
+# include "wchar.h"
 
 # define UINT_MAX 4294967296
 # define FLAGS "cspdiouxX%fZ"
@@ -154,7 +154,6 @@ char			*ft_flag_s(va_list list, t_flag flag);
 char			*ft_flag_d(va_list list, t_flag flag);
 char			*ft_flag_u(va_list list, t_flag flag);
 char			*ft_flag_o(va_list list, t_flag flag);
-char			*prec_0o(char *str, int arg);
 char			*ft_flag_x(va_list list, t_flag flag);
 char			*ft_flag_X(va_list list, t_flag flag);
 char			*ft_flag_p(va_list list, t_flag flag);
@@ -176,6 +175,7 @@ int				ft_numlen(unsigned long long int value, int base_size);
 char			*ft_lltoa_base(long long value, int base_size, char *base);
 char			*ft_ulltoa_base(unsigned long long value, int base_size, char *base);
 char			*zero_fill_l(char *str, int i);
+int				ft_char_only(char *str, char c, char d);
 char			*add_hashtag(char *str, char *add);
 
 /*
@@ -187,7 +187,6 @@ char 			*ft_ltoa_base(long value, int base);
 char			*ft_ltoa(long n);
 char			*pf_strjoin(char const *s1, char const *s2);
 //int			ft_size(int n);
-char			*add_hashtag(char *str, char *add);
 void			pf_init_struct(t_flag *flag);
 void			pf_fill_struct(t_flag *flag);
 void			pf_free_struct(t_flag *flag);

@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/15 11:51:37 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 18:16:38 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag = fill_flag(flag, list);
 	//il faut *i s'incremente jusqu'au prochain % (voir les undefined behavior
 	// tests). 
-	// Il reste a gerer: l'option #, les modifieurs: il manque 
-	// l'integration de ll pour les conversions non signée.
 	//  d est le plus avancé. Il faut aussi gerer un argument 0 pour
 	// c et p. Apres dans les tests, il y a des trucs hyper chelou genre
 	// j, z, U, O, D... (present surtout dans le moulitest) mais alors
@@ -64,10 +62,10 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	//  tests, ecrit comme ça, ça repond aux tests.
 	//flag.flag == 'Z' ? flag.to_print = "Z" : 0;
 	*i += ft_strlen(flag.parsing);
-	ft_putchar('\n');
-	print_struct(flag);
-	ft_putchar('\n');
-	if (flag.flag == 'c' && (ft_strlen(flag.to_print) == 0)) // only_char || ft_strcmp(flag.to_print, " ")))
+	//ft_putchar('\n');
+	//print_struct(flag);
+	//ft_putchar('\n');
+	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (ft_char_only(flag.to_print, ' ', '\0') == 1)))
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
 		res = ft_strlen(flag.to_print) + 1;
