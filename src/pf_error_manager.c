@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_arg_per.c                                       :+:      :+:    :+:   */
+/*   pf_error_manager.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 14:50:04 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/25 16:30:49 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/25 14:54:09 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/25 14:55:53 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_per(t_flag flag)
+int		pf_error_manager(char *str, int pos)
 {
-	flag.to_print = "%";
-	flag.to_print = handle_field(flag);
-	return (flag.to_print);
+	
 }
+
+// gérer le field; le +; le -; le % isolée ou par 3.

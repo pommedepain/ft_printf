@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 18:29:58 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/25 17:13:50 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,53 @@ int		pf_manager(const char *format, va_list ap)
 	printed = 0;
 	while (format[pos])
 	{
-		if (format[pos] == '%')
+		if ((format[pos] == '%') && (check_format(&format[pos]) == 1))
 			printed += ft_parsing(format, &pos, ap);
 		if (format[pos] != '%')
 			printed += pf_str_manager(format, &pos);
+		else if ((format[pos] == '%') && (check_format(&format[pos]) != 1))
+		{
+			ft_putstr("");
+			pos += 1;
+			while ((ft_chrchar(format[pos], "cspdiouxXfZzj") == 1 || (ft_chrchar(format[pos], OPTIONS) == 1)
+			|| (ft_chrchar(format[pos], "lLh") == 1) ))
+				pos++;
+		}
 	}
 	return (printed);
+}
+
+int		check_format(const char *str)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	*tmp;
+	char	*tmp2;
+
+	i = 1;
+	k = 0;
+	tmp2 = "+-";
+	tmp = FLAGS;
+	if(str == NULL)
+		return (-1);
+	while (str[i] != '\0')
+	{
+		j = -1;
+		while (tmp[++j])
+		{
+			if (str[i] == tmp[j])
+				return (1);
+		}
+		k = -1;
+		while (tmp2[++k])
+		{
+			if (str[i] == tmp2[k])
+				return (1);
+		}
+		i++;
+	}
+	return (0);
 }
 
 int		ft_strstringlen(const char *str, char *chr)

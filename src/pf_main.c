@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 19:15:21 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/25 16:55:41 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,36 @@ int		main(void)
 	int i;
 	int j;
 
-	/*printf("\nTest pourcent de rien\n");
-	i = ft_printf("% \\0\n");
-	j = printf("% \\0\n");
+	i = 0;
+	j = 0;
+	
+	printf("\nTest pourcent de rien\n");
+	i = ft_printf("%s%s%s%s%s\n", "1", "2", "3", "4", "5");
+	j = printf("%s%s%s%s%s\n", "1", "2", "3", "4", "5");
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
 	printf("\n########## NEXT #########\n");
 
 	printf("\nTest pourcent h de rien\n");
-	i = ft_printf("% h\\0\n");
-	j = printf("% h\\0\n");
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);*/
+	i = ft_printf("%s, % h;\n", "coucou");
+	j = printf("%s % h;\n", "coucou");
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
-	double d;
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest #x de 42\n");
+	i = ft_printf("%#x;\n", 42);
+	j = printf("%#x;\n", 42);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	printf("\n########## NEXT #########\n");
+
+	printf("\nTest 05pourcent de rien\n");
+	i = ft_printf("%05%;\n", 42);
+	j = printf("%05%;\n", 42);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+	/*double d;
 
 	d = 258.01;
 	printf("NOUS\n");
@@ -45,7 +62,7 @@ int		main(void)
 	i = ft_printf("%f\n", d);
 	printf("PRINTF\n");
 	j =	printf("%f\n", d);
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);*/
 	/*d = -2 * 1.0 / 3.0;
 	str = ft_round(ft_double(d), 6);
 	printf("moi : \n");
