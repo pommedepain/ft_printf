@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/26 12:19:40 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/26 12:24:41 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ int		main(void)
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 
 	p = 2147483647;
-	printf("----test: p ----");
+	printf("----test: p ----\n");
 	printf("NOUS\n");
 	i = ft_printf("%p\n", &p);
 	printf("PRINTF\n");
@@ -154,7 +154,7 @@ int		main(void)
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 
 	p = 2147483647;
-	printf("----test: o ----");
+	printf("----test: o ----\n");
 	printf("NOUS\n");
 	i = ft_printf("%o\n", p);
 	printf("PRINTF\n");
@@ -162,11 +162,27 @@ int		main(void)
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 
 	p = 2147483647;
-	printf("----test: x ----");
+	printf("----test: x ----\n");
 	printf("NOUS\n");
 	i = ft_printf("%x\n", p);
 	printf("PRINTF\n");
 	j =	printf("%x\n", p);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	p = 2147483647;
+	printf("----test: d ----\n");
+	printf("NOUS\n");
+	i = ft_printf("%d\n", p);
+	printf("PRINTF\n");
+	j =	printf("%d\n", p);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	p = 2147483647;
+	printf("----test: u ----\n");
+	printf("NOUS\n");
+	i = ft_printf("%u\n", p);
+	printf("PRINTF\n");
+	j =	printf("%u\n", p);
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 	/*d = -2 * 1.0 / 3.0;
 	str = ft_round(ft_double(d), 6);
