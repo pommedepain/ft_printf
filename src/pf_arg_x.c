@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_x.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:06 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/23 18:07:44 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 15:32:40 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_flag_x(va_list list, t_flag flag)
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	else if (flag.precision == -1)
-		flag.to_print = "";
+		flag.to_print = ft_strdups("");
 	if (ft_chrstring(flag.option, "#") == 1)
 	{
 		flag.field -= 2;
@@ -48,6 +48,6 @@ char	*ft_flag_x(va_list list, t_flag flag)
 	else
 		flag.to_print = handle_field(flag);
 	if (((ft_chrstring(flag.option, "#") == 1) && (ft_strcmp(flag.to_print, "0") != 0)) && ft_strcmp(flag.to_print, "") != 0)
-		flag.to_print = add_hashtag(flag.to_print, "0x");
+		flag.to_print = ft_strdups(add_hashtag(flag.to_print, "0x"));
 	return (flag.to_print);
 }

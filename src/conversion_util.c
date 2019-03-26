@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 19:20:22 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 15:42:18 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,7 +219,7 @@ char	*add_hashtag(char *str, char *add)
 	len = ft_strlen(str);
 	len2 = ft_strlen(add);
 	i = 0;
-	if (!(mod = (char *)malloc(sizeof(char) * (len + len2 + 1))))
+	if (!(mod = (char *)malloc(sizeof(char) * (len + len2 + 2))))
 		return (NULL);
 	j = 0;
 	k = 0;
