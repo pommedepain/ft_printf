@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_float_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 19:07:06 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/23 18:53:01 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 12:08:34 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*ft_round(char *str, int prec)
 	size = ft_strlens(str2);
 	if (prec == 0)
 		return(case1(str, str1, str2, i));
-	if (size < prec)
+	else if (size < prec)
 		return(case2(str, str1, str2, prec));
 	else if (str2[prec])
 		return(case3(str, str1, str2, prec));
@@ -113,6 +113,7 @@ char		*final_process(char *tmp)
 		str2 = ft_rightatoulltoa(str2);
 	else
 	{
+		free(str2);
 		str2 = ft_strnew(1);
 		str2[0] = '0';
 	}

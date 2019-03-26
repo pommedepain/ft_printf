@@ -37,7 +37,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	else
 		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
 	if (flag.precision < 0)
-		flag.to_print = "";
+		flag.to_print = ft_strdups("");
 	else if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	if (ft_chrstring(flag.option, "#") == 1)
@@ -50,11 +50,11 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	if ((ft_chrstring(flag.option, "#") == 1))
 	{
 		if (flag.precision == -1)
-			flag.to_print = "0";
+			flag.to_print = ft_strdups("0");
 		else if (ft_char_only(flag.to_print, '0', ' ') == 1)
-			flag.to_print = flag.to_print;
+			flag.to_print = ft_strdups(flag.to_print);
 		else
-			flag.to_print = add_hashtag(flag.to_print, "0");
+			flag.to_print = ft_strdups(add_hashtag(flag.to_print, "0"));
 	}
 	return (flag.to_print);
 }

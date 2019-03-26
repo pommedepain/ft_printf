@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_atoull.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 22:41:27 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/23 18:53:54 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 11:40:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ char *str)
 	char				*to_print;
 
 	tmp = ft_search_c(str, '1');
-	nul = ft_decimal_zeros(zero);
 	i = 0;
 	while (++i < 56)
 		pows[i] = pows[i - 1] >> 1;

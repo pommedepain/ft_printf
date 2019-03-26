@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
 /*   Updated: 2019/03/25 17:06:04 by pommedepin       ###   ########.fr       */
@@ -70,12 +70,15 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
 		res = ft_strlen(flag.to_print) + 1;
+		free(flag.to_print);
 	}
 	else
 	{
 		ft_putstr(flag.to_print);
 		res = ft_strlen(flag.to_print);
+		free(flag.to_print);
 	}
+	free(flag.parsing);
 	//pf_free_struct(&flag);
 	//free flag.to_print ici fait bugger bcp de test...
 	return (res);

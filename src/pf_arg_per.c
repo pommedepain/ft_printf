@@ -14,7 +14,7 @@
 
 char	*ft_flag_per(t_flag flag)
 {
-	flag.to_print = "%";
+	flag.to_print = ft_strdups("%");
 	flag.to_print = handle_field(flag);
 	return (flag.to_print);
 }

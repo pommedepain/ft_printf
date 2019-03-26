@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
 /*   Updated: 2019/03/25 15:14:36 by pommedepin       ###   ########.fr       */
@@ -37,7 +37,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 	if (ft_chrstring(&str[i], FLAGS) != 1)
 		return (NULL);
 	len = ft_strstringlen(&str[i], FLAGS);
-	if (!(dest = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
 		return (NULL);
 	while (str[i])
 	{
@@ -54,6 +54,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 		}
 		dest[k++] = str[i++];
 	}
+	free(dest);
 	return (NULL);
 }
 

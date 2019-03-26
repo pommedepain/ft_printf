@@ -219,7 +219,7 @@ char	*add_hashtag(char *str, char *add)
 	len = ft_strlen(str);
 	len2 = ft_strlen(add);
 	i = 0;
-	if (!(mod = (char *)malloc(sizeof(char) * (len + len2 + 1))))
+	if (!(mod = (char *)malloc(sizeof(char) * (len + len2 + 2))))
 		return (NULL);
 	j = 0;
 	k = 0;

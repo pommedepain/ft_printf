@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:14 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/12 15:06:30 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/26 15:03:01 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*print_address(void *address)
 	char			*to_print;
 	char			*to_free;
 
+	if ((unsigned long long)address == 0)
+		return (ft_strdups("0x0"));
 	i = 0;
 	while (i < 8)
 	{

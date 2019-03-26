@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_double.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 10:36:17 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/23 18:54:26 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 11:52:31 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ char		*ft_put_zeros_pos(int pow, char *fraction)
 	tmp2 = ft_strsub(frac, pow + 1, 56);
 	free(frac);
 	frac = ft_strjoinfs1(tmp, tmp2);
+	free(tmp2);
 	return (frac);
 }
 
