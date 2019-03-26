@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 14:03:52 by pommedepin       ###   ########.fr       */
+/*   Created: 2018/11/07 11:38:48 by cajulien          #+#    #+#             */
+/*   Updated: 2019/03/15 11:58:29 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int i;
-	char *to_print;
+	size_t	i;
 
 	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	while (i < n)
 	{
-		to_print[i] = str[*pos + i];
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	return (0);
 }

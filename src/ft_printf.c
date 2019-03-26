@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/07 17:24:43 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/23 18:29:58 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "libft.h"
 
 /*
 ** Main Function: initialise va_list, call reading_format and return
@@ -44,12 +44,6 @@ int		pf_manager(const char *format, va_list ap)
 	}
 	return (printed);
 }
-
-/*
-** Fonction utile de Cam = ft_strjoinfs1 (join meme si une des string est vide, et free la premiere string
-** passée en parametre)
-*/
-
 
 int		ft_strstringlen(const char *str, char *chr)
 {

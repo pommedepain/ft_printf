@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_strtimc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 14:03:52 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/06 13:24:41 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/06 13:30:52 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+char	*ft_strtrimc(char const *s, char c)
 {
-	int i;
-	char *to_print;
+	int		st;
+	int		len;
+	char	*new;
 
-	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	if (s == NULL)
+		return (NULL);
+	st = 0;
+	new = NULL;
+	while (s[st] && (s[st] == c))
+		st++;
+	if (ft_strlens(s) == 0 || st == (int)ft_strlens(s))
 	{
-		to_print[i] = str[*pos + i];
-		i++;
+		ft_strdel((char **)&s);
+		return (ft_strnew(0));
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	len = ft_strlens(s) - 1;
+	while (s[len] && (s[len] == c))
+		len--;
+	new = ft_strsub(s, st, len - st + 1);
+	ft_strdel((char **)&s);
+	return (new);
 }

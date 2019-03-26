@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 14:03:52 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/06 13:29:07 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/06 13:29:18 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	int i;
-	char *to_print;
+	size_t	i;
+	char	*dup;
 
+	if (!s1)
+		return(NULL);
 	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	dup = (char *)malloc(sizeof(char) * ft_strnlen(s1, n) + 1);
+	if (!dup)
+		return (NULL);
+	while (s1[i] && i < n)
 	{
-		to_print[i] = str[*pos + i];
+		dup[i] = s1[i];
 		i++;
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	dup[i] = 0;
+	return (dup);
 }

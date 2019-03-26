@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 14:03:52 by pommedepin       ###   ########.fr       */
+/*   Created: 2018/11/07 10:19:09 by cajulien          #+#    #+#             */
+/*   Updated: 2019/03/15 11:58:41 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int i;
-	char *to_print;
+	size_t			i;
 
 	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	if (src < dst)
 	{
-		to_print[i] = str[*pos + i];
-		i++;
+		while (len--)
+		{
+			((unsigned char *)dst)[len] = ((unsigned char *)src)[len];
+		}
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	else
+	{
+		while (i < len)
+		{
+			((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+			i++;
+		}
+	}
+	return (dst);
 }

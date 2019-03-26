@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf_str_manager.c                               :+:      :+:    :+:   */
+/*   ft_tabcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/03/12 14:03:52 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/03/06 13:28:17 by pommedepin        #+#    #+#             */
+/*   Updated: 2019/03/06 13:33:03 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			pf_str_manager(const char *str, int *pos)
+char	**ft_tabcpy(char **dst, char **src)
 {
-	int i;
-	char *to_print;
+	int k;
 
-	i = 0;
-	to_print = NULL;
-	if (!str || *pos < 0)
-		return (-1);
-	while (str[*pos + i] && str[*pos + i] != '%')
-		i++;
-	to_print = ft_strnew((size_t)i);
-	i = 0;
-	while (str[*pos + i] && str[*pos + i] != '%')
+	k = 0;
+	while (src[k])
 	{
-		to_print[i] = str[*pos + i];
-		i++;
+		dst[k] = ft_strcpy(dst[k], src[k]);
+		k++;
 	}
-	ft_putstr(to_print);
-	free(to_print);
-	*pos += i;
-	return(i);
+	return (dst);
 }
