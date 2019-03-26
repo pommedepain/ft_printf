@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/26 13:21:31 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/25 15:14:36 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	i = 0;
 	while (flag.parsing[i])
 	{
+		//printf("%c\n", flag.parsing[i]);
 		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
 			flag.option = pf_catch_option(flag.parsing, i, flag.option);
@@ -101,6 +102,7 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
 			while (ft_chrchar(flag.parsing[i], "lLh") == 1)
 				i++;
+			i -= 1;
 		}
 		i++;
 	}
