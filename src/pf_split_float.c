@@ -14,7 +14,7 @@
 
 char	*case1(char *str, char *str1, char *str2, int i)
 {
-	if (str2[0] > '5')
+	if (str2[0] >= '5')
 	{
 		str1[i - 1]++;
 		free(str);
@@ -51,7 +51,7 @@ char	*case3(char * str, char *str1, char *str2, int prec)
 {
 	char	*to_print;
 
-	str2[prec] > '5' ? str2[prec - 1]++ : 0;
+	str2[prec] >= '5' ? str2[prec - 1]++ : 0;
 	str2[prec] = '\0';
 	if (str2[prec - 1] == ':')
 	{

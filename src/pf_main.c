@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 19:15:21 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/26 12:19:40 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		main(void)
 {
 	int i;
 	int j;
-
+	int		p;
 	/*printf("\nTest pourcent de rien\n");
 	i = ft_printf("% \\0\n");
 	j = printf("% \\0\n");
@@ -33,19 +33,141 @@ int		main(void)
 
 	double d;
 
-	d = 258.01;
+	d = 15.51;
+	printf("----test: %f precision: %d ----\n", d, 1);
 	printf("NOUS\n");
-	i = ft_printf("%f\n", d);
+	i = ft_printf("%.1f\n", d);
 	printf("PRINTF\n");
-	j =	printf("%f\n", d);
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 	
-	d = 258.01;
+	d = 15.5;
+	printf("----test: %f precision: %d ----\n", d, 1);
 	printf("NOUS\n");
-	i = ft_printf("%f\n", d);
+	i = ft_printf("%.1f\n", d);
 	printf("PRINTF\n");
-	j =	printf("%f\n", d);
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 15.50;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 1.250;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 1.259;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 1.25;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 1.65;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 3.49;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 42.1465;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 43.1466;
+	printf("----test: %f precision: %d ----\n", d, 1);
+	printf("NOUS\n");
+	i = ft_printf("%.1f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.1f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 43.1466;
+	printf("----test: %f precision: %d ----\n", d, 0);
+	printf("NOUS\n");
+	i = ft_printf("%.0f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.0f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 43.0;
+	printf("----test: %f precision: %d ----\n", d, 0);
+	printf("NOUS\n");
+	i = ft_printf("%.0f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.0f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = 43.0;
+	printf("----test: %f precision: %d ----\n", d, 10);
+	printf("NOUS\n");
+	i = ft_printf("%.10f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.10f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	d = -2.0 * 1.0 / 3.0;
+	printf("----test: %f precision: %d ----\n", d, 10);
+	printf("NOUS\n");
+	i = ft_printf("%.10f\n", d);
+	printf("PRINTF\n");
+	j =	printf("%.10f\n", d);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	p = 2147483647;
+	printf("----test: p ----");
+	printf("NOUS\n");
+	i = ft_printf("%p\n", &p);
+	printf("PRINTF\n");
+	j =	printf("%p\n", &p);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	p = 2147483647;
+	printf("----test: o ----");
+	printf("NOUS\n");
+	i = ft_printf("%o\n", p);
+	printf("PRINTF\n");
+	j =	printf("%o\n", p);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+
+	p = 2147483647;
+	printf("----test: x ----");
+	printf("NOUS\n");
+	i = ft_printf("%x\n", p);
+	printf("PRINTF\n");
+	j =	printf("%x\n", p);
+	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 	/*d = -2 * 1.0 / 3.0;
 	str = ft_round(ft_double(d), 6);
 	printf("moi : \n");
