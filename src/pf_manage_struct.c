@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/26 13:21:31 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/27 13:55:04 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,11 +101,11 @@ t_flag	fill_flag(t_flag flag, va_list list)
 			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
 			while (ft_chrchar(flag.parsing[i], "lLh") == 1)
 				i++;
+			i -= 1;
 		}
 		i++;
 	}
 	flag.flag = flag.parsing[i - 1];
-	//print_struct(flag);
 	return (flag);
 }
 

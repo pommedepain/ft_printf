@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/26 15:36:39 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/27 14:06:09 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int		main(void)
 	double d;
 	char	c;
 
+
 /*
 **	LEAKS TEST
 */
 
-	ft_printf("\n");
+	/*ft_printf("\n");
 	ft_printf("%%\n");
 	ft_printf("%d\n", 42);
 	ft_printf("%d%d\n", 42, 41);
@@ -56,7 +57,7 @@ int		main(void)
 	ft_printf("%S\n", L"ݗݜशব");
 	ft_printf("%s%s\n", "test", "test");
 	ft_printf("%s%s%s\n", "test", "test", "test");
-	ft_printf("%C\n", 15000);
+	ft_printf("%C\n", 15000);*/
 /*	
 	printf("############- f -############\n");
 
