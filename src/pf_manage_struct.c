@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/25 15:14:36 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/27 13:55:04 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	i = 0;
 	while (flag.parsing[i])
 	{
-		//printf("%c\n", flag.parsing[i]);
 		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
 			flag.option = pf_catch_option(flag.parsing, i, flag.option);
@@ -107,7 +106,6 @@ t_flag	fill_flag(t_flag flag, va_list list)
 		i++;
 	}
 	flag.flag = flag.parsing[i - 1];
-	//print_struct(flag);
 	return (flag);
 }
 
