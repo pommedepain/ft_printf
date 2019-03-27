@@ -99,7 +99,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 # include "wchar.h"
 
 # define UINT_MAX 4294967296
-# define FLAGS "cspdiouxX%fZ"
+# define FLAGS "cspdiouxX%fFZ"
 # define OPTIONS "#0-+ "
 # define B1 0x0000000000FF
 # define _X_ "0123456789ABCDEF"

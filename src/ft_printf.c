@@ -45,8 +45,9 @@ int		pf_manager(const char *format, va_list ap)
 		{
 			ft_putstr("");
 			pos += 1;
-			while ((ft_chrchar(format[pos], "cspdiouxXfZzj") == 1 || (ft_chrchar(format[pos], OPTIONS) == 1)
-			|| (ft_chrchar(format[pos], "lLh") == 1) ))
+			while ((ft_chrchar(format[pos], "cspdiouxXfZzj") == 1
+			|| (ft_chrchar(format[pos], OPTIONS) == 1)
+			|| (ft_chrchar(format[pos], "lLh") == 1)))
 				pos++;
 		}
 	}
@@ -62,10 +63,9 @@ int		check_format(const char *str)
 	char	*tmp2;
 
 	i = 1;
-	k = 0;
 	tmp2 = "+-";
 	tmp = FLAGS;
-	if(str == NULL)
+	if (str == NULL)
 		return (-1);
 	while (str[i] != '\0')
 	{

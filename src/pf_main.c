@@ -23,12 +23,30 @@ int		main(void)
 	double d;
 	char	c;
 
-/*printf("\nTest ll#x de 9223372036854775807\n");
-i = ft_printf("%ll#x;\n", 9223372036854775807);
-j = printf("%ll#x;\n", 9223372036854775807);
+printf("\nTest multiple c de c\n");
+i = ft_printf("%2c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c \
+%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\
+%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\\0\n",
+' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+'t', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}');
+j = printf("%2c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c \
+%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\
+%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\\0\n",
+' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+'t', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}');
 printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
-printf("\n########## NEXT #########\n");*/
+printf("\n########## NEXT #########\n");
 
 /*
 **	LEAKS TEST

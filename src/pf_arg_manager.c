@@ -57,7 +57,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.flag == 'u' ? flag.to_print = ft_flag_u(list, flag) : 0;
 	flag.flag == 'x' ? flag.to_print = ft_flag_x(list, flag) : 0;
 	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
-	flag.flag == 'f' ? flag.to_print = ft_flag_f(list, flag) : 0;
+	(flag.flag == 'f' || flag.flag == 'F') ? flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
 	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
 	//  tests, ecrit comme ça, ça repond aux tests.
@@ -66,7 +66,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	//ft_putchar('\n');
 	//print_struct(flag);
 	//ft_putchar('\n');
-	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (ft_char_only(flag.to_print, ' ', '\0') == 1)))
+	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
 		res = ft_strlen(flag.to_print) + 1;
