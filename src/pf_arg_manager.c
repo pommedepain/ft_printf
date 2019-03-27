@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/26 14:53:52 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/27 13:15:10 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ int		ft_parsing(const char *format, int *i, va_list list)
 		free(flag.to_print);
 	}
 	free(flag.parsing);
-	//pf_free_struct(&flag);
+	free(flag.option);
+	free(flag.modif);
+	//pf_free_struct(flag);
 	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }
