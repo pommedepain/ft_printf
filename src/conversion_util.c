@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/23 19:20:22 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/27 13:25:47 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*zero_fill_l(char *str, int i)
 			res[k++] = str[ibis++];
 		// dans l'etat free(str) peut entrainer des segfaults, je l'ai donc mis en 
 		// commentaire
-		//free(str);
+		free(str);
 		return (res);
 	}
 	return (str);
@@ -107,6 +107,7 @@ char	*space_fill_l(char *str, int i)
 		res[k++] = ' ';
 	while (j-- > 0)
 		res[k++] = str[ibis++];
+	free(str);
 	return (res);
 }
 
@@ -128,6 +129,7 @@ char	*space_fill_r(char *str, int i)
 	i -= j;
 	while (i-- > 0)
 		res[j++] = ' ';
+	free(str);
 	return (res);
 }
 
@@ -243,5 +245,6 @@ char	*add_hashtag(char *str, char *add)
 		j++;
 	}
 	mod[j + 1] = '\0';
+	free(str);
 	return (mod);
 }

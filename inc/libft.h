@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/25 13:04:56 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/23 19:01:36 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 
 /*
-** 								ft_printf PROJECT
+** Projet ft_printf :
 */
 
 # include <stdarg.h>
@@ -133,13 +133,13 @@ typedef struct s_double
 ** ft_printf.c
 */
 
-int				ft_printf(const char *format, ...) __attribute__((format(printf, 1, 2)));
+int				ft_printf(const char *format, ...);
+			//__attribute__((format(printf, 1, 2)));
 int				reading_format(const char *format, va_list list);
 int				ft_strstringlen(const char *str, char *chr);
 int				new_reading(const char *format, va_list list);
 int				pf_manager(const char *format, va_list ap);
 int				pf_str_manager(const char *str, int *pos);
-int				check_format(const char *str);
 
 /*
 ** parsing.c
@@ -208,10 +208,8 @@ int 			print_struct(t_flag flag);
 int 			pf_fill_option(t_flag *flag, int *i);
 int 			pf_fill_field(t_flag *flag, int *i, va_list list);
 
-
-
 /*
-** 								FLOAT :
+** FLOAT
 */
 
 /*
