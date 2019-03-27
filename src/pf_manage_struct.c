@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/27 13:55:04 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/27 15:35:33 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,29 +79,31 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	{
 		if (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
 		{
-			flag.option = pf_catch_option(flag.parsing, i, flag.option);
-			while (ft_chrchar(flag.parsing[i], OPTIONS) == 1)
+			if (flag.option != NULL)
+				flag.option = ft_strjoin(flag.option, pf_catch_option(flag.parsing, i, flag.option));
+			else
+				flag.option = pf_catch_option(flag.parsing, i, flag.option);
+			while (ft_chrchar(flag.parsing[i + 1], OPTIONS) == 1)
 				i++;
 		}
-		if ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
+		if ((flag.parsing[i] > '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 		{
 			flag.field = pf_catchfield(flag.parsing, i, list);
-			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
+			while ((flag.parsing[i + 1] >= '0' && flag.parsing[i + 1] <= '9') || flag.parsing[i + 1] == '*')
 				i++;
 		}
 		if (flag.parsing[i] == '.')
 		{
 			flag.precision = pf_catchprecision(flag.parsing, i, list);
 			i += 1;
-			while ((flag.parsing[i] >= '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
+			while ((flag.parsing[i + 1] >= '0' && flag.parsing[i + 1] <= '9') || flag.parsing[i + 1] == '*')
 				i++;
 		}
 		if (ft_chrchar(flag.parsing[i], "lLh") == 1)
 		{
 			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
-			while (ft_chrchar(flag.parsing[i], "lLh") == 1)
+			while (ft_chrchar(flag.parsing[i + 1], "lLh") == 1)
 				i++;
-			i -= 1;
 		}
 		i++;
 	}
