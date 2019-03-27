@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/13 12:41:31 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/27 16:10:24 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,5 +115,7 @@ char	*pf_catchmodifier(char *str, int i, char *res)
 	res[len] = '\0';
 	while (ft_chrchar(str[i], "lLh") == 1)
 		res[j++] = str[i++];
+	if (ft_chrstring(res, "l") == 1 && ft_chrstring(res, "h") == 1)
+		res = NULL;
 	return (res);
 }
