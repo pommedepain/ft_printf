@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/27 14:06:09 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/27 14:16:56 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ int		main(void)
 	double d;
 	char	c;
 
+/*printf("\nTest ll#x de 9223372036854775807\n");
+i = ft_printf("%ll#x;\n", 9223372036854775807);
+j = printf("%ll#x;\n", 9223372036854775807);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+
+printf("\n########## NEXT #########\n");*/
 
 /*
 **	LEAKS TEST
