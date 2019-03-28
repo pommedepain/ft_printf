@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:10 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/14 17:12:37 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/28 12:46:10 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_flag_u(va_list list, t_flag flag)
 			flag.to_print = ft_itoa(va_arg(list, unsigned int));
 	}
 	else
-		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 10, _x_);
+		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 10, _x_);
 	if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);

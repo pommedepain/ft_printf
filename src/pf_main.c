@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/27 14:16:56 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/28 12:49:29 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ int		main(void)
 	double d;
 	char	c;
 
+
+
+/*
 printf("\nTest multiple c de c\n");
 i = ft_printf("%2c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c \
 %c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c\
@@ -47,7 +50,7 @@ j = printf("%2c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c \
 printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
 printf("\n########## NEXT #########\n");
-
+*/
 /*
 **	LEAKS TEST
 */

@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:12 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/26 15:30:46 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/28 12:46:01 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
 	}
 	else
-		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
+		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 8, _x_);
 	if (flag.precision < 0)
 		flag.to_print = ft_strdups("");
 	else if (flag.precision >= 0)
