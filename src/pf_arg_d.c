@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:19 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/27 16:29:32 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:40:13 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ char	*ft_flag_d(va_list list, t_flag flag)
 	{
 		if (ft_strcmp(flag.modif, "ll") == 0)
 			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
+		if (ft_strcmp(flag.modif, "j") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, intmax_t), 10, _x_);
+		if (ft_strcmp(flag.modif, "z") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, ssize_t), 10, _x_);
 		if (ft_strcmp(flag.modif, "h") == 0)
 			flag.to_print = ft_itoa((short int)va_arg(list, int));
 		if (ft_strcmp(flag.modif, "l") == 0)

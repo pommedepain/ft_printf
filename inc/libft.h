@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/28 12:41:23 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:46:39 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+#include <stdint.h>
 
 # define BUFF_SIZE 42
 
@@ -166,6 +167,7 @@ char			*ft_flag_c(va_list list, t_flag flag);
 char			*ft_flag_s(va_list list, t_flag flag);
 char			*ft_flag_d(va_list list, t_flag flag);
 char			*ft_flag_u(va_list list, t_flag flag);
+char			*ft_flag_uu(va_list list, t_flag flag);
 char			*ft_flag_o(va_list list, t_flag flag);
 char			*ft_flag_x(va_list list, t_flag flag);
 char			*ft_flag_X(va_list list, t_flag flag);

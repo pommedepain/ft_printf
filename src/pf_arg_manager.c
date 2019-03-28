@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/28 12:49:13 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/28 15:47:44 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	(flag.flag == 'd' || flag.flag == 'i') ?
 	flag.to_print = ft_flag_d(list, flag) : 0;
 	(flag.flag == 'o' || flag.flag == 'O')  ? flag.to_print = ft_flag_o(list, flag) : 0;
-	(flag.flag == 'u' || flag.flag == 'U')  ? flag.to_print = ft_flag_u(list, flag) : 0;
+	flag.flag == 'u' ? flag.to_print = ft_flag_u(list, flag) : 0;
+	flag.flag == 'U' ? flag.to_print = ft_flag_uu(list, flag) : 0;
 	flag.flag == 'x' ? flag.to_print = ft_flag_x(list, flag) : 0;
 	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
 	(flag.flag == 'f' || flag.flag == 'F') ? flag.to_print = ft_flag_f(list, flag) : 0;
