@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_u.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:10 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/28 15:39:41 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 16:57:55 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 
 char	*ft_flag_u(va_list list, t_flag flag)
 {
-	/*unsigned long	res;
-	int				arg;
-
-	res = 0;
-	arg = va_arg(list, int);
-	if (arg < 0)
-		res = UINT_MAX + arg;
-	else
-		res = arg;*/
 	if (flag.modif)
 	{
 		if (ft_strcmp(flag.modif, "ll") == 0)
@@ -38,7 +29,9 @@ char	*ft_flag_u(va_list list, t_flag flag)
 	}
 	else
 		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 10, _x_);
-	if (flag.precision >= 0)
+	if (flag.precision < 0)
+		flag.to_print = ft_strdups("");
+	else if (flag.precision >= 0)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	flag.to_print = handle_field(flag);
 	return (flag.to_print);

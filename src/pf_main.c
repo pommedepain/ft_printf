@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/28 15:49:50 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 17:15:03 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,36 @@ int		main(void)
 	double d;
 	char	c;
 
-	printf("----test: 15.5 precision: %d ----\n", 1);
-	printf("NOUS\n");
-	i = ft_printf("%zd\n", -0);
-	printf("PRINTF\n");
-	j =	printf("%zd\n", -0);
-	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
+/*printf("----test: 15.5 precision: %d ----\n", 1);
+printf("NOUS\n");
+i = ft_printf("%zd\n", -0);
+printf("PRINTF\n");	
+j =	printf("%zd\n", -0);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);*/
+
+printf("\nTest .p, .0p de 0\n");
+i = ft_printf("%.p, %.0p\\0\n", 0, 0);
+j = printf("%.p, %.0p\\0\n", 0, 0);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+printf("\n########## NEXT #########\n");
+
+printf("\nTest .p, .0p de 42\n");
+i = ft_printf("%.p, %.0p\\0\n",42,42);
+j = printf("%.p, %.0p\\0\n",42,42);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+printf("\n########## NEXT #########\n");
+
+printf("\nTest .p, .4p de 42\n");
+i = ft_printf("%.p, %.4p\\0\n",42,42);
+j = printf("%.p, %.4p\\0\n",42,42);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+printf("\n########## NEXT #########\n");
+
+printf("\nTest p de 42\n");
+i = ft_printf("%p\\0\n",42,42);
+j = printf("%p\\0\n",42,42);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
+printf("\n########## NEXT #########\n");
 
 /*
 printf("\nTest multiple c de c\n");
@@ -55,6 +79,7 @@ j = printf("%2c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c \
 printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
 
 printf("\n########## NEXT #########\n");
+
 */
 /*
 **	LEAKS TEST

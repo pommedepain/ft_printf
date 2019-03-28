@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/28 15:47:44 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 17:12:24 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	//  tests, ecrit comme ça, ça repond aux tests.
 	flag.flag == 'Z' ? flag.to_print = ft_strdups("Z") : 0;
 	*i += ft_strlen(flag.parsing);
-	//ft_putchar('\n');
-	//print_struct(flag);
-	//ft_putchar('\n');
+	ft_putchar('\n');
+	print_struct(flag);
+	ft_putchar('\n');
 	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
