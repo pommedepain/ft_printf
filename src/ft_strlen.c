@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/07 12:30:50 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/29 16:32:33 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:34:01 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ size_t			ft_strlen(const char *s)
 	while (1)
 	{
 		ret = ft_byte_mask(*c);
-		if (ret > 0)
+		if (ret)
 			return (len + ret - 1);
 		c++;
 		len += 8;
