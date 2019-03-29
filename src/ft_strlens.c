@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/11 03:40:55 by cajulien          #+#    #+#             */
-/*   Updated: 2018/11/11 03:50:21 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/29 15:21:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 size_t	ft_strlens(const char *s)
 {
-	size_t	i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
+	if (!s)
+		return (0);
+	else
+		return (ft_strlen(s));
 }
