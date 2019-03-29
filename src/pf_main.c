@@ -13,6 +13,7 @@
 #include "../inc/libft.h"
 #include <stdio.h>
 #include <float.h>
+#include <limits.h>
 
 int		main(void)
 {
@@ -30,7 +31,13 @@ printf("PRINTF\n");
 j =	printf("%zd\n", -0);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);*/
 
-printf("\nTest .p, .0p de 0\n");
+printf("\nTest mix de conv\n");
+i = ft_printf("%lU, %lU\n", 0, USHRT_MAX);
+j = printf("%lU, %lU\n", 0, USHRT_MAX);
+printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
+printf("\n########## NEXT #########\n");
+
+/*printf("\nTest .p, .0p de 0\n");
 i = ft_printf("%.p, %.0p\\0\n", 0, 0);
 j = printf("%.p, %.0p\\0\n", 0, 0);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
@@ -52,7 +59,7 @@ printf("\nTest p de 42\n");
 i = ft_printf("%p\\0\n",42,42);
 j = printf("%p\\0\n",42,42);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n", i, j);
-printf("\n########## NEXT #########\n");
+printf("\n########## NEXT #########\n");*/
 
 /*
 printf("\nTest multiple c de c\n");

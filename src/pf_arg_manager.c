@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 13:57:16 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/29 14:39:56 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,6 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	if (flag.parsing == NULL)
 		return (0);
 	flag = fill_flag(flag, list);
-	//il faut *i s'incremente jusqu'au prochain % (voir les undefined behavior
-	// tests). 
-	//  d est le plus avancé. Il faut aussi gerer un argument 0 pour
-	// c et p. Apres dans les tests, il y a des trucs hyper chelou genre
-	// j, z, U, O, D... (present surtout dans le moulitest) mais alors
-	// la c'est mystery et les floats MDRRRRs
 	(flag.flag == 'c' || flag.flag == 'C') ? flag.to_print = ft_flag_c(list, flag) : 0;
 	(flag.flag == 's' || flag.flag == 'S')  ? flag.to_print = ft_flag_s(list, flag) : 0;
 	flag.flag == 'p' ? flag.to_print = ft_flag_p(list, flag) : 0;
@@ -60,13 +54,11 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
 	(flag.flag == 'f' || flag.flag == 'F') ? flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
-	// J'ai vu aucune trace de Z nul part sauf dans les undefined behavior
-	//  tests, ecrit comme ça, ça repond aux tests.
 	flag.flag == 'Z' ? flag.to_print = ft_strdups("Z") : 0;
 	*i += ft_strlen(flag.parsing);
-	/*ft_putchar('\n');
-	print_struct(flag);
-	ft_putchar('\n');*/
+	//ft_putchar('\n');
+	//print_struct(flag);
+	//ft_putchar('\n');
 	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
@@ -82,7 +74,5 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	free(flag.parsing);
 	free(flag.option);
 	free(flag.modif);
-	//pf_free_struct(flag);
-	//free flag.to_print ici fait bugger bcp de test...
 	return (res);
 }
