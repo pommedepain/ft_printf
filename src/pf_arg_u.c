@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:10 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/28 15:39:41 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 16:56:58 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_flag_u(va_list list, t_flag flag)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 10, _x_);
 		if (ft_strcmp(flag.modif, "j") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, intmax_t), 10, _x_);
+		if (ft_strcmp(flag.modif, "z") == 0)
+			flag.to_print = ft_ulltoa_base(va_arg(list, ssize_t), 10, _x_);
 		if (ft_strcmp(flag.modif, "h") == 0)
 			flag.to_print = ft_itoa(va_arg(list, unsigned int));
 		if (ft_strcmp(flag.modif, "l") == 0)

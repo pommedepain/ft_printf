@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/28 15:49:50 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 17:05:12 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int		main(void)
 
 	printf("----test: 15.5 precision: %d ----\n", 1);
 	printf("NOUS\n");
-	i = ft_printf("%zd\n", -0);
+	i = ft_printf("%x\n", 0);
 	printf("PRINTF\n");
-	j =	printf("%zd\n", -0);
+	j =	printf("%zx\n", 0);
 	printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 
 /*

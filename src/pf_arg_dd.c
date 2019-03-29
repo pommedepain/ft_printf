@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_arg_d.c                                         :+:      :+:    :+:   */
+/*   pf_arg_dd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:19 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/28 17:19:23 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 17:27:46 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_d(va_list list, t_flag flag)
+char	*ft_flag_dd(va_list list, t_flag flag)
 {
-	if (flag.modif)
+	if (ft_strcmp(flag.modif, "z") == 0)
 	{
-		if (ft_strcmp(flag.modif, "ll") == 0)
-			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
-		if (ft_strcmp(flag.modif, "j") == 0)
-			flag.to_print = ft_lltoa_base(va_arg(list, intmax_t), 10, _x_);
-		if (ft_strcmp(flag.modif, "z") == 0)
-			flag.to_print = ft_lltoa_base(va_arg(list, ssize_t), 10, _x_);
-		if (ft_strcmp(flag.modif, "h") == 0)
-			flag.to_print = ft_itoa((short int)va_arg(list, int));
-		if (ft_strcmp(flag.modif, "l") == 0)
-			flag.to_print = ft_ltoa_base(va_arg(list, long), 10);
-		if (ft_strcmp(flag.modif, "hh") == 0)
-			flag.to_print = ft_itoa((char)va_arg(list, int));
+		flag.to_print = ft_lltoa_base(va_arg(list, ssize_t), 10, _x_);
+		return(flag.to_print);
 	}
 	else
-		flag.to_print = ft_itoa(va_arg(list, int));
+	{
+		flag.to_print = ft_ulltoa_base(va_arg(list, long long), 10, _x_);
+		return (flag.to_print);
+	}
 	if (ft_chrstring(flag.option, "+ ") == 1)
 		flag.to_print = add_sign(flag.to_print, flag.option);
 	if ((flag.precision >= 0 || flag.precision == -1) && ft_strequ(flag.modif, "j"))

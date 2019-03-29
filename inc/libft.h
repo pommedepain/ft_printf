@@ -6,7 +6,7 @@
 /*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/28 15:46:39 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/28 17:17:17 by benjamintle      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,6 +166,7 @@ char			*pf_catchmodifier(char *str, int i, char *res);
 char			*ft_flag_c(va_list list, t_flag flag);
 char			*ft_flag_s(va_list list, t_flag flag);
 char			*ft_flag_d(va_list list, t_flag flag);
+char			*ft_flag_dd(va_list list, t_flag flag);
 char			*ft_flag_u(va_list list, t_flag flag);
 char			*ft_flag_uu(va_list list, t_flag flag);
 char			*ft_flag_o(va_list list, t_flag flag);
