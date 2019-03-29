@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_atoull.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 22:41:27 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/26 11:40:46 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:21:05 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ char *str)
 	nbr = ft_decimal_process(pows, str, i, tmp);
 	free(str);
 	(ft_numlen(nbr, 10) > ft_numlen(pows[0], 10)) && zero != 0 ? zero-- : 0;
-	to_print = ft_ulltoa_base(nbr, 10, _x_);
+	to_print = ft_ulltoa_base(nbr, 10, _XMIN_);
 	free(to_print);
 	nul = ft_decimal_zeros(zero);
-	to_print = ft_strjoinfs2(nul, ft_ulltoa_base(nbr, 10, _x_));
+	to_print = ft_strjoinfs2(nul, ft_ulltoa_base(nbr, 10, _XMIN_));
 	free(nul);
 	return (to_print);
 }
@@ -112,5 +112,5 @@ char				*ft_leftatoulltoa(char *str)
 			nbr = nbr << 1;
 	}
 	free(str);
-	return (ft_ulltoa_base(nbr, 10, _x_));
+	return (ft_ulltoa_base(nbr, 10, _XMIN_));
 }

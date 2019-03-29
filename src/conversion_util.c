@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 17:05:02 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:15:35 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ char	*bytes_to_str(unsigned char b[8])
 	char	*hex;
 	char	*str;
 
-	hex = _x_;
+	hex = _XMIN_;
 	i = 0;
 	if (!(str = (char *)malloc(sizeof(char) * 19)))
 		return (NULL);
