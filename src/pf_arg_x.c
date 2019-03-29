@@ -14,15 +14,6 @@
 
 char	*ft_flag_x(va_list list, t_flag flag)
 {
-	/*unsigned long	res;
-	int				arg;
-
-	res = 0;
-	arg = va_arg(list, int);
-	if (arg < 0)
-		res = UINT_MAX + arg;
-	else
-		res = arg;*/
 	if (flag.modif)
 	{
 		if (ft_strcmps(flag.modif, "ll") == 0)
