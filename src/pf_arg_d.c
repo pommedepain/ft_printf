@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:19 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 16:58:19 by btollie          ###   ########.fr       */
+/*   Updated: 2019/03/29 17:23:46 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ char	*ft_flag_d(va_list list, t_flag flag)
 	{
 		if (ft_strcmps(flag.modif, "ll") == 0)
 			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
+		if (ft_strcmps(flag.modif, "zh") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
+		if (ft_strcmps(flag.modif, "jh") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
+		if (ft_strcmps(flag.modif, "jz") == 0)
+			flag.to_print = ft_lltoa_base(va_arg(list, long long), 10, _x_);
 		if (ft_strcmps(flag.modif, "j") == 0)
 			flag.to_print = ft_lltoa_base(va_arg(list, intmax_t), 10, _x_);
 		if (ft_strcmps(flag.modif, "z") == 0)
@@ -25,7 +31,7 @@ char	*ft_flag_d(va_list list, t_flag flag)
 		if (ft_strcmps(flag.modif, "h") == 0)
 			flag.to_print = ft_itoa((short int)va_arg(list, int));
 		if (ft_strcmps(flag.modif, "l") == 0)
-			flag.to_print = ft_lltoa_base(va_arg(list, long), 10, _x_);
+			flag.to_print = ft_ltoa_base(va_arg(list, long), 10);
 		if (ft_strcmps(flag.modif, "hh") == 0)
 			flag.to_print = ft_itoa((char)va_arg(list, int));
 	}
