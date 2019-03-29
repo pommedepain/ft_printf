@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_util.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/28 13:55:20 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/29 16:05:05 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		pf_catchprecision(char *str, int i, va_list list)
 	i += 1;
 	len = 1;
 	ibis = i;
-	if ((str[i] <= '0' || str[i] >= '9') && str[i] != '*')
+	if ((str[i] <= '0' || str[i] > '9') && str[i] != '*')
 		return (-1);
 	if (str[i] == '*')
 	{
