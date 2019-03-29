@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_xx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:08 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 17:16:07 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:00:26 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ char	*ft_flag_X(va_list list, t_flag flag)
 	else
 		flag.to_print = handle_field(flag);
 	if (((ft_chrstring(flag.option, "#") == 1) && (ft_strcmps(flag.to_print, "0") != 0)) && ft_strcmps(flag.to_print, "") != 0)
-		flag.to_print = ft_strdups(add_hashtag(flag.to_print, "0X"));
+		flag.to_print = add_hashtag(flag.to_print, "0X");
 	return (flag.to_print);
 }
