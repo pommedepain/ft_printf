@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:19 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/28 17:19:23 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/29 15:35:05 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_flag_d(va_list list, t_flag flag)
 		flag.to_print = ft_itoa(va_arg(list, int));
 	if (ft_chrstring(flag.option, "+ ") == 1)
 		flag.to_print = add_sign(flag.to_print, flag.option);
-	if ((flag.precision >= 0 || flag.precision == -1) && !ft_strequ(flag.modif, "j"))
+	if ((flag.precision >= 0 || flag.precision == -1) && flag.modif == NULL)
 	{
 		if (flag.precision <= 0 && ft_strequ(flag.to_print, "0"))
 		{

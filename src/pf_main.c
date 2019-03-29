@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 13:51:35 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/29 15:34:20 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ i = ft_printf("%zd\n", -0);
 printf("PRINTF\n");	
 j =	printf("%zd\n", -0);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);*/
+printf("NOUS\n");
+i = ft_printf("%ld%ld\n", 0, 42);
+printf("PRINTF\n");	
+j = printf("%ld%ld\n", 0, 42);
+printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);
 
-printf("\nTest mix de conv\n");
-i = ft_printf("%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C\n","bonjour", 42, &c, L"暖炉", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42, 'c', L'플');
-j = printf("%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C\n","bonjour", 42, &c, L"暖炉", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42, 'c', L'플');
-printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
-printf("\n########## NEXT #########\n");
 
 /*printf("\nTest .p, .0p de 0\n");
 i = ft_printf("%.p, %.0p\\0\n", 0, 0);
