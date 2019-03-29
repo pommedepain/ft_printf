@@ -33,7 +33,7 @@ char	*ft_flag_d(va_list list, t_flag flag)
 		flag.to_print = ft_itoa(va_arg(list, int));
 	if (ft_chrstring(flag.option, "+ ") == 1)
 		flag.to_print = add_sign(flag.to_print, flag.option);
-	if ((flag.precision >= 0 || flag.precision == -1) && ft_strequ(flag.modif, "j"))
+	if ((flag.precision >= 0 || flag.precision == -1) && !ft_strequ(flag.modif, "j"))
 	{
 		if (flag.precision <= 0 && ft_strequ(flag.to_print, "0"))
 		{
