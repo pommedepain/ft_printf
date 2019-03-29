@@ -25,17 +25,17 @@ char	*ft_flag_x(va_list list, t_flag flag)
 		res = arg;*/
 	if (flag.modif)
 	{
-		if (ft_strcmp(flag.modif, "ll") == 0)
+		if (ft_strcmps(flag.modif, "ll") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 16, _x_);
-		if (ft_strcmp(flag.modif, "j") == 0)
+		if (ft_strcmps(flag.modif, "j") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, intmax_t), 16, _x_);
-		if (ft_strcmp(flag.modif, "z") == 0)
+		if (ft_strcmps(flag.modif, "z") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 16, _x_);
-		if (ft_strcmp(flag.modif, "h") == 0)
+		if (ft_strcmps(flag.modif, "h") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 16, _x_);
-		if (ft_strcmp(flag.modif, "l") == 0)
+		if (ft_strcmps(flag.modif, "l") == 0)
 			flag.to_print = ft_ltoa_base_2(va_arg(list, unsigned long), 16);
-		if (ft_strcmp(flag.modif, "hh") == 0)
+		if (ft_strcmps(flag.modif, "hh") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 16, _x_);
 	}
 	else
@@ -51,7 +51,7 @@ char	*ft_flag_x(va_list list, t_flag flag)
 	}
 	else
 		flag.to_print = handle_field(flag);
-	if (((ft_chrstring(flag.option, "#") == 1) && (ft_strcmp(flag.to_print, "0") != 0)) && ft_strcmp(flag.to_print, "") != 0)
+	if (((ft_chrstring(flag.option, "#") == 1) && (ft_strcmps(flag.to_print, "0") != 0)) && ft_strcmps(flag.to_print, "") != 0)
 		flag.to_print = ft_strdups(add_hashtag(flag.to_print, "0x"));
 	return (flag.to_print);
 }

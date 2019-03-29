@@ -14,7 +14,7 @@
 
 char	*ft_flag_dd(va_list list, t_flag flag)
 {
-	if (ft_strcmp(flag.modif, "z") == 0)
+	if (ft_strcmps(flag.modif, "z") == 0)
 	{
 		flag.to_print = ft_lltoa_base(va_arg(list, ssize_t), 10, _x_);
 		return(flag.to_print);

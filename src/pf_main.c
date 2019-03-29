@@ -32,8 +32,8 @@ j =	printf("%zd\n", -0);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);*/
 
 printf("\nTest mix de conv\n");
-i = ft_printf("%lU, %lU\n", 0, USHRT_MAX);
-j = printf("%lU, %lU\n", 0, USHRT_MAX);
+i = ft_printf("%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C\n","bonjour", 42, &c, L"暖炉", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42, 'c', L'플');
+j = printf("%s%d%p%%%S%D%i%o%O%u%U%x%X%c%C\n","bonjour", 42, &c, L"暖炉", LONG_MAX, 42, 42, 42, 100000, ULONG_MAX, 42, 42, 'c', L'플');
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 

@@ -18,13 +18,13 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	{
 		if (ft_strcmp(flag.modif, "ll") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 8, _x_);
-		if (ft_strcmp(flag.modif, "h") == 0)
+		if (ft_strcmps(flag.modif, "h") == 0)
 			flag.to_print = ft_ulltoa_base((unsigned short)va_arg(list, unsigned int), 8, _x_);
-		if (ft_strcmp(flag.modif, "z") == 0)
+		if (ft_strcmps(flag.modif, "z") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, ssize_t), 8, _x_);
-		if (ft_strcmp(flag.modif, "l") == 0)
+		if (ft_strcmps(flag.modif, "l") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long), 8, _x_);
-		if (ft_strcmp(flag.modif, "hh") == 0)
+		if (ft_strcmps(flag.modif, "hh") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
 	}
 	else

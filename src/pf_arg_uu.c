@@ -25,9 +25,9 @@ char	*ft_flag_uu(va_list list, t_flag flag)
 		res = arg;*/
 	if (flag.modif)
 	{
-		if (ft_strcmp(flag.modif, "h") == 0)
+		if (ft_strcmps(flag.modif, "h") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long), 10, _x_);
-		if (ft_strcmp(flag.modif, "z") == 0)
+		if (ft_strcmps(flag.modif, "z") == 0)
 			flag.to_print = ft_ulltoa_base((unsigned short)va_arg(list, unsigned long), 10, _x_);
 	}
 	else
