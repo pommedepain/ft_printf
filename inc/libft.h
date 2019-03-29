@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/28 17:17:17 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/03/29 17:02:10 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 # include "wchar.h"
 
 # define UINT_MAX 4294967296
-# define FLAGS "cCsSpdDioOuUxX%fFZ"
+# define FLAGS "cCsSpdDioOuUbxX%fFZ"
 # define OPTIONS "#0-+ "
 # define B1 0x0000000000FF
 # define _X_ "0123456789ABCDEF"
@@ -175,6 +175,7 @@ char			*ft_flag_X(va_list list, t_flag flag);
 char			*ft_flag_p(va_list list, t_flag flag);
 char			*ft_flag_f(va_list list, t_flag flag);
 char			*ft_flag_per(t_flag flag);
+char			*ft_flag_b(va_list list, t_flag flag);
 char			*handle_field(t_flag flag);
 
 /*
