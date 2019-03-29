@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 17:17:45 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:27:06 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.flag == 'U' ? flag.to_print = ft_flag_uu(list, flag) : 0;
 	flag.flag == 'x' ? flag.to_print = ft_flag_x(list, flag) : 0;
 	flag.flag == 'b' ? flag.to_print = ft_flag_b(list, flag) : 0;
-	flag.flag == 'X' ? flag.to_print = ft_flag_X(list, flag) : 0;
+	flag.flag == 'X' ? flag.to_print = ft_flag_xx(list, flag) : 0;
 	(flag.flag == 'f' || flag.flag == 'F') ? flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
 	flag.flag == 'Z' ? flag.to_print = ft_strdups("Z") : 0;

@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/29 18:16:14 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:36:15 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ int					check_format(const char *str);
 
 int					ft_parsing(const char *format, int *i, va_list list);
 t_flag				fill_flag(t_flag flag, va_list list);
-char 				*ft_fillparsing(const char *str, int i, char *chr);
+char				*ft_fillparsing(const char *str, int i, char *chr);
 
 /*
 ** parsing_util.c
@@ -167,7 +167,7 @@ char				*ft_flag_uu(va_list list, t_flag flag);
 char				*ft_flag_o(va_list list, t_flag flag);
 char				*ft_flag_oo(va_list list, t_flag flag);
 char				*ft_flag_x(va_list list, t_flag flag);
-char				*ft_flag_X(va_list list, t_flag flag);
+char				*ft_flag_xx(va_list list, t_flag flag);
 char				*ft_flag_p(va_list list, t_flag flag);
 char				*ft_flag_f(va_list list, t_flag flag);
 char				*ft_flag_per(t_flag flag);
@@ -187,7 +187,8 @@ char				*print_address(void *address);
 char				*bytes_to_str(unsigned char b[8]);
 int					ft_numlen(unsigned long long int value, int base_size);
 char				*ft_lltoa_base(long long value, int base_size, char *base);
-char				*ft_ulltoa_base(unsigned long long value, int base_size, char *base);
+char				*ft_ulltoa_base(unsigned long long value, int base_size,
+					char *base);
 char				*zero_fill_l(char *str, int i);
 int					ft_char_only(char *str, char c, char d);
 char				*add_hashtag(char *str, char *add);
@@ -196,19 +197,16 @@ char				*add_hashtag(char *str, char *add);
 ** util.c
 */
 
-char 				*ft_ltoa_base_2(long value, int base);
-char 				*ft_ltoa_base(long value, int base);
+char				*ft_ltoa_base_2(long value, int base);
+char				*ft_ltoa_base(long value, int base);
 char				*ft_ltoa(long n);
 char				*pf_strjoin(char const *s1, char const *s2);
-//int				ft_size(int n);
 void				pf_init_struct(t_flag *flag);
 void				pf_fill_struct(t_flag *flag);
 void				pf_free_struct(t_flag *flag);
-int 				print_struct(t_flag flag);
-int 				pf_fill_option(t_flag *flag, int *i);
-int 				pf_fill_field(t_flag *flag, int *i, va_list list);
-
-
+int					print_struct(t_flag flag);
+int					pf_fill_option(t_flag *flag, int *i);
+int					pf_fill_field(t_flag *flag, int *i, va_list list);
 
 /*
 ** 								FLOAT :
@@ -257,7 +255,6 @@ char				*case3(char *str, char *str1, char *str2, int prec);
 /*
 ** Amélioration de la libft de base :
 */
-
 
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
 char				*ft_no_whitespaces(char *str);

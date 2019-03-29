@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_xx.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:08 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 18:00:26 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/29 18:25:33 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_X(va_list list, t_flag flag)
+char	*ft_flag_xx(va_list list, t_flag flag)
 {
 	if (flag.modif)
 	{
