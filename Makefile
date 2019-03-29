@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+         #
+#    By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/03/29 17:02:31 by cajulien         ###   ########.fr        #
+#    Updated: 2019/03/29 17:12:49 by psentilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -118,6 +118,7 @@ SRC =	conversion_util.c\
 		pf_arg_d.c\
 		pf_arg_dd.c\
 		pf_arg_o.c\
+		pf_arg_oo.c\
 		pf_arg_u.c\
 		pf_arg_uu.c\
 		pf_arg_x.c\

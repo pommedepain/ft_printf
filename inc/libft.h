@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/29 17:02:10 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/03/29 17:13:38 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,6 +170,7 @@ char			*ft_flag_dd(va_list list, t_flag flag);
 char			*ft_flag_u(va_list list, t_flag flag);
 char			*ft_flag_uu(va_list list, t_flag flag);
 char			*ft_flag_o(va_list list, t_flag flag);
+char			*ft_flag_oo(va_list list, t_flag flag);
 char			*ft_flag_x(va_list list, t_flag flag);
 char			*ft_flag_X(va_list list, t_flag flag);
 char			*ft_flag_p(va_list list, t_flag flag);

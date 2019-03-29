@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 15:48:52 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:55:23 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ printf("PRINTF\n");
 j =	printf("%zd\n", -0);
 printf("Nb char ft_printf = %d\nNb char printf = %d\n\n", i, j);*/
 
-printf("\nTest hhU de 0 et short max\n");
-i = ft_printf("%hhU, %hhU\n", 0, USHRT_MAX);
-j = printf("%hhU, %hhU\n", 0, USHRT_MAX);
+printf("\nTest hhO de short max\n");
+i = ft_printf("{%.*s}\n", -5, "42");
+j = printf("{%.*s}\n", -5, "42");
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 

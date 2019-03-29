@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_arg_o.c                                         :+:      :+:    :+:   */
+/*   pf_arg_oo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 14:50:12 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 15:57:31 by psentilh         ###   ########.fr       */
+/*   Created: 2019/03/29 16:25:47 by psentilh          #+#    #+#             */
+/*   Updated: 2019/03/29 16:52:50 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_o(va_list list, t_flag flag)
+char	*ft_flag_oo(va_list list, t_flag flag)
 {
 	if (flag.modif)
 	{
@@ -25,12 +25,12 @@ char	*ft_flag_o(va_list list, t_flag flag)
 		if (ft_strcmps(flag.modif, "l") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long), 8, _x_);
 		if (ft_strcmps(flag.modif, "hh") == 0)
-			flag.to_print = ft_ulltoa_base((unsigned char)va_arg(list, unsigned int), 8, _x_);
+			flag.to_print = ft_ulltoa_base((unsigned int)va_arg(list, unsigned long), 8, _x_);
 		if (ft_strcmps(flag.modif, "j") == 0)
 			flag.to_print = ft_ulltoa_base(va_arg(list, intmax_t), 8, _x_);
 	}
 	else
-		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned int), 8, _x_);
+		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 8, _x_);
 	if (flag.precision < 0 && ft_chrstring(flag.to_print, "0"))
 		flag.to_print = ft_strdups("");
 	if (flag.precision >= 0)
