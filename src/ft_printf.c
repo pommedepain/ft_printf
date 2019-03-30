@@ -6,7 +6,7 @@
 /*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/27 13:55:38 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/03/30 12:28:56 by pommedepin       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,12 @@ int		check_format(const char *str)
 	{
 		j = -1;
 		while (tmp[++j])
-		{
 			if (str[i] == tmp[j])
 				return (1);
-		}
 		k = -1;
 		while (tmp2[++k])
-		{
 			if (str[i] == tmp2[k])
 				return (1);
-		}
 		i++;
 	}
 	return (0);
