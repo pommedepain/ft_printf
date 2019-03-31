@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/29 18:36:15 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/31 21:59:15 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -207,6 +207,8 @@ void				pf_free_struct(t_flag *flag);
 int					print_struct(t_flag flag);
 int					pf_fill_option(t_flag *flag, int *i);
 int					pf_fill_field(t_flag *flag, int *i, va_list list);
+int					search_zero(char *str);
+int					char_counter(char *str, char c);
 
 /*
 ** 								FLOAT :
