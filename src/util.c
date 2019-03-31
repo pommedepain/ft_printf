@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 01:07:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 18:21:25 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/31 22:01:21 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,39 @@ char	*pf_strjoin(char const *s1, char const *s2)
 	}
 	else
 		return (0);
+}
+
+int		search_zero(char *str)
+{
+	int i;
+
+	i = 0;
+	if (str)
+	{
+		if (str[i] == '0')
+			return (1);
+		while(str[i] < '0' || str[i] >= '9')
+		{
+			if (str[i] == '0')
+				return (1);
+			i++;
+		}
+	}
+	return(0);	
+}
+
+int		char_counter(char *str, char c)
+{
+	int i;
+	int res;
+
+	i = 0;
+	res = 0;
+	while(str[i])
+	{
+		if (str[i] == c)
+			res++;
+		i++;
+	}
+	return (res);
 }
