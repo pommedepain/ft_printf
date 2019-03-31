@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_o.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:12 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 18:20:22 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/03/31 20:59:10 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char	*ft_flag_o(va_list list, t_flag flag)
 	{
 		if (flag.precision == -1)
 			flag.to_print = ft_strjoin("0", flag.to_print);
-		else if (ft_char_only(flag.to_print, '0', ' ') == 1)
+		else if (search_zero(flag.to_print) == 1)
 			flag.to_print = ft_strdups(flag.to_print);
 		else
 			flag.to_print = ft_strdups(add_hashtag(flag.to_print, "0"));
