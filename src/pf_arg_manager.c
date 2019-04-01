@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/29 18:27:06 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/01 12:23:16 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	flag.flag == 'X' ? flag.to_print = ft_flag_xx(list, flag) : 0;
 	(flag.flag == 'f' || flag.flag == 'F') ? flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
-	flag.flag == 'Z' ? flag.to_print = ft_strdups("Z") : 0;
+	flag.flag == 'Z' ? flag.to_print = ft_flag_z(flag) : 0;
 	*i += ft_strlen(flag.parsing);
-	//ft_putchar('\n');
-	//print_struct(flag);
-	//ft_putchar('\n');
+	/*ft_putchar('\n');
+	print_struct(flag);
+	ft_putchar('\n');*/
 	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
 	{
 		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
