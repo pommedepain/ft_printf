@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/01 13:21:40 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/01 13:36:37 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,8 +218,9 @@ char	*add_hashtag(char *str, char *add)
 	int		k;
 
 	len = ft_strlen(str) + ft_strlen(add);
-	if (!(mod = (char *)malloc(sizeof(char) * (len + 2))))
+	if (!(mod = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
+	mod[len] = '\0';
 	j = 0;
 	k = 0;
 	while (str[k] == ' ')
@@ -229,7 +230,6 @@ char	*add_hashtag(char *str, char *add)
 		mod[j++] = add[i++];
 	while (str[k])
 		mod[j++] = str[k++];
-	mod[j + 1] = '\0';
 	free(str);
 	return (mod);
 }
