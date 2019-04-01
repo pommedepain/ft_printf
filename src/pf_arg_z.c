@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pf_arg_s.c                                         :+:      :+:    :+:   */
+/*   pf_arg_z.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 14:50:16 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/01 12:15:29 by cfauvell         ###   ########.fr       */
+/*   Created: 2019/04/01 12:17:43 by cfauvell          #+#    #+#             */
+/*   Updated: 2019/04/01 12:29:26 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_s(va_list list, t_flag flag)
+char	*ft_flag_z(t_flag flag)
 {
-	flag.to_print = ft_strdups(va_arg(list, char *));
-	if (flag.to_print == NULL && (flag.option == NULL || flag.precision <= 0))
-		flag.to_print = ft_strdups("(null)");
-	else if (flag.to_print == NULL && (flag.option != NULL || flag.precision > 0))
-		flag.to_print = ft_strdups("\0");
-	if (flag.precision != 0)
-		flag.to_print = precision_string(flag.to_print, flag.precision);
+	flag.to_print = ft_strdups("Z");
 	flag.to_print = handle_field(flag);
 	return (flag.to_print);
 }
