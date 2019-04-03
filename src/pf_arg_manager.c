@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/01 12:23:16 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 13:35:06 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,6 @@
 ** Fill the structure flag, with all the informations organized in order to help
 ** for the conversion (with the call of fill_flag)
 */
-
-void    ft_putstrtest(char *str, int len)
-{
-    int i = 0;
-
-    while (i < len)
-    {
-        ft_putchar(str[i]);
-        i++;
-    }
-}
 
 int		ft_parsing(const char *format, int *i, va_list list)
 {
@@ -63,7 +52,7 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	ft_putchar('\n');*/
 	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0) || (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
 	{
-		ft_putstrtest(flag.to_print, (ft_strlen(flag.to_print) + 1));
+		ft_putstrbk0(flag.to_print, (ft_strlen(flag.to_print) + 1));
 		res = ft_strlen(flag.to_print) + 1;
 		free(flag.to_print);
 	}
@@ -77,4 +66,15 @@ int		ft_parsing(const char *format, int *i, va_list list)
 	free(flag.option);
 	free(flag.modif);
 	return (res);
+}
+
+void    ft_putstrbk0(char *str, int len)
+{
+    int i = 0;
+
+    while (i < len)
+    {
+        ft_putchar(str[i]);
+        i++;
+    }
 }

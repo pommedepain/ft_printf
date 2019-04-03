@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/28 15:26:29 by benjamintle      ###   ########.fr       */
+/*   Updated: 2019/04/03 13:34:31 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,20 +88,20 @@ t_flag	fill_flag(t_flag flag, va_list list)
 		}
 		if ((flag.parsing[i] > '0' && flag.parsing[i] <= '9') || flag.parsing[i] == '*')
 		{
-			flag.field = pf_catchfield(flag.parsing, i, list);
+			flag.field = pf_catch_field(flag.parsing, i, list);
 			while ((flag.parsing[i + 1] >= '0' && flag.parsing[i + 1] <= '9') || flag.parsing[i + 1] == '*')
 				i++;
 		}
 		if (flag.parsing[i] == '.')
 		{
-			flag.precision = pf_catchprecision(flag.parsing, i, list);
+			flag.precision = pf_catch_precision(flag.parsing, i, list);
 			i += 1;
 			while ((flag.parsing[i + 1] >= '0' && flag.parsing[i + 1] <= '9') || flag.parsing[i + 1] == '*')
 				i++;
 		}
 		if (ft_chrchar(flag.parsing[i], "lLhzj") == 1)
 		{
-			flag.modif = pf_catchmodifier(flag.parsing, i, flag.modif);
+			flag.modif = pf_catch_modifier(flag.parsing, i, flag.modif);
 			while (ft_chrchar(flag.parsing[i + 1], "lLhzj") == 1)
 				i++;
 		}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+         #
+#    By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/04/01 12:31:52 by cfauvell         ###   ########.fr        #
+#    Updated: 2019/04/03 13:33:15 by psentilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,7 @@ CFLAGS = -g3 -Wall -Werror -Wextra -I$(INC_DIR)
 
 SRC_DIR = ./src/
 SRCS = $(addprefix $(SRC_DIR), $(SRC))
-SRC =	conversion_util.c\
-		conversion.c\
-		ft_printf.c\
-		parsing_util.c\
-		pf_arg_manager.c\
-		printf_str_manager.c\
-		util.c\
-		ft_lltoa_base.c\
+SRC =	ft_lltoa_base.c\
 		ft_ulltoa_base.c\
 		ft_numlen.c\
 		ft_memset.c\
@@ -131,7 +124,15 @@ SRC =	conversion_util.c\
 		pf_float_utils.c\
 		pf_atoull.c\
 		pf_double.c\
-		pf_arg_f.c 
+		pf_arg_f.c\
+		pf_conversion_util.c\
+		pf_conversion.c\
+		ft_printf.c\
+		pf_parsing_util.c\
+		pf_arg_manager.c\
+		pf_str_manager.c\
+		pf_util.c\
+		pf_util_2.c\
 		
 
 OBJ_DIR = ./obj/

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing_util.c                                     :+:      :+:    :+:   */
+/*   pf_parsing_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/31 22:07:59 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 12:40:46 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 ** this charactere)
 */
 
-int		pf_catchprecision(char *str, int i, va_list list)
+int		pf_catch_precision(char *str, int i, va_list list)
 {
 	int		j;
 	char	*numbers;
@@ -54,7 +54,7 @@ int		pf_catchprecision(char *str, int i, va_list list)
 ** Convert a decimal digit string (into a bigger string) into a int
 */
 
-int		pf_catchfield(char *str, int i, va_list list)
+int		pf_catch_field(char *str, int i, va_list list)
 {
 	int		j;
 	char	*numbers;
@@ -101,7 +101,7 @@ char	*pf_catch_option(char *str, int i, char *res)
 	return (res);
 }
 
-char	*pf_catchmodifier(char *str, int i, char *res)
+char	*pf_catch_modifier(char *str, int i, char *res)
 {
 	int j;
 	int len;
