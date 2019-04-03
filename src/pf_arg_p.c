@@ -6,7 +6,7 @@
 /*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:14 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 15:13:25 by btollie          ###   ########.fr       */
+/*   Updated: 2019/04/03 15:21:07 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 static char	*handle_field_p1(t_flag flag)
 {
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
-		&& ft_chrstring(flag.option, "0") == 1 && (flag.precision == 0 || flag.precision == -1))
+	if (flag.field > (int)ft_strlen(flag.to_print) &&
+	ft_chrstring(flag.option, "-") != 1 && ft_chrstring(flag.option, "0") == 1
+	&& (flag.precision == 0 || flag.precision == -1))
 		flag.to_print = zero_fill_l(flag.to_print, flag.field - 2);
 	return (flag.to_print);
 }
 
 static char	*handle_field_p2(t_flag flag)
 {
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") == 1)
+	if (flag.field > (int)ft_strlen(flag.to_print)
+		&& ft_chrstring(flag.option, "-") == 1)
 		flag.to_print = space_fill_r(flag.to_print, flag.field);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
-		&& ft_chrstring(flag.option, "0") != 1)
+	if (flag.field > (int)ft_strlen(flag.to_print) &&
+	ft_chrstring(flag.option, "-") != 1 && ft_chrstring(flag.option, "0") != 1)
 		flag.to_print = space_fill_l(flag.to_print, flag.field);
-	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
-		&& ft_chrstring(flag.option, "0") == 1 && flag.precision != 0)
+	if (flag.field > (int)ft_strlen(flag.to_print) &&
+	ft_chrstring(flag.option, "-") != 1 && ft_chrstring(flag.option, "0") == 1
+	&& flag.precision != 0)
 		flag.to_print = space_fill_l(flag.to_print, flag.field);
 	return (flag.to_print);
 }
 
-char	*print_address(void *address)
+char		*print_address(void *address)
 {
 	unsigned char	b[8];
 	int				i;
@@ -61,7 +64,7 @@ char	*print_address(void *address)
 	return (to_print);
 }
 
-char	*ft_flag_p(va_list list, t_flag flag)
+char		*ft_flag_p(va_list list, t_flag flag)
 {
 	flag.to_print = print_address(va_arg(list, void *));
 	if (flag.precision > 0)
