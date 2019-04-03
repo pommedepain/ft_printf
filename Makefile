@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+         #
+#    By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/04/03 13:33:15 by psentilh         ###   ########.fr        #
+#    Updated: 2019/04/03 14:37:52 by cfauvell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,6 +133,7 @@ SRC =	ft_lltoa_base.c\
 		pf_str_manager.c\
 		pf_util.c\
 		pf_util_2.c\
+		new_functions.c\
 		
 
 OBJ_DIR = ./obj/

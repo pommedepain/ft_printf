@@ -6,11 +6,32 @@
 /*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:14 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 15:07:05 by btollie          ###   ########.fr       */
+/*   Updated: 2019/04/03 15:13:25 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static char	*handle_field_p1(t_flag flag)
+{
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
+		&& ft_chrstring(flag.option, "0") == 1 && (flag.precision == 0 || flag.precision == -1))
+		flag.to_print = zero_fill_l(flag.to_print, flag.field - 2);
+	return (flag.to_print);
+}
+
+static char	*handle_field_p2(t_flag flag)
+{
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") == 1)
+		flag.to_print = space_fill_r(flag.to_print, flag.field);
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
+		&& ft_chrstring(flag.option, "0") != 1)
+		flag.to_print = space_fill_l(flag.to_print, flag.field);
+	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
+		&& ft_chrstring(flag.option, "0") == 1 && flag.precision != 0)
+		flag.to_print = space_fill_l(flag.to_print, flag.field);
+	return (flag.to_print);
+}
 
 char	*print_address(void *address)
 {
@@ -47,7 +68,8 @@ char	*ft_flag_p(va_list list, t_flag flag)
 		flag.to_print = zero_fill(flag.to_print, flag.precision);
 	if (flag.precision == -1 && ft_strcmp(flag.to_print, "0") == 0)
 		flag.to_print = ft_strdups("");
+	flag.to_print = handle_field_p1(flag);
 	flag.to_print = ft_strjoinfs2("0x", flag.to_print);
-	flag.to_print = handle_field(flag);
+	flag.to_print = handle_field_p2(flag);
 	return (flag.to_print);
 }
