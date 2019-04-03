@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/07 12:06:14 by btollie           #+#    #+#             */
-/*   Updated: 2019/04/03 15:35:21 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:36:17 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int			pf_str_manager(const char *str, int *pos)
 {
 	int		i;
-	char 	*to_print;
+	char	*to_print;
 
 	i = 0;
 	to_print = NULL;
