@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_split_float.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 18:09:09 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 14:19:22 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:57:39 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*case1(char *str, char *str1, char *str2, int i)
 {
-	if (str2[0] >= '5')
+	if (str2[0] >= '5' && str1[i - 1] % 2)
 	{
 		str1[i - 1]++;
 		free(str);
