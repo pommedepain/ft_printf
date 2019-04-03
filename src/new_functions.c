@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:29:59 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 15:25:20 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:46:03 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ int		get_field(t_flag *flag, int i, va_list list)
 	while ((flag->parsing[i + 1] >= '0' && flag->parsing[i + 1] <= '9')
 	|| flag->parsing[i + 1] == '*')
 		i++;
-	return (i);	
+	return (i);
 }
 
 int		get_precision(t_flag *flag, int i, va_list list)
 {
 	flag->precision = pf_catch_precision(flag->parsing, i, list);
-		i += 1;
+	i += 1;
 	while ((flag->parsing[i + 1] >= '0' && flag->parsing[i + 1] <= '9')
 	|| flag->parsing[i + 1] == '*')
 		i++;
