@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:50:17 by psentilh          #+#    #+#             */
-/*   Updated: 2019/04/03 16:17:28 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:30:10 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		char_counter(char *str, char c)
 	return (res);
 }
 
-char		*precision_string(char *str, int i)
+char	*precision_string(char *str, int i)
 {
 	char	*res;
 	int		j;
