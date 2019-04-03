@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:14 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 15:13:25 by btollie          ###   ########.fr       */
+/*   Updated: 2019/04/03 15:18:02 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*handle_field_p1(t_flag flag)
 {
 	if (flag.field > (int)ft_strlen(flag.to_print) && ft_chrstring(flag.option, "-") != 1
 		&& ft_chrstring(flag.option, "0") == 1 && (flag.precision == 0 || flag.precision == -1))
-		flag.to_print = zero_fill_l(flag.to_print, flag.field - 2);
+		flag.to_print = zero_fill(flag.to_print, flag.field - 2);
 	return (flag.to_print);
 }
 

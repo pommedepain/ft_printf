@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_util_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 12:50:17 by psentilh          #+#    #+#             */
-/*   Updated: 2019/04/03 14:18:07 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:17:28 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,21 @@ int		char_counter(char *str, char c)
 			res++;
 		i++;
 	}
+	return (res);
+}
+
+char		*precision_string(char *str, int i)
+{
+	char	*res;
+	int		j;
+	int		k;
+
+	k = 0;
+	j = 0;
+	if (!(res = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
+	res[i] = '\0';
+	while (i-- > 0)
+		res[k++] = str[j++];
 	return (res);
 }

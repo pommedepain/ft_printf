@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 14:43:10 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 16:20:06 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,7 +221,6 @@ char				*zero_fill(char *str, int i);
 char				*zero_fill_l(char *str, int i);
 char				*space_fill_l(char *str, int i);
 char				*space_fill_r(char *str, int i);
-char				*precision_string(char *str, int i);
 
 /*
 ** pf_util.c
@@ -239,6 +238,7 @@ char				*pf_strjoin(char const *s1, char const *s2);
 
 int					search_zero(char *str);
 int					char_counter(char *str, char c);
+char				*precision_string(char *str, int i);
 
 /*
 ** 								FLOAT :
