@@ -3,34 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_oo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 16:25:47 by psentilh          #+#    #+#             */
-/*   Updated: 2019/03/29 18:20:29 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:06:13 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_oo(va_list list, t_flag flag)
+static void	fill_toprint_oo(va_list list, t_flag *flag)
 {
-	if (flag.modif)
+	if (flag->modif)
 	{
-		if (ft_strcmp(flag.modif, "ll") == 0)
-			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 8, _XMIN_);
-		if (ft_strcmps(flag.modif, "h") == 0)
-			flag.to_print = ft_ulltoa_base((unsigned short)va_arg(list, unsigned int), 8, _XMIN_);
-		if (ft_strcmps(flag.modif, "z") == 0)
-			flag.to_print = ft_ulltoa_base(va_arg(list, ssize_t), 8, _XMIN_);
-		if (ft_strcmps(flag.modif, "l") == 0)
-			flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long), 8, _XMIN_);
-		if (ft_strcmps(flag.modif, "hh") == 0)
-			flag.to_print = ft_ulltoa_base((unsigned int)va_arg(list, unsigned long), 8, _XMIN_);
-		if (ft_strcmps(flag.modif, "j") == 0)
-			flag.to_print = ft_ulltoa_base(va_arg(list, intmax_t), 8, _XMIN_);
+		if (ft_strcmp(flag->modif, "ll") == 0)
+			flag->to_print =
+			ft_ulltoa_base(va_arg(list, unsigned long long), 8, _XMIN_);
+		if (ft_strcmps(flag->modif, "h") == 0)
+			flag->to_print =
+			ft_ulltoa_base(
+			(unsigned short)va_arg(list, unsigned int), 8, _XMIN_);
+		if (ft_strcmps(flag->modif, "z") == 0)
+			flag->to_print = ft_ulltoa_base(va_arg(list, ssize_t), 8, _XMIN_);
+		if (ft_strcmps(flag->modif, "l") == 0)
+			flag->to_print =
+			ft_ulltoa_base(va_arg(list, unsigned long), 8, _XMIN_);
+		if (ft_strcmps(flag->modif, "hh") == 0)
+			flag->to_print =
+			ft_ulltoa_base(
+			(unsigned int)va_arg(list, unsigned long), 8, _XMIN_);
+		if (ft_strcmps(flag->modif, "j") == 0)
+			flag->to_print = ft_ulltoa_base(va_arg(list, intmax_t), 8, _XMIN_);
 	}
 	else
-		flag.to_print = ft_ulltoa_base(va_arg(list, unsigned long long), 8, _XMIN_);
+		flag->to_print =
+		ft_ulltoa_base(va_arg(list, unsigned long long), 8, _XMIN_);
+}
+
+char		*ft_flag_oo(va_list list, t_flag flag)
+{
+	fill_toprint_oo(list, &flag);
 	if (flag.precision < 0 && ft_chrstring(flag.to_print, "0"))
 		flag.to_print = ft_strdups("");
 	if (flag.precision >= 0)

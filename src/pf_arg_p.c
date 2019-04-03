@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_p.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:14 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/29 18:09:56 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:07:05 by btollie          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*print_address(void *address)
 	if ((unsigned long long)address == 0)
 	{
 		to_print = ft_strdups("0");
-		return(to_print);
+		return (to_print);
 	}
 	i = 0;
 	while (i < 8)
@@ -51,4 +51,3 @@ char	*ft_flag_p(va_list list, t_flag flag)
 	flag.to_print = handle_field(flag);
 	return (flag.to_print);
 }
-
