@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_split_float.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 18:09:09 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/30 12:20:18 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/04/03 14:19:22 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*case1(char *str, char *str1, char *str2, int i)
 		str1[i - 1]++;
 		free(str);
 		free(str2);
-		return (ft_carry(str1));	
+		return (ft_carry(str1));
 	}
 	else
 	{
@@ -47,7 +47,7 @@ char	*case2(char *str, char *str1, char *str2, int prec)
 	return (to_print);
 }
 
-char	*case3(char * str, char *str1, char *str2, int prec)
+char	*case3(char *str, char *str1, char *str2, int prec)
 {
 	char	*to_print;
 
