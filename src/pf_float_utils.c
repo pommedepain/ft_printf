@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_float_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/15 19:07:06 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/26 12:08:34 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:37:32 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int			ft_search_c(char *str, char c)
 	return (-1);
 }
 
-char	*ft_large_number(int pow, char *fraction)
+char		*ft_large_number(int pow, char *fraction)
 {
 	char	*to_process;
 	char	*zeros;
@@ -53,8 +53,7 @@ char	*ft_large_number(int pow, char *fraction)
 	return (zeros);
 }
 
-
-char	*ft_carry(char *str)
+char		*ft_carry(char *str)
 {
 	int		i;
 
@@ -79,7 +78,7 @@ char	*ft_carry(char *str)
 	return (str);
 }
 
-char	*ft_round(char *str, int prec)
+char		*ft_round(char *str, int prec)
 {
 	char	*str1;
 	char	*str2;
@@ -91,11 +90,11 @@ char	*ft_round(char *str, int prec)
 	str2 = ft_strsub(str, i + 1, 66);
 	size = ft_strlens(str2);
 	if (prec == 0)
-		return(case1(str, str1, str2, i));
+		return (case1(str, str1, str2, i));
 	else if (size < prec)
-		return(case2(str, str1, str2, prec));
+		return (case2(str, str1, str2, prec));
 	else if (str2[prec])
-		return(case3(str, str1, str2, prec));
+		return (case3(str, str1, str2, prec));
 	return (str);
 }
 

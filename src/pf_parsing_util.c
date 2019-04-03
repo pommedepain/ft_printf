@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   pf_parsing_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 12:40:46 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:39:58 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-
 
 /*
 ** Convert a decimal digit string (into a bigger string) into a int
@@ -96,7 +94,8 @@ char	*pf_catch_option(char *str, int i, char *res)
 	res[len] = '\0';
 	while (ft_chrchar(str[i], OPTIONS) == 1)
 		res[j++] = str[i++];
-	if (char_counter(res, '#') >= 1 && char_counter(res, '0') > 1 && ft_chrstring(res, "+-") != 1) 
+	if (char_counter(res, '#') >= 1 && char_counter(res, '0') > 1
+	&& ft_chrstring(res, "+-") != 1)
 		res = NULL;
 	return (res);
 }
