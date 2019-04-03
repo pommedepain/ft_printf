@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_d.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 14:50:19 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 14:49:35 by btollie          ###   ########.fr       */
+/*   Updated: 2019/04/03 17:48:51 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ char		*ft_flag_d(va_list list, t_flag flag)
 		flag.to_print = add_sign(flag.to_print, flag.option);
 	if ((flag.precision >= 0 || flag.precision == -1) && flag.modif == NULL)
 	{
-		if (flag.precision <= 0 && ft_strequ(flag.to_print, "0"))
+		if (flag.precision < 0 && ft_strequ(flag.to_print, "0"))
 		{
 			free(flag.to_print);
 			flag.to_print = ft_strdups("\0");

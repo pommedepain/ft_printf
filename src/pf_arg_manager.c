@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: btollie <btollie@student.42.fr>            +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 16:16:33 by btollie          ###   ########.fr       */
+/*   Updated: 2019/04/03 17:49:03 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int				ft_parsing(const char *format, int *i, va_list list)
 	flag.to_print = fill_flag_toprint(list, flag);
 	*i += ft_strlen(flag.parsing);
 	if (flag.flag == 'c' && ((ft_strlen(flag.to_print) == 0)
-	|| (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '\0') == 1))))
+	|| (flag.field != 0 && (ft_char_only(flag.to_print, ' ', '0') == 1))))
 	{
 		ft_putstrbk0(flag.to_print, (ft_strlen(flag.to_print) + 1));
 		res = ft_strlen(flag.to_print) + 1;

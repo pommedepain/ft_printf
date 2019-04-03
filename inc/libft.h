@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 16:25:44 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 17:14:15 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,7 @@ char				*ft_flag_xx(va_list list, t_flag flag);
 char				*ft_flag_z(t_flag flag);
 
 /*
-** conversion.c
+** pf_conversion.c
 */
 
 char				*handle_field(t_flag flag);
@@ -214,7 +214,7 @@ int					ft_char_only(char *str, char c, char d);
 char				*add_hashtag(char *str, char *add);
 
 /*
-** conversion_util.c
+** pf_conversion_util.c
 */
 
 char				*zero_fill(char *str, int i);
