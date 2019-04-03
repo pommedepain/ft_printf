@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 13:38:56 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 14:43:10 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -283,6 +283,12 @@ char				*final_process(char *tmp);
 char				*case1(char *str, char *str1, char *str2, int i);
 char				*case2(char *str, char *str1, char *str2, int prec);
 char				*case3(char *str, char *str1, char *str2, int prec);
+
+/*
+** new_functions.c
+*/
+
+char				*init_pars(const char *str, int i);
 
 /*
 ** Amélioration de la libft de base :

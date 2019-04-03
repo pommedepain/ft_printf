@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 13:34:31 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 14:43:59 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,18 @@ void	pf_init_struct(t_flag *flag)
 	flag->precision = 0;
 	flag->field = 0;
 	flag->modif = NULL;
-	return;
 }
-
 
 char	*ft_fillparsing(const char *str, int i, char *chr)
 {
 	int		j;
 	char	*dest;
 	int		k;
-	int		len;
 
-	j = 0;
 	k = 0;
 	if (ft_chrstring(&str[i], FLAGS) != 1)
 		return (NULL);
-	len = ft_strstringlen(&str[i], FLAGS);
-	if (!(dest = (char *)malloc(sizeof(char) * len + 2)))
-		return (NULL);
+	dest = init_pars(str, i);
 	while (str[i])
 	{
 		j = 0;
@@ -58,7 +52,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 	return (NULL);
 }
 
-int 	print_struct(t_flag flag)
+int		print_struct(t_flag flag)
 {
 	printf("char	*parsing; %s\n", flag.parsing);
 	printf("char	*to_print; %s\n", flag.to_print);
@@ -67,7 +61,7 @@ int 	print_struct(t_flag flag)
 	printf("int	*precision; %d\n", flag.precision);
 	printf("int	*field; %d\n", flag.field);
 	printf("char	*modif; %s\n", flag.modif);
-	return(1);
+	return (1);
 }
 
 t_flag	fill_flag(t_flag flag, va_list list)
@@ -111,12 +105,10 @@ t_flag	fill_flag(t_flag flag, va_list list)
 	return (flag);
 }
 
-
-void 	pf_free_struct(t_flag *flag)
+void	pf_free_struct(t_flag *flag)
 {
 	free(flag->parsing);
 	free(flag->to_print);
 	free(flag->option);
 	free(flag->modif);
-	return;
 }
