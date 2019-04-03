@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 13:33:07 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:11:31 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ char	*space_fill_l(char *str, int i)
 	j = ft_strlen(str);
 	k = 0;
 	ibis = 0;
-	if(!(res = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	res[i] = '\0';
 	while (i-- > j)
@@ -119,7 +119,7 @@ char	*space_fill_r(char *str, int i)
 	len = ft_strlen(str);
 	k = 0;
 	j = 0;
-	if(!(res = (char *)malloc(sizeof(char) * (i + 1))))
+	if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	res[i] = '\0';
 	while (len-- > 0)

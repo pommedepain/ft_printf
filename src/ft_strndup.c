@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/06 13:29:07 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/03/06 13:29:18 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/04/03 14:46:23 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strndup(const char *s1, size_t n)
 	char	*dup;
 
 	if (!s1)
-		return(NULL);
+		return (NULL);
 	i = 0;
 	dup = (char *)malloc(sizeof(char) * ft_strnlen(s1, n) + 1);
 	if (!dup)
