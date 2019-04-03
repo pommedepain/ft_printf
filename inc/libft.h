@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 14:43:10 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/03 15:25:34 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -289,6 +289,9 @@ char				*case3(char *str, char *str1, char *str2, int prec);
 */
 
 char				*init_pars(const char *str, int i);
+int					get_option(t_flag *flag, int i);
+int					get_field(t_flag *flag, int i, va_list list);
+int					get_precision(t_flag *flag, int i, va_list list);
 
 /*
 ** Amélioration de la libft de base :
