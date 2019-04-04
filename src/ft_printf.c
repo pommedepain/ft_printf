@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/04 17:02:27 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/04 18:05:48 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ int		check_format2(const char *str)
 	}
 	return (0);
 }
+
 int		ft_strstringlen(const char *str, char *chr)
 {
 	int j;

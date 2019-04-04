@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 12:17:43 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/04 17:38:55 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/04 18:08:00 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_flag_other(t_flag flag)
 {
 	char	*tmp;
 
-	if(!(tmp = (char *)malloc(sizeof(char) * 2)))
+	if (!(tmp = (char *)malloc(sizeof(char) * 2)))
 		return (NULL);
 	tmp[0] = flag.flag;
 	tmp[1] = '\0';
