@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 17:14:15 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/04 17:45:14 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,8 @@ int					ft_toupper(int c);
 
 # define UINT_MAX	4294967296
 # define FLAGS		"cCsSpdDioOuUbxX%fFZ"
+# define OTHER		".1234567890QqWwEeRrTtYyAaGgHJKkZVvBbNnMm"
+# define OTHER2		"QqWwEeRrTtYyAaGgHJKkZVvBbNnMmI"
 # define OPTIONS	"#0-+ "
 # define B1			0x0000000000FF
 # define _X_		"0123456789ABCDEF"
@@ -133,6 +135,7 @@ int					ft_printf(const char *format, ...) __attribute__
 					((format(printf,1,2)));
 int					pf_manager(const char *format, va_list ap);
 int					check_format(const char *str);
+int					check_format2(const char *str);
 int					ft_strstringlen(const char *str, char *chr);
 
 /*
@@ -201,7 +204,7 @@ char				*ft_flag_u(va_list list, t_flag flag);
 char				*ft_flag_uu(va_list list, t_flag flag);
 char				*ft_flag_x(va_list list, t_flag flag);
 char				*ft_flag_xx(va_list list, t_flag flag);
-char				*ft_flag_z(t_flag flag);
+char				*ft_flag_other(t_flag flag);
 
 /*
 ** pf_conversion.c
@@ -292,6 +295,7 @@ char				*init_pars(const char *str, int i);
 int					get_option(t_flag *flag, int i);
 int					get_field(t_flag *flag, int i, va_list list);
 int					get_precision(t_flag *flag, int i, va_list list);
+char				*particular_case(const char *str, int i);
 
 /*
 ** Amélioration de la libft de base :

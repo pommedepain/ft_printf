@@ -6,15 +6,22 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/01 12:17:43 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/01 12:29:26 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/04 17:38:55 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_flag_z(t_flag flag)
+char	*ft_flag_other(t_flag flag)
 {
-	flag.to_print = ft_strdups("Z");
+	char	*tmp;
+
+	if(!(tmp = (char *)malloc(sizeof(char) * 2)))
+		return (NULL);
+	tmp[0] = flag.flag;
+	tmp[1] = '\0';
+	flag.to_print = ft_strdups(tmp);
 	flag.to_print = handle_field(flag);
+	free(tmp);
 	return (flag.to_print);
 }

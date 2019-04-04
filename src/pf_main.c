@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 18:15:11 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/04 17:47:56 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int		main(void)
 
 
 printf("\nTest 10 de d avec aucun arg\n");
-i = ft_printf("{%10d}\n");
-j = printf("{%10d}\n");
+i = ft_printf("{%*d}\n", -5, 42);
+j = printf("{%*d}\n", -5, 42);
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 
@@ -50,8 +50,8 @@ printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 
 printf("\nTest 10 de R avec aucun arg\n");
-i = ft_printf("{%10R}\n");
-j = printf("{%10R}\n");
+i = ft_printf("{%10 Raton}\n");
+j = printf("{%10 Raton}\n");
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 

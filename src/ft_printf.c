@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/16 14:17:52 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/03/30 12:28:56 by pommedepin       ###   ########.fr       */
+/*   Updated: 2019/04/04 17:02:27 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ int		pf_manager(const char *format, va_list ap)
 	printed = 0;
 	while (format[pos])
 	{
-		if ((format[pos] == '%') && (check_format(&format[pos]) == 1))
+		if ((format[pos] == '%') && (check_format(&format[pos]) == 1
+		|| check_format2(&format[pos]) == 1))
 			printed += ft_parsing(format, &pos, ap);
 		if (format[pos] != '%')
 			printed += pf_str_manager(format, &pos);
-		else if ((format[pos] == '%') && (check_format(&format[pos]) != 1))
+		else if ((format[pos] == '%') && (check_format(&format[pos]) != 1
+		&& check_format2(&format[pos]) != 1))
 		{
 			ft_putstr("");
 			pos += 1;
@@ -82,6 +84,33 @@ int		check_format(const char *str)
 	return (0);
 }
 
+int		check_format2(const char *str)
+{
+	int		i;
+	int		j;
+	int		k;
+	char	*tmp;
+	char	*tmp2;
+
+	i = 1;
+	tmp2 = "+-";
+	tmp = OTHER;
+	if (str == NULL)
+		return (-1);
+	while (str[i] != '\0')
+	{
+		j = -1;
+		while (tmp[++j])
+			if (str[i] == tmp[j])
+				return (1);
+		k = -1;
+		while (tmp2[++k])
+			if (str[i] == tmp2[k])
+				return (1);
+		i++;
+	}
+	return (0);
+}
 int		ft_strstringlen(const char *str, char *chr)
 {
 	int j;

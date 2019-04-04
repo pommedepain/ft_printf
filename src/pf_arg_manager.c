@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_arg_manager.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 20:20:18 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 17:49:03 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:55:14 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static	char	*fill_flag_toprint(va_list list, t_flag flag)
 	(flag.flag == 'f' || flag.flag == 'F') ?
 	flag.to_print = ft_flag_f(list, flag) : 0;
 	flag.flag == '%' ? flag.to_print = ft_flag_per(flag) : 0;
-	flag.flag == 'Z' ? flag.to_print = ft_flag_z(flag) : 0;
+	ft_chrchar(flag.flag, OTHER2) == 1 ? flag.to_print = ft_flag_other(flag) : 0;
 	return (flag.to_print);
 }
 

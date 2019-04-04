@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 15:29:07 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/04 16:58:57 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	k = 0;
 	if (ft_chrstring(&str[i], FLAGS) != 1)
-		return (NULL);
+		return (particular_case(str, i));
 	dest = init_pars(str, i);
 	while (str[i])
 	{
@@ -86,7 +86,9 @@ t_flag	fill_flag(t_flag flag, va_list list)
 		}
 		i++;
 	}
-	flag.flag = flag.parsing[i - 1];
+	if (ft_chrchar(flag.parsing[i - 1], FLAGS) == 1
+	|| ft_chrchar(flag.parsing[i - 1], OTHER2) == 1)
+		flag.flag = flag.parsing[i - 1];
 	return (flag);
 }
 
