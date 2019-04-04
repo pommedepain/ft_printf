@@ -6,7 +6,7 @@
 /*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/03 14:29:59 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/04 18:08:45 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/04 18:21:55 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*particular_case(const char *str, int i)
 	j = 0;
 	len = ft_strstringlen(&str[i], OTHER2) + 1;
 	if (len == 1)
-		len = ft_strlen(&str[i]) + 1;
+		return (NULL);
 	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
 	res[len] = '\0';
