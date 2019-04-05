@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_parsing_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/05 16:30:47 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:36:19 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,10 @@ int		pf_catch_precision(char *str, int i, va_list list)
 	int		j;
 	char	*numbers;
 	int		len;
-	int		ibis;
 
 	j = 0;
 	i += 1;
 	len = 1;
-	ibis = i;
 	if ((str[i] <= '0' || str[i] > '9') && str[i] != '*')
 		return (-1);
 	if (str[i] == '*')
@@ -37,8 +35,9 @@ int		pf_catch_precision(char *str, int i, va_list list)
 		j = va_arg(list, int);
 		return (j);
 	}
-	while (str[ibis++] >= '0' && str[ibis] <= '9')
+	while (str[i++] >= '0' && str[i] <= '9')
 		len++;
+	i -= len;
 	if (!(numbers = malloc(sizeof(char) * len + 1)))
 		return (-2);
 	numbers[len] = '\0';
