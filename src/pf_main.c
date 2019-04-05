@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/04 17:47:56 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:26:39 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		main(void)
 	double d;
 	char	c;
 
-
+/*
 printf("\nTest 10 de d avec aucun arg\n");
 i = ft_printf("{%*d}\n", -5, 42);
 j = printf("{%*d}\n", -5, 42);
@@ -111,3 +111,4 @@ printf("\n########## NEXT #########\n");
 	
 	return (0);
 }
+*/
