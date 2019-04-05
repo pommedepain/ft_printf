@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/04 17:45:14 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:09:54 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,7 +305,6 @@ int					ft_chrchar(char c, char *chr);
 int					ft_chrstring(const char *str, char *chr);
 long				ft_digit_len(int n);
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
-void				ft_letter_count(char **split, char *s, char c);
 char				*ft_lltoa_base(long long value, int b_size, char *base);
 char				*ft_no_whitespaces(char *str);
 int					ft_numlen(unsigned long long int n, int b_size);
@@ -318,6 +317,7 @@ size_t				ft_strcountsplit(const char *s, char c);
 char				*ft_strdups(const char *s1);
 char				*ft_strjoinfs1(char *s1, char *s2);
 char				*ft_strjoinfs2(char *s1, char *s2);
+char				*ft_strjoinfs1s2(char *s1, char *s2);
 char				*ft_strjoins(char const *s1, char const *s2);
 size_t				ft_strlens(const char *s);
 char				*ft_strndup(const char *s1, size_t n);

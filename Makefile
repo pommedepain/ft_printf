@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+         #
+#    By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/03/07 15:17:57 by pommedepin        #+#    #+#              #
-#    Updated: 2019/04/03 14:37:52 by cfauvell         ###   ########.fr        #
+#    Updated: 2019/04/05 16:09:32 by cajulien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,6 @@ SRC =	ft_lltoa_base.c\
 		ft_strtrim.c\
 		ft_strsplit.c\
 		ft_word_count.c\
-		ft_letter_count.c\
 		ft_tab_filling.c\
 		ft_itoa.c\
 		ft_digit_len.c\
@@ -90,6 +89,7 @@ SRC =	ft_lltoa_base.c\
 		ft_strlens.c\
 		ft_strjoinfs1.c\
 		ft_strjoinfs2.c\
+		ft_strjoinfs1s2.c\
 		ft_strjoins.c\
 		ft_strdups.c\
 		ft_strcmps.c\
