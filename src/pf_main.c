@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_main.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/06 03:57:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/05 16:26:39 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:48:32 by cfauvell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ int		main(void)
 	double d;
 	char	c;
 
-/*
+
 printf("\nTest 10 de d avec aucun arg\n");
 i = ft_printf("{%*d}\n", -5, 42);
 j = printf("{%*d}\n", -5, 42);
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 
-printf("\nTest 10 de D avec aucun arg\n");
-i = ft_printf("{%10D}\n");
-j = printf("{%10D}\n");
+printf("\nTest 10  avec aucun arg\n");
+i = ft_printf("{%10}\n");
+j = printf("{%10}\n");
 printf("\nNb char ft_printf = %d\nNb char printf = %d\n", i, j);
 printf("\n########## NEXT #########\n");
 
@@ -111,4 +111,3 @@ printf("\n########## NEXT #########\n");
 	
 	return (0);
 }
-*/
