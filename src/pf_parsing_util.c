@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_parsing_util.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:10:57 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 15:39:58 by cfauvell         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:30:47 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ int		pf_catch_precision(char *str, int i, va_list list)
 	}
 	while (str[ibis++] >= '0' && str[ibis] <= '9')
 		len++;
-	numbers = malloc(sizeof(char) * len + 1);
+	if (!(numbers = malloc(sizeof(char) * len + 1)))
+		return (-2);
 	numbers[len] = '\0';
 	while (str[i] >= '0' && str[i] <= '9')
 		numbers[j++] = str[i++];
@@ -69,7 +70,8 @@ int		pf_catch_field(char *str, int i, va_list list)
 	}
 	while (str[ibis++] >= '0' && str[ibis] <= '9')
 		len++;
-	numbers = malloc(sizeof(char) * len + 1);
+	if (!(numbers = malloc(sizeof(char) * len + 1)))
+		return (-1);
 	while (str[i] >= '0' && str[i] <= '9')
 		numbers[j++] = str[i++];
 	numbers[j] = '\0';
