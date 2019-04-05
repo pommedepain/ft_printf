@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 10:36:17 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/26 11:52:31 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:47:55 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,7 @@ char		*ft_put_zeros_pos(int pow, char *fraction)
 	tmp[i + 1] = '\0';
 	tmp2 = ft_strsub(frac, pow + 1, 56);
 	free(frac);
-	frac = ft_strjoinfs1(tmp, tmp2);
-	free(tmp2);
+	frac = ft_strjoinfs1s2(tmp, tmp2);
 	return (frac);
 }
 
