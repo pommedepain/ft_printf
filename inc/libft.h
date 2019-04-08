@@ -6,7 +6,7 @@
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 16:28:14 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 17:14:15 by psentilh         ###   ########.fr       */
+/*   Updated: 2019/04/05 17:14:32 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <stdint.h>
 # include <stdarg.h>
-# include <stdio.h>
 # include "wchar.h"
 
 # define BUFF_SIZE	42
@@ -96,6 +95,8 @@ int					ft_toupper(int c);
 
 # define UINT_MAX	4294967296
 # define FLAGS		"cCsSpdDioOuUbxX%fFZ"
+# define OTHER		".1234567890QqWwEeRrTtYyAaGgHJKkZVvBbNnMm"
+# define OTHER2		"QqWwEeRrTtYyAaGgHJKkZVvBbNnMmI"
 # define OPTIONS	"#0-+ "
 # define B1			0x0000000000FF
 # define _X_		"0123456789ABCDEF"
@@ -133,6 +134,7 @@ int					ft_printf(const char *format, ...) __attribute__
 					((format(printf,1,2)));
 int					pf_manager(const char *format, va_list ap);
 int					check_format(const char *str);
+int					check_format2(const char *str);
 int					ft_strstringlen(const char *str, char *chr);
 
 /*
@@ -156,7 +158,6 @@ void				pf_init_struct(t_flag *flag);
 char				*ft_fillparsing(const char *str, int i, char *chr);
 t_flag				fill_flag(t_flag flag, va_list list);
 void				pf_free_struct(t_flag *flag);
-int					print_struct(t_flag flag);
 
 /*
 ** pf_parsing_util.c
@@ -201,7 +202,7 @@ char				*ft_flag_u(va_list list, t_flag flag);
 char				*ft_flag_uu(va_list list, t_flag flag);
 char				*ft_flag_x(va_list list, t_flag flag);
 char				*ft_flag_xx(va_list list, t_flag flag);
-char				*ft_flag_z(t_flag flag);
+char				*ft_flag_other(t_flag flag);
 
 /*
 ** pf_conversion.c
@@ -292,16 +293,16 @@ char				*init_pars(const char *str, int i);
 int					get_option(t_flag *flag, int i);
 int					get_field(t_flag *flag, int i, va_list list);
 int					get_precision(t_flag *flag, int i, va_list list);
+char				*particular_case(const char *str, int i);
 
 /*
-** Amélioration de la libft de base :
+** Improvement of the basic libft :
 */
 
 int					ft_chrchar(char c, char *chr);
 int					ft_chrstring(const char *str, char *chr);
 long				ft_digit_len(int n);
 char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
-void				ft_letter_count(char **split, char *s, char c);
 char				*ft_lltoa_base(long long value, int b_size, char *base);
 char				*ft_no_whitespaces(char *str);
 int					ft_numlen(unsigned long long int n, int b_size);
@@ -314,6 +315,7 @@ size_t				ft_strcountsplit(const char *s, char c);
 char				*ft_strdups(const char *s1);
 char				*ft_strjoinfs1(char *s1, char *s2);
 char				*ft_strjoinfs2(char *s1, char *s2);
+char				*ft_strjoinfs1s2(char *s1, char *s2);
 char				*ft_strjoins(char const *s1, char const *s2);
 size_t				ft_strlens(const char *s);
 char				*ft_strndup(const char *s1, size_t n);

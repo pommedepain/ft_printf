@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_functions.c                                    :+:      :+:    :+:   */
+/*   pf_new_functions.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/03 14:29:59 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 15:46:03 by cfauvell         ###   ########.fr       */
+/*   Created: 2019/04/05 17:18:25 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:18:27 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,22 @@ int		get_precision(t_flag *flag, int i, va_list list)
 	|| flag->parsing[i + 1] == '*')
 		i++;
 	return (i);
+}
+
+char	*particular_case(const char *str, int i)
+{
+	char	*res;
+	int		j;
+	int		len;
+
+	j = 0;
+	len = ft_strstringlen(&str[i], OTHER2) + 1;
+	if (len == 1)
+		return (NULL);
+	if (!(res = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	res[len] = '\0';
+	while (j < len)
+		res[j++] = str[i++];
+	return (res);
 }

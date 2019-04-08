@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:35:48 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/03/06 13:36:01 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/04/05 17:22:16 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:22:17 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

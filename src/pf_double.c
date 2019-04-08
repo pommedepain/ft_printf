@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/12 10:36:17 by cajulien          #+#    #+#             */
-/*   Updated: 2019/03/26 11:52:31 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/05 16:20:57 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,16 @@ char		*ft_put_zeros_pos(int pow, char *fraction)
 		return (NULL);
 	tmp[0] = '1';
 	tmp[1] = '\0';
-	frac = ft_strjoinfs2(tmp, fraction);
-	free(tmp);
-	tmp = malloc(sizeof(char) * pow + 3);
+	frac = ft_strjoinfs1s2(tmp, fraction);
+	if (!(tmp = malloc(sizeof(char) * pow + 3)))
+		return (NULL);
 	while (++i < pow + 1 && i < 64)
 		tmp[i] = frac[i];
 	tmp[i] = '.';
 	tmp[i + 1] = '\0';
 	tmp2 = ft_strsub(frac, pow + 1, 56);
 	free(frac);
-	frac = ft_strjoinfs1(tmp, tmp2);
-	free(tmp2);
+	frac = ft_strjoinfs1s2(tmp, tmp2);
 	return (frac);
 }
 

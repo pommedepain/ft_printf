@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_chrstring.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: benjamintle <benjamintle@student.42.fr>    +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 19:32:03 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/03/12 19:32:13 by benjamintle      ###   ########.fr       */
+/*   Created: 2019/04/05 17:16:27 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:16:32 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

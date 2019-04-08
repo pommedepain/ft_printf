@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pf_manage_struct.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cfauvell <cfauvell@student.42.fr>          +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/12 18:14:00 by benjamintle       #+#    #+#             */
-/*   Updated: 2019/04/03 15:29:07 by cfauvell         ###   ########.fr       */
+/*   Created: 2019/04/05 17:25:07 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:25:08 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 
 	k = 0;
 	if (ft_chrstring(&str[i], FLAGS) != 1)
-		return (NULL);
+		return (particular_case(str, i));
 	dest = init_pars(str, i);
 	while (str[i])
 	{
@@ -50,18 +50,6 @@ char	*ft_fillparsing(const char *str, int i, char *chr)
 	}
 	free(dest);
 	return (NULL);
-}
-
-int		print_struct(t_flag flag)
-{
-	printf("char	*parsing: %s\n", flag.parsing);
-	printf("char	*to_print: %s\n", flag.to_print);
-	printf("char	flag: %c\n", flag.flag);
-	printf("char	*option: %s\n", flag.option);
-	printf("int	*precision: %d\n", flag.precision);
-	printf("int	*field: %d\n", flag.field);
-	printf("char	*modif: %s\n", flag.modif);
-	return (1);
 }
 
 t_flag	fill_flag(t_flag flag, va_list list)
@@ -86,7 +74,9 @@ t_flag	fill_flag(t_flag flag, va_list list)
 		}
 		i++;
 	}
-	flag.flag = flag.parsing[i - 1];
+	if (ft_chrchar(flag.parsing[i - 1], FLAGS) == 1
+	|| ft_chrchar(flag.parsing[i - 1], OTHER2) == 1)
+		flag.flag = flag.parsing[i - 1];
 	return (flag);
 }
 

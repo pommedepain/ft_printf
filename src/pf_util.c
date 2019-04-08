@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 01:07:41 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 12:53:08 by psentilh         ###   ########.fr       */
+/*   Created: 2019/04/05 17:26:12 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:26:13 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_ltoa_base(long value, int base)
 	i = (sign == -1) ? 2 : 1;
 	while ((n /= base) >= 1)
 		i++;
-	tmp = (char *)malloc(sizeof(char) * i + 1);
+	if (!(tmp = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
 	tmp[i] = '\0';
 	n = (value < 0) ? -(long)value : value;
 	while (i-- + sign)
@@ -48,7 +49,8 @@ char	*ft_ltoa_base_2(long value, int base)
 	i = (sign == -1) ? 2 : 1;
 	while ((n /= base) >= 1)
 		i++;
-	tmp = (char *)malloc(sizeof(char) * i + 1);
+	if (!(tmp = (char *)malloc(sizeof(char) * i + 1)))
+		return (NULL);
 	tmp[i] = '\0';
 	n = (value < 0) ? -(long)value : value;
 	while (i-- + sign)

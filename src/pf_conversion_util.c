@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 15:09:53 by cfauvell          #+#    #+#             */
-/*   Updated: 2019/04/03 16:17:32 by psentilh         ###   ########.fr       */
+/*   Created: 2019/04/05 17:26:03 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:26:04 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static char	*if_no_option(char *res, char *str, int i, int k)
 	j = ft_strlen(str);
 	if (ft_chrchar(str[0], "-+ ") != 1)
 	{
-		res = (char *)malloc(sizeof(char) * (i + 1));
+		if (!(res = (char *)malloc(sizeof(char) * (i + 1))))
+			return (NULL);
 		res[i] = '\0';
 		while (i-- > j)
 			res[k++] = '0';
@@ -49,7 +50,8 @@ char		*zero_fill(char *str, int i)
 		{
 			k = 1;
 			j = ft_strlen(str);
-			res = (char *)malloc(sizeof(char) * (i + 2));
+			if (!(res = (char *)malloc(sizeof(char) * (i + 2))))
+				return (NULL);
 			res[i + 1] = '\0';
 			res[0] = str[0];
 			while (i-- > (j - 1))
@@ -76,7 +78,8 @@ char		*zero_fill_l(char *str, int i)
 		{
 			k = 1;
 			j = ft_strlen(str) - 1;
-			res = (char *)malloc(sizeof(char) * (i + 2));
+			if (!(res = (char *)malloc(sizeof(char) * (i + 2))))
+				return (NULL);
 			res[i + 1] = '\0';
 			res[0] = str[0];
 			while (--i > j)

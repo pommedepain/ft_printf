@@ -6,7 +6,7 @@
 /*   By: cajulien <cajulien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/23 18:09:09 by cajulien          #+#    #+#             */
-/*   Updated: 2019/04/03 17:53:33 by cajulien         ###   ########.fr       */
+/*   Updated: 2019/04/05 15:57:11 by cajulien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,10 @@ static int		is_zero(char *str)
 	return (1);
 }
 
-char	*case1(char *str, char *str1, char *str2, int i)
+char			*case1(char *str, char *str1, char *str2, int i)
 {
-	if (str2[0] > '5' || (str2[0] == '5' && (!(is_zero(&str2[1])) || str1[i - 1] % 2)))
+	if (str2[0] > '5' || (str2[0] == '5' && (!(is_zero(&str2[1]))
+	|| str1[i - 1] % 2)))
 	{
 		str1[i - 1]++;
 		free(str);
@@ -43,7 +44,7 @@ char	*case1(char *str, char *str1, char *str2, int i)
 	}
 }
 
-char	*case2(char *str, char *str1, char *str2, int prec)
+char			*case2(char *str, char *str1, char *str2, int prec)
 {
 	int		size;
 	char	*to_print;
@@ -61,7 +62,7 @@ char	*case2(char *str, char *str1, char *str2, int prec)
 	return (to_print);
 }
 
-char	*case3(char *str, char *str1, char *str2, int prec)
+char			*case3(char *str, char *str1, char *str2, int prec)
 {
 	char	*to_print;
 

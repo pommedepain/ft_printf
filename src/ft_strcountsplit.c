@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcountsplit.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pommedepin <pommedepin@student.42.fr>      +#+  +:+       +#+        */
+/*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/06 13:23:48 by pommedepin        #+#    #+#             */
-/*   Updated: 2019/03/06 13:23:53 by pommedepin       ###   ########.fr       */
+/*   Created: 2019/04/05 17:21:58 by psentilh          #+#    #+#             */
+/*   Updated: 2019/04/05 17:21:59 by psentilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
