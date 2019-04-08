@@ -5,8 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: psentilh <psentilh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+<<<<<<< HEAD:src/pf_new_functions.c
 /*   Created: 2019/04/05 17:18:25 by psentilh          #+#    #+#             */
 /*   Updated: 2019/04/05 17:18:27 by psentilh         ###   ########.fr       */
+=======
+/*   Created: 2019/04/03 14:29:59 by cfauvell          #+#    #+#             */
+/*   Updated: 2019/04/04 18:21:55 by cfauvell         ###   ########.fr       */
+>>>>>>> 823be3ea2500ffc238a7eca15f5d0eb744346400:src/new_functions.c
 /*                                                                            */
 /* ************************************************************************** */
 
