@@ -32,3 +32,5 @@ The aim of this project is to partially reproduce this function.
 <li>Run: gcc ./main.c ./libftprintf.a (there will be warning that's normal! We're testing some undefined behaviors of the printf function)</li>
 <li>Run ./a.out</li>
 </ul>
+
+[Grade](./grade.png)
