@@ -12,7 +12,7 @@ Printf is a function that writes output to stdout according to a format [(see ma
 
 The aim of this project is to partially reproduce this function.
 
-<h1>ft_printf can handle</h1>
+#### ft_printf can handle 
 <ul>
 <li>c s p conversions</li>
 <li>d i o u x X conversions with flags hh, h, l and ll</li>
