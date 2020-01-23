@@ -1,4 +1,4 @@
-## FT_PRINTF
+# FT_PRINTF
 
 4th C project for 42 Paris school.
 
@@ -6,7 +6,7 @@ This project consists in recoding the printf function of the libc.
 
 (Group project carried out with @cajulien42)
 
-# Recoding Printf
+## Recoding Printf
 
 Printf is a function that writes output to stdout according to a format [(see man)](https://linux.die.net/man/3/printf).
 
@@ -24,7 +24,7 @@ The aim of this project is to partially reproduce this function.
 
 <b>NB:</b> The function uses a great deal of the libft I made earlier in my cursus.
 
-# How to use it ?
+## How to use it ?
 
 <ul>
 <li>Run: make</li>
