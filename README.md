@@ -1,4 +1,4 @@
-# FT_PRINTF
+## FT_PRINTF
 
 4th C project for 42 Paris school.
 
@@ -33,4 +33,4 @@ The aim of this project is to partially reproduce this function.
 <li>Run ./a.out</li>
 </ul>
 
-[Grade](./grade.png)
+![Grade](./grade.png?raw=true "grade")
