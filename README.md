@@ -4,7 +4,7 @@
 
 This project consists in recoding the printf function of the libc.
 
-(Group project carried out with [Camille Julien](https://github.com/cajulien42)
+(Group project carried out with [Camille Julien](https://github.com/cajulien42) )
 
 ## Recoding Printf
 
