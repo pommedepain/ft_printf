@@ -4,7 +4,7 @@
 
 This project consists in recoding the printf function of the libc.
 
-(Group project carried out with @cajulien42)
+(Group project carried out with [Camille Julien (https://github.com/cajulien42)])
 
 ## Recoding Printf
 
@@ -32,5 +32,3 @@ The aim of this project is to partially reproduce this function.
 <li>Run: gcc ./main.c ./libftprintf.a (there will be warning that's normal! We're testing some undefined behaviors of the printf function)</li>
 <li>Run ./a.out</li>
 </ul>
-
-![Grade](./grade.png?raw=true "grade")
